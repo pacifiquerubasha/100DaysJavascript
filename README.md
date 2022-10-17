@@ -17,14 +17,15 @@ For the sake of readability and good practice, all functions should have documen
  * @return {ReturnType} - ReturnDescription
  * @see [ResourcePageTitle](PageUrl)
  * @example Example of how to call the function
- */
+ 
+**/
 
 ## CONVENTIONS
 
-camelCase for variables
-PascalCase for classes
-UPPERCASE with underscore for constants
-snake_case for utility variables like an imported object
+camelCase for variables\
+PascalCase for classes\
+UPPERCASE with underscore for constants\
+snake_case for utility variables like an imported object\
 
 ## VSCODE EXTENSIONS FOR JAVASCRIPT
 
