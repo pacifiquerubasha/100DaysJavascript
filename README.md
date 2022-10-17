@@ -1,3 +1,9 @@
+## PUSHING CHANGES TO GITHUB
+
+STAGE CHANGES git add .\
+COMMIT CHANGES git commit -m "Message here"\
+PUSH CHANGES git push OR git push origin main
+
 
 ## RUNNING JS CODE WITHOUT HTML
 
@@ -25,7 +31,7 @@ For the sake of readability and good practice, all functions should have documen
 camelCase for variables\
 PascalCase for classes\
 UPPERCASE with underscore for constants\
-snake_case for utility variables like an imported object\
+snake_case for utility variables like an imported object
 
 ## VSCODE EXTENSIONS FOR JAVASCRIPT
 
