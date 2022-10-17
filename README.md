@@ -7,8 +7,8 @@ PUSH CHANGES git push OR git push origin main
 
 ## RUNNING JS CODE WITHOUT HTML
 
-INSTEAD OF OPENING THE BROWSER TO SEE THE CONSOLE, IN THE TERMINAL, WE ISSUE THE COMMAND "node FILENAME"
-Eg. To check the value of scholastique, in the terminal we issue the command node variables.js
+Instead of opening the browser to see code issued in the console, we issue the command "node FILENAME" in the editor terminal\
+Eg. To check the value of scholastique logged in the variables.js file(DAY1), in the terminal we issue the command node variables.js
 
 ## WRITING BETTER DOCUMENTATION
 
