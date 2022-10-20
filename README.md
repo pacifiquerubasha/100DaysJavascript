@@ -11,7 +11,7 @@ Instead of opening the browser to see code issued in the console, we issue the c
 Eg. To check the value of scholastique logged in the variables.js file(DAY1), in the terminal we issue the command node variables.js
 
 ## WRITING BETTER DOCUMENTATION
-
+    
 For the sake of readability and good practice, all functions should have documentation attached to them in the format
 
 /**

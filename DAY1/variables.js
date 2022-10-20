@@ -1,4 +1,4 @@
-let scholastique = "Ineza";
-console.log(scholastique);
+let scholastique = 1;
+console.log(++scholastique);
 
 
