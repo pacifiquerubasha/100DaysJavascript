@@ -60,7 +60,6 @@ else if(koalasReallyWins) console.log("KOALAS WINS")
 else console.log("NO TEAM WON")
 
 
-
 /**
  * SWITCH STATEMENT
  * Used in scenarios where we need to make a decision based on the value in a variable
