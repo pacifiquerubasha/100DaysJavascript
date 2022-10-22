@@ -2,18 +2,18 @@ console.log(num);
 let num = 5;
 //ReferenceError
 
-let num = 5;
+num = 5;
 console.log(num);
 //Corrected
 
-let yearOfBirt h= 2002;
+let yearOfBirth = 2002;
 let now = 2022;
 let age = no - yearOfBirth;
 //SyntaxError
-let age= no - yearOfBirth;
+age = now - yearOfBirth;
 //Corrected
 
-yearOfBirth = 'Two Thousand and Two';
+yearOfBirth = "Two Thousand and Two";
 //Dynamic Typing
 
 //The let declaration declares a block-scoped local variable
@@ -29,11 +29,11 @@ var a = 1;
 var b = 2;
 
 if (a === 1) {
-  var a = 11; // the scope is global
-  let b = 22; // the scope is inside the if-block
+	var a = 11; // the scope is global
+	let b = 22; // the scope is inside the if-block
 
-  console.log(a);  // 11
-  console.log(b);  // 22
+	console.log(a); // 11
+	console.log(b); // 22
 }
 
 console.log(a); // 11
