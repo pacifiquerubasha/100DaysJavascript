@@ -3,6 +3,7 @@
 STAGE CHANGES git add .\
 COMMIT CHANGES git commit -m "Message here"\
 PUSH CHANGES git push OR git push origin main
+PULL CHANGES git pull
 
 
 ## RUNNING JS CODE WITHOUT HTML
@@ -32,6 +33,14 @@ camelCase for variables\
 PascalCase for classes\
 UPPERCASE with underscore for constants\
 snake_case for utility variables like an imported object
+
+## SHORTCUTS
+
+Select code then CTRL+/ = Commenting\
+Select then CTRL+F2 = Change all occurences\
+CTRL+B = Close side pannel\
+CTRL+` = Open/Close Terminal\
+CTRL+, = Open settings
 
 ## VSCODE EXTENSIONS FOR JAVASCRIPT
 
