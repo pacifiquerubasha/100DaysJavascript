@@ -2,7 +2,7 @@
 
 STAGE CHANGES git add .\
 COMMIT CHANGES git commit -m "Message here"\
-PUSH CHANGES git push OR git push origin main
+PUSH CHANGES git push OR git push origin main\
 PULL CHANGES git pull
 
 
