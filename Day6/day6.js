@@ -1,3 +1,8 @@
+/**
+ * Difference between expression and statement
+ * An expression is a combination of values and functions that are combined and interpreted by the compiler to create a new value.
+ * A statement is a standalone unit that does not return anyting
+ * Examples
 
 */
 
