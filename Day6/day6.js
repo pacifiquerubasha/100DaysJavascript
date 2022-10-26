@@ -16,6 +16,7 @@ if (num === 6) {
 	//more statements
 }
 
+
 /**
  * The conditional (ternary) Operator takes three operands:
  * A condition followed by a question mark (?)
@@ -29,6 +30,7 @@ if (num === 6) {
  * 2. Print a string that contains the bill, tip, and final value
  * Testing Data: 275, 40, 430
  */
+
 
 let bill = 275;
 const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
