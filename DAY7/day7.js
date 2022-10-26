@@ -1,4 +1,4 @@
-/**
+6/**
  * FUNCTIONS
  * 
  * Used to create pieces of code that do a specific job and can be reused
