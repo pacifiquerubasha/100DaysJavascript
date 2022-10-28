@@ -37,3 +37,26 @@ if (markDetails.calcBMI() > johnDetails.calcBMI())
     console.log(`${markDetails.fullName}'s BMI (${markDetails.calcBMI()}) is higher than ${johnDetails.fullName}'s (${johnDetails.calcBMI()})`);
 
 else console(`${johnDetails.fullName}'s BMI (${johnDetails.calcBMI()}) is higher tha ${markDetails.fullName}'s (${markDetails.calcBMI()})`);
+
+
+/**
+ * LOOPS
+ * 
+ * FOR LOOP
+ * 
+ * Structure
+ * 
+ * for(counter declaration, condition, update counter){
+ *      CODE HERE
+ * }
+ * 
+ * 
+ * 
+ */
+
+
+for(let i=0; i<=10; i++){
+    console.log(`Printing number ${i}`);
+}
+
+
