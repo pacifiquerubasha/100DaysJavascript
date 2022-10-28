@@ -1,3 +1,12 @@
+/**
+ * Intro to Objects
+ * 
+ * An Object  is a standalone entity, with properties and type.
+ * A property of an object can be explained as a variable that is attached to the object.
+ * Object properties can be accessed with a simple dot or bracket notation.
+ * This is demonstarted in the small challenges below
+ */
+
 const jonas = {
     name: 'Jonas',
     friends: ['Michel', 'Gerard', 'Mark']
@@ -19,3 +28,4 @@ const jonasDetails = {
 
 
 console.log(`${jonasDetails.name} is a ${jonasDetails.calcAge()}-year old ${jonasDetails.job}, and ${jonasDetails.hasDriverLicense ? "he has a driver's license" : "he has no driver's license"}`)
+
