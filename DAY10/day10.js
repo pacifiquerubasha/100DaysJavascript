@@ -1,3 +1,5 @@
+
+
 const jonas = {
     name: 'Jonas',
     friends: ['Michel', 'Gerard', 'Mark']
@@ -19,3 +21,4 @@ const jonasDetails = {
 
 
 console.log(`${jonasDetails.name} is a ${jonasDetails.calcAge()}-year old ${jonasDetails.job}, and ${jonasDetails.hasDriverLicense ? "he has a driver's license" : "he has no driver's license"}`)
+
