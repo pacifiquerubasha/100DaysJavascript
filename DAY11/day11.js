@@ -51,7 +51,6 @@ else console(`${johnDetails.fullName}'s BMI (${johnDetails.calcBMI()}) is higher
  * }
  * 
  * 
- * 
  */
 
 
