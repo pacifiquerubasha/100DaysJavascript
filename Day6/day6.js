@@ -3,9 +3,7 @@
  * An expression is a combination of values and functions that are combined and interpreted by the compiler to create a new value.
  * A statement is a standalone unit that does not return anyting
  * Examples
-
 */
-
 let num = 6; // This is a statement, it produces nothing
 
 num > 100; // This is an expression because it will either produce true or false
