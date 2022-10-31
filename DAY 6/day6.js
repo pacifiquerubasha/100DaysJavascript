@@ -17,7 +17,7 @@ if (num === 6) {
 /**
  * The conditional (ternary) Operator takes three operands:
  * A condition followed by a question mark (?)
- * An expression toexecute if the condition is true followed by a colon (:)
+ * An expression to execute if the condition is true followed by a colon (:)
  * An expression to execute if the condition is false
  * Example which is also challenge 4:
  * To build a tip calculator
