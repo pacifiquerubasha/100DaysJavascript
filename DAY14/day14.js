@@ -7,8 +7,8 @@
  *
  * Temperature amplitude is the difference between the highest and the lowest temperature in the given array
  * Ignore the sensor error
- *
- * given two arrays, merge them
+ * 
+ * Given two arrays, merge them
  */
 
 const temp1 = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
