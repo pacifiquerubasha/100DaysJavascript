@@ -3,7 +3,7 @@
  * An expression is a combination of values and functions that are combined and interpreted by the compiler to create a new value.
  * A statement is a standalone unit that does not return anyting
  * Examples
-*/
+ */
 let num = 6; // This is a statement, it produces nothing
 
 num > 100; // This is an expression because it will either produce true or false
@@ -13,7 +13,6 @@ if (num === 6) {
 	//This also is a statement
 	//more statements
 }
-
 
 /**
  * The conditional (ternary) Operator takes three operands:
@@ -28,7 +27,6 @@ if (num === 6) {
  * 2. Print a string that contains the bill, tip, and final value
  * Testing Data: 275, 40, 430
  */
-
 
 let bill = 275;
 const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
