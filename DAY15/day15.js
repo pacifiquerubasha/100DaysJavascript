@@ -192,8 +192,9 @@ const temperatures = [
 
 let sorted = [];
 let index = -1;
+
 for (i = 0; i < temperatures.length; i++) {
-	index = i;
+    index = i;
 	for (j = i; j <= temperatures.length - 1; j++) {
 		if (temperatures[j] < temperatures[index]) {
 			index = j;
