@@ -49,7 +49,7 @@ randomArray = ['Mine']; //TypeError
 
 /**
  * @function calcTip
- * @description 
+ * @description Calculates the tip for bill ranges
  * @param {Number} bill
  * @returns corresponding tip
  */
