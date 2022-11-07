@@ -11,7 +11,7 @@
  * 
  * Global Execution Content and Function Execution Context
  * 
- * Global Execution Context is the defualt Execution Context that the engine creates whenever it recieves a script file.
+ * Global Execution Context is the default Execution Context that the engine creates whenever it recieves a script file.
  * It is where all javascript code that is not inside of a function gets executed.
  * And there can only be one GEC for every javascript file
  * 
