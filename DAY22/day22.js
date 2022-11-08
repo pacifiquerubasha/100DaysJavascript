@@ -1,6 +1,107 @@
+/**
+ * 
+ * Rest pattern and rest parameters
+ * 
+ * ===========REST PATTERN===========
+ * 
+ * 
+ * Rest pattern is used to collect multiple elements and put them in an array. Which is the opposite of what the spread operator does.
+ * 
+ * Rest pattern has the same synthax asthe spread operator except that for rest ... is used on the left-hand side of =
+ */
+
+/**
+ * 1. Rest pattern in arrays
+ * 
+  */
+
+const arr = [1,2,...[3,4]];//spread operator
+
+const [x,y, ...others]= [1,2,3,4,5]; //rest pattern
+console.log(x,y,others) // prints 1 2 [3,4,5]
+
+
+
+/**
+ * Rest pattern in objects
+ */
+const rubasha={
+    name:"Pacifique",
+    age: 20,
+    hobby1: "coding",
+    hobby2: "eating"
+}
+
+const {name, ...about}= rubasha;
+console.log(about); //prints rubasha except name
+/**
+ * ===========REST PARAMETERS============ 
+ * 
+ * the rest parameter synthax allows a function to accept an indefinite number of arguments as an array
+*/
+
+function sum(...args){
+    let total = 0;
+    for (let i=0; i<args.length; i++){
+        total+=args[i];
+    }
+    console.log(total)
+}
+sum(2,3,4,5);
+sum(4,5,6,7,8,0);
+
+
+
+/**
+ * ==========SHORT CIRCUITING OPERATORS=========
+ * 
+ * 1. AND (&&) short circuit
+ * 
+ * The expression is evaluated until there is a false result
+ */
+
+
+
+console.log(false && true && 1 && 0); //prints false only because it is a falsy value and the evaluating stops there
+console.log (6, "yes", '', undefined); //prints 6, yes, undefined(falsy value)
+
+
 
 /**
  * 
+ * 2. OR (||) short circuiting
+ * 
+ * The opposite of &&
+ * 
+ * Evaluates until there's a true result
+ */
+
+
+
+console.log(6, "yes", "", undefined); //prints 6
+console.log(false && true && 1 && 0); //prints false, true
+
+
+
+/**
+ * ===========Nullish Coalescing Operator(??)==========
+ * 
+ * This is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined
+ * Otherwise returns its left-hand side operand
+ */
+const num = null ?? 6;
+console.log(num) // prints 6
+
+const num6 = 0 ?? 6;
+console.log(num6); //prints 0
+
+
+
+
+
+/**
+ * 
+ * Challenge
  * 1. Create one player array for each team
  * 
  */
