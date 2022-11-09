@@ -106,27 +106,7 @@ console.log(num2); //prints 10
  *
  */
 
-// const team1 = {
-//     name:"Bayern Munich",
-//     gk:"Nuer",
-//     fieldPlayers:["Sadio", "Mane", "Kimmich", "Frederich", "Some", "One", "Else", "And", "Another", "Player"],
-//     substitutes : ["Thiago", "Coutinho", "Perisich"]
-// }
 
-// const team2 = {
-//     name:"Real Madrid",
-//     gk:"Courtois",
-//     fieldPlayers:["Benzema", "Vini", "Jr", "Modrich", "Some", "One", "Else", "And", "Another", "Player"],
-//     substitutes: ["Rudiger", "Asensio", "Rodrigo"]
-// }
-
-// const players1 = [team1.gk, ...team1.fieldPlayers];
-// const players2 = [team2.gk, team2.fieldPlayers];
-
-// const allPlayers = [...players1, ...players2];
-
-// const players1Final = [players1, ...team1.substitutes]
-// const players2Final = [players2, team2.substitutes]
 
 const game = {
 	team1: "Bayern Munchen",
