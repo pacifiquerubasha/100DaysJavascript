@@ -187,8 +187,8 @@ const odds = Object.values(game.odds);
 let avg = 0;
 for (const odd of odds) {
 	avg += odd;
-	avg = avg / odds.length;
 }
+avg = avg / odds.length;
 console.log(avg);
 
 
