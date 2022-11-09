@@ -133,6 +133,9 @@ console.log("AFTER DELETION", map); // prints Map(0) {}
  * 1. Loop over the game.scored array and print each *player name with the goal number
  * example : Goal 1: Lewandowiski
  */
+
+ console.log("========================CHALLENGE STARTS HERE")
+
 const game = {
 	team1: "Bayern Munchen",
 	team2: "Real Madrid",
@@ -173,7 +176,7 @@ const game = {
 	},
 };
 
-console.log("========================LOGGING STARTS HERE")
+
 for (const [i, player] of game.scored.entries())
 	console.log(`Goal ${i + 1} : ${player}`);
 /**
@@ -182,13 +185,13 @@ for (const [i, player] of game.scored.entries())
  *
  *
  */
-const odds = Object.values(game.odds);
 
-let avg = 0;
-for (const odd of odds) {
-	avg += odd;
+let sum = 0;
+for (const odd of Object.values(game.odds)) {
+	sum += odd;
 }
-avg = avg / odds.length;
+
+const avg = sum / odds.length;
 console.log(avg);
 
 
