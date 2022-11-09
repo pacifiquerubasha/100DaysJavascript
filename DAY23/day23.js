@@ -173,6 +173,7 @@ const game = {
 	},
 };
 
+console.log("========================LOGGING STARTS HERE")
 for (const [i, player] of game.scored.entries())
 	console.log(`Goal ${i + 1} : ${player}`);
 /**
@@ -182,6 +183,7 @@ for (const [i, player] of game.scored.entries())
  *
  */
 const odds = Object.values(game.odds);
+
 let avg = 0;
 for (const odd of odds) {
 	avg += odd;
@@ -189,15 +191,17 @@ for (const odd of odds) {
 }
 console.log(avg);
 
+
 /**
  * 3. Print the 3 odds in a nice formatted way
  *
  * Odd of victory Bayern Munich: 1.33
  * Odd of draw: 1.33
- * Odd of victory Borussia Dortmund: 6.5
+ * Odd of victory Real Madrid: 6.5
  */
+
 
 for (const [team, odd] of Object.entries(game.odds)) {
 	const teamwin = team === "x" ? "draw" : `victory ${game[team]}`;
-	console.log(`Odd ${teamwin} ${odd}`);
+	console.log(`Odd of ${teamwin} : ${odd}`);
 }
