@@ -78,4 +78,3 @@ for (const [team, odd] of Object.entries(game.odds)) {
 	const teamwin = team === "x" ? "draw" : `victory ${game[team]}`;
 	console.log(`Odd of ${teamwin} : ${odd}`);
 }
->>>>>>> fec2236398c48eb864caab0ffdfb3696b7db1677
