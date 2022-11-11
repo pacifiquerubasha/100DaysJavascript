@@ -29,7 +29,6 @@ gameEvents.delete(67);
 console.log(gameEvents)
 
 
-
 /**
  * 
  * 3. Print: AN event happened, on average, every 9 minutes
