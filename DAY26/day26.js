@@ -113,7 +113,7 @@ console.log("DO NOT HIDE ".repeat(6)); //Prints DO NOT HIDE 6 times
 /**
  * CHALLENGE
  *
- * A program that receives a list of variables in under_score and convert them in camelCase
+ * A program that receives a list of variables in snake_case and convert them in camelCase
  */
 
 const convertToCamelCase = (arguments) => {
