@@ -101,7 +101,7 @@ console.log(checkNumberOfVowels("Permanganate"))
  * 
  */
 
-  console.log("6. ############################")
+console.log("6. ############################")
 
 const findMostCommonlyUsed = (string)=>{
     const temp = {}
