@@ -161,3 +161,38 @@ console.log("MOST COMMON", findMostCommonlyUsed('Here we gggggggooo againo'))
   }
 
   console.log("SAME LETTERS ? ", checkAnagrams("Pacy", "YPCA"));
+
+/**
+ * 8. String Permutation is Palindrome?
+ * 
+ * 
+ */
+
+    console.log("8. ############################")
+
+const checkPalindrome = (firstString, secondString)=>{
+
+    if(firstString.length === secondString.length){
+        let tempStringArray = [];
+        for(const letter of secondString){
+            tempStringArray.unshift(letter)
+        }
+
+        console.log(Array.from(firstString))
+        console.log(tempStringArray)
+
+        const secondArrayString = Array.from(firstString);
+
+        for(let i = 0; i<=firstString.length; i++){
+            if(tempStringArray[i] !== secondArrayString[i]) return false
+        }
+
+        return true
+
+    }
+
+    return false;
+    
+}
+
+console.log(checkPalindrome('noel', 'loen'));
