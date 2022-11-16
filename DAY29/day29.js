@@ -1,4 +1,67 @@
 /**
+ * Method.apply()
+ * allows you to call a function with a given this value and arguments provided as an array.
+ */
+
+
+ const person = {
+	fullName: function(message) {
+	  return message + " " + this.firstName + " " + this.lastName;
+	}
+  }
+  
+  const person1 = {
+	firstName: "Mary",
+	lastName: "Doe"
+  }
+  
+  // This will return "Mary Doe":
+  person.fullName.apply(person1, ['Hello']);
+
+  console.log(person.fullName.apply(person1, ['Hello']))
+
+
+/**
+ * Method.call()
+ * allows you to call a function with a given this value and arguments provided as values.
+ */
+
+ console.log(person.fullName.call(person1, 'Hello'))
+
+
+/**
+ * Method.bind()
+ */
+
+
+ const randomObject = {
+	randomValue: 1000,
+   randomMethod() {
+	 return this.randomValue;
+   },
+ };
+ 
+ console.log("RANDOM METHOD", randomObject.randomMethod()); // 1000
+ 
+ const retrieveX = randomObject.randomMethod;
+ console.log("RETRIEVED", retrieveX()); // undefined; the function gets invoked at the global scope because the this keyword is, by default at this scope bind at the window object
+ 
+ // Create a new function with 'this' bound to randomObject.
+ 
+ const boundRandomMethod = retrieveX.bind(randomObject);
+
+ console.log("BOUND", boundRandomMethod()); // 1000
+
+
+
+
+
+
+
+
+
+
+/**
  * Challenge
  *
  * Poll app
