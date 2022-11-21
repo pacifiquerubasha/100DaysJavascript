@@ -1,4 +1,12 @@
 /**
+ * Chaining methods
+ * 
+ * Only chain methods that do not mutate the original array
+ * 
+ * 
+ */
+
+/**
  * Create function calcAverageHumanAge(dogsAgeArray)
  * 
  * 
@@ -24,7 +32,5 @@ const calcAverageHumanAge = (dogsAgeArray)=>{
 
     console.log("AVERAGE", averageMatureDogsAge)
 }
-
-
 
 calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3])
