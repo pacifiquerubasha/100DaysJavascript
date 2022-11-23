@@ -74,3 +74,17 @@ console.log(nestedArray.flatMap((num) => num));
 console.log("******SORTING******");
 console.log(arr.sort()); // sorts the array as strings
 console.log(arr.sort((a, b) => a - b));
+
+/**
+ * Creating and filling arrays
+ * fill method fills an array with specified value from a start index to an end index
+ *
+ * default start index is 0
+ * default end index is array.length
+ */
+
+const num = new Array(4); //creates an empty array with 4 indexes
+console.log("*******ARRAYS*********");
+console.log(num);
+console.log(num.fill(6)); //fills the empty array with 6
+console.log(num.fill(3, 1, 3)); //fills 3 from index 1 to 3
