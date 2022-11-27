@@ -28,6 +28,8 @@ const dogs = [
 		owners: ["Micheal"],
 	},
 ];
+
+
 dogs.forEach(
 	(dog) => (dog.recommendedFood = Math.trunc(dog.weight ** 0.75 * 28))
 );
@@ -53,6 +55,7 @@ console.log(
 const ownersEatsMuch = dogs
 	.filter((dog) => dog.curFood > dog.recommendedFood)
 	.flatMap((dog) => dog.owners);
+
 console.log("********Numero 3**********");
 console.log(ownersEatsMuch);
 console.log(`Owners of obese dogs: ${ownersEatsMuch}`);
@@ -92,6 +95,7 @@ console.log(dogs.some(dogsEatingOkay));
 
 console.log("********Numero 7**********");
 console.log(dogs.filter(dogsEatingOkay));
+
 /**
  * 8. Create a shallow copy of the dogs array and sort it by recommended food portion in ascending order.
  */
