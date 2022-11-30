@@ -21,7 +21,7 @@ console.log(person.fullName.apply(person1, ["Hello"]));
 
 /**
  * Method.call()
- * allows you to call a function with a given this value and arguments provided as values.
+ * allows you to call a function with given arguments provided as values.
  */
 
 console.log(person.fullName.call(person1, "Hello"));
