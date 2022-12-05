@@ -32,3 +32,27 @@
  *  b) ES6 classes
  *  c) Object.create()
  */
+
+
+/**
+ * CONSTRUCTOR FUNCTION
+ */
+
+const Person = function(name = "Default Name", nationality = "Default nationality"){
+    this.name = name;
+    this.nationality = nationality;
+}
+
+Person.prototype.changeName = function(){
+    this.name = "Changed name";
+}
+
+
+const somebody = new Person("Name", "African"); //creates a Person object with name "Name" and nationality "African"
+console.log(somebody)
+
+console.log(somebody.__proto__);   //prints the prototype of object somebody which contains the function changeName specified above
+console.log(somebody.__proto__ === Person.prototype);   //prints true Note : Person.prototype is not the prototype of person, it is the prototype of objects created using the constructor
+
+const somebodyElse = new Person();
+console.log("SOMEBODY ELSE", somebodyElse);
