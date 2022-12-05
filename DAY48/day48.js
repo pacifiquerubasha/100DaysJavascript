@@ -9,15 +9,13 @@ class Car {
 	}
 	brake = function () {
 		this.speed -= 5;
-		this.speedUS;
 		console.log(this.speed);
 	};
 	accelerate = function () {
 		this.speed += 10;
-		this.speedUS;
 		console.log(this.speed);
 	};
-	get SpeedUS() {
+	get speedUS() {
 		return this.speed / 1.6;
 	}
 	set speedUs(speed) {
@@ -25,9 +23,7 @@ class Car {
 	}
 }
 car1 = new Car("Ford", 120);
+console.log(car1.speedUS);
+
+car1.speedUs = 80;
 console.log(car1);
-car1.brake();
-car1.accelerate();
-car1.brake();
-car1.brake();
-car1.accelerate();
