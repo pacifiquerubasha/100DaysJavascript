@@ -15,7 +15,7 @@ child.style.color = "var(--color-primary)";
 
 * _container.childNodes_  : accesses all nodes inside the container including commnents and texts
 * _container.children_  :   accesses only nested elements inside the container
-* _container.firstElementChild_ and _container.lastElementChild _   : access respectively the first and last children
+* _container.firstElementChild_ and _container.lastElementChild_   : access respectively the first and last children
 * _child.parentNode_ and _child.parentElement_  : access the parent of the element child
 * _child.closest('.container')_;  : access the closest ancestor with the specified class/id
 * _child.previousElementSibling_ and _child.nextElementSibling_  :  access respectively the previous and next sibling of the child element
