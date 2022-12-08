@@ -1,9 +1,9 @@
-/**
- * STATIC FUNCTIONS
- * Allow us to call them without creating an instance of the class(prototype)
- */
 
+ # STATIC FUNCTIONS
+ Allow us to call them without creating an instance of the class(prototype)
+ 
 
+``` Javascript
 class Person{
 	constructor(name = "PK", birthdate = 1500){
 		this.name = name;
@@ -25,14 +25,14 @@ Person.bye = ()=>{
 
 Person.hey();	//prints Hey there. Person class here
 Person.bye()	//prints SEE YOU SOON
+```
 
 
 
-/**
- * OBJECT.CREATE
- * Creating a new object from a prototype
- */
+ # OBJECT.CREATE
+ Creating a new object from a prototype
 
+``` Javascript
 
  /**  
  * @param {*} name 
@@ -58,12 +58,13 @@ const NewStudent = Object.create(Person);
 
 console.log("STUDENT OBJ", NewStudent.prototype)	// prints STUDENT OBJ { updateName: [Function (anonymous)] }
 
+```
 
 
-/**
- * INTER CLASS INHERITANCE
- * 
- */
+
+ # INTER CLASS INHERITANCE
+
+``` Javascript
 
 const Human = function(name, birthdate){
 	this.name = name;
@@ -99,15 +100,15 @@ Teacher.prototype.constructor = Teacher;
 console.log("TEACHER CONST AFTER", Teacher.prototype.constructor)
 console.log("ALLANO PROTO AFTER", allano.__proto__)
 
+```
 
 
 
 
-/**
- * Challenge
- *
- */
+# Challenge
 
+
+``` Javascript
 
 class Car {
 	constructor(make, speed) {
@@ -134,3 +135,4 @@ console.log(car1.speedUS);
 
 car1.speedUs = 80;
 console.log(car1);
+```
