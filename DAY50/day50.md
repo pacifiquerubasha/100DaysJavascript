@@ -29,7 +29,7 @@ Let's say we want to change both the name and lastname using one line of code co
 
 ```Javascript
 
-	const cyrrusDEL = new Person('Cyrrus', 'Delta Labs');
+	const cyrrus = new Person('Cyrrus', 'Delta Labs');
 	cyrrus.changeName('CDL').changeLastName('Coorp');
 
 ```
