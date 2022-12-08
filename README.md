@@ -41,7 +41,7 @@ snake_case for utility variables like an imported object
 Select code then `CTRL+/` = Commenting\
 Select then `CTRL+F2` = Change all occurences\
 `CTRL+B` = Close side pannel\
-`CTRL+`` = Open/Close Terminal\
+`CTRL+` ` = Open/Close Terminal\
 `CTRL+,` = Open settings
 
 ## VSCODE EXTENSIONS FOR JAVASCRIPT
@@ -50,5 +50,5 @@ TODO: IF NEEDED, ADD THEM HERE
 
 
 
-Smile like you enjoy it! Well, you do, don't you?
+Smile like you enjoy it! Well, you do, don't you?\
 Absolutely not!
