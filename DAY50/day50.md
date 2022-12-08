@@ -34,7 +34,7 @@ Let's say we want to change both the name and lastname using one line of code co
 
 ```
 First failed try!
-We cannot chain method on each other because the second method(`changeLastName`) will be called on undefined because the `changeName` does not return anything.
+We cannot chain method on each other because the second method(`changeLastName`) will be called on undefined. Reason being that the `changeName` does not return anything.
 
 The solution will then be making sure the first method returns the current object.
 
