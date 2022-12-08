@@ -19,7 +19,7 @@ The different features that will be needed in the application based on the needs
 
 Flowchart help visualize the development process in steps that will be used to build each of the features.
 
-![Flowchart](https://ibb.co/0hVpzB6)
+![Flowchart](https://github.com/Scholaa/100DaysJavascript/blob/main/DAY50/Screenshot%20from%202022-12-08%2011-28-39.png)
 
 ### Step 4 : Architecture
 
