@@ -206,7 +206,7 @@ The output prints `My name is Cyrrus DEL`. Beautiful! We are able to access a me
 
 ```
 
-Our console prints\
+Our console prints
 
 `My position is undefined`\
  `My position is Campus Director`
