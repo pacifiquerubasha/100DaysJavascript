@@ -40,7 +40,7 @@ Well, no one does. We get access to the data through what is called APIs. An API
 
 AJAX is one of the ways. AJAX, which stands for Asynchronous Javascript And HML, allows us to communicate with remote servers in an asynchronous way. It provides us with an easy way to request the data that we need from an interface and receive a response containing what we asked for. Modern AJAX uses JSON format because it is widely used but some time back the response data was retrived in XML format(remember the X in AJAX). JSON(Javascipt Object Notation) is prefered because of its structure that is close to Javascript objects.
 
-Let's put ourselves in the old shoes and make some old-fashioned AJAX call to the weather API! We need to create an account with [WeatherAPI](https://www.weatherapi.com/signup.aspx) which will give us an API key to use in out request
+Let's put ourselves in the old shoes and make some old-fashioned AJAX call to the weather API! We need to create an account with [WeatherAPI](https://www.weatherapi.com/signup.aspx) which will give us an API key to use in our request
 
 ```Javascript
 
