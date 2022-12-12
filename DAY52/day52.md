@@ -1,7 +1,7 @@
 
 # INHERITANCE
 
-In Object Oriented Programming, the availability of parent properties among children is the called inheritance. This means that fields and methods specified in the parent can be used by the child.\
+In Object Oriented Programming, the availability of parent properties among children is the called inheritance. This means that fields and methods specified in the parent can be used by the child.
 
 
 ## Case study
