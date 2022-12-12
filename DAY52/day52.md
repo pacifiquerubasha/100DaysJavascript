@@ -53,7 +53,7 @@ class Authority{
 
 ```
 
-:dizzy: Trying hard to not faint after writing all these repeating lines! Fof your information, I did not use Copy/Paste when I first wrote these classes. Let us explore some alternatives to help us use inheritance to DRY our code.
+:dizzy: Trying hard to not faint after writing all these repeating lines! For your information, I did not use Copy/Paste when I first wrote these classes. Let us explore some alternatives to help us use inheritance to DRY our code.
 
 > DRY stands for Don't Repeat Yourself. It is a best practice in programming that encourages the reduction of repetitive code through, for example, use of helper and utility functions or inheritance in our case.
 
