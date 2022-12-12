@@ -217,9 +217,9 @@ Awesome!
 ## Reminders
 
 > 1. Always remember to select your `HTML` elements and store them in global variables to DRY your code.
-2. To check if a value is a number, use `isFinite(value)`;
-3. To round a number to the closest, use `number.toFixed();`
-4. Use prettier-ignore to instruct prettier to not format a piece of code.
+> 2. To check if a value is a number, use `isFinite(value)`;
+> 3. To round a number to the closest, use `number.toFixed();`
+> 4. Use prettier-ignore to instruct prettier to not format a piece of code.
 
 
 
