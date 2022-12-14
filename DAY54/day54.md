@@ -95,7 +95,7 @@ As simple as that! After creating the account and receiveing the key, we make a 
  
  5. As soon as the resource is resolved, the client receives a HTTP response similar to the request but with different content
  
-  START LINE             | HTTP RESPONSE HEADERS                                             |  RESPONSE BODY
+| START LINE             | HTTP RESPONSE HEADERS                                             |  RESPONSE BODY
 | -----------            | -----------                                                       | -----------
 | HTTP/1.1   200    OK   | Specified by the developer ('Content-type', date, enconding)      | Response
 
