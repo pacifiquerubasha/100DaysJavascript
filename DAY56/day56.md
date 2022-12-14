@@ -37,39 +37,39 @@ Step 1
 
 The first line(`console.log('I am the first log');`) will be sent to the call stack. Since it is just a synchronous piece of code, it will be executed and  we will see in the console `I am the first log`. The code will be marked as executed then removed from the call stack.
 
->Console
+>Console\
 > I am the first log
 
 Step 2
 
 The second piece of code (`setTimeout(()=>console.log('I am the timout log'), 10000);`) will be put in the call stack for execution. But it is an async operation, having a callback. Call back itself might be explained as _"do serve other operations coming after me and when I am ready, call me back"_. The timeout is sent to the Web API(our waiting room) where it waits for 10 seconds as specified. The function is removed from the call stack.
 
->Console
+>Console\
 > I am the first log
 
 Step 3
 
 The third piece of code (`console.log('I am the log after the timeout');`) will be put on the call stack and executed just like the first one. Why? It is synchronous. As a result, we see in out console a second log. Our console now looks like this:
 
->Console
-> I am the first log
+>Console\
+> I am the first log\
 > I am the log after the timeout
 
 Step 4
 
 After 10 seconds, the callback working in the Web API will be ready. It is sent to the Callback queue. Given that no one else is on the line, the event loop looks in the call stack and if nothing is there, fetches a callback from the callback queue and puts it inside the call stack. The event loop will take our callback and put it inside the call stack for execution.
 
->Console
-> I am the first log
+>Console\
+> I am the first log\
 > I am the log after the timeout
 
 Step 5
 
 Once in the call stack, the code inside the callback will be executed, then the callback removed from the stack.
 
->Console
-> I am the first log
-> I am the log after the timeout
+>Console\
+> I am the first log\
+> I am the log after the timeout\
 > I am the timout log
 
 This is just, in 5 simple steps how event loop works in Javascript. Of course if the code that we are running had multiple callbacks or async blocks of code, further judgement will have to be considered to decide who gets out of the Web API first. Apart from callbacks like setTimeout or changing the src of an image, most of the time asynchronous activities are data fetching algorithms. And in modern Javascript, we use promises to do exactly that.
