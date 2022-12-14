@@ -16,7 +16,7 @@ localStorage.setItem("myAge", "very old");
 
 ```
 
-Notice: myAge is a key and very old is a value
+>Notice: myAge is a key and very old is a value. If we want to change the value assigned to myAge, we need to set another item with the changes to the localstorage with the same key, in this case "myAge". 
 
 - For reading items of the local storage we use `getItem()` method by passing in the key
 
@@ -34,5 +34,5 @@ localStorage.clear();
 
 ```
 
-- To convert an object into a string use `JSON.stringify(obj)`
-  use `JSON.parse()` to convert it back being an object
+- To store an object into localstorage we have to convert it into a string. This is done by using `JSON.stringify(obj)` then when we want to retrieve the object, we
+  use `JSON.parse()` which converts it back to an object
