@@ -32,8 +32,6 @@
    c) `Object.create()`
  
 
-
-
 # CONSTRUCTOR FUNCTION
 
 ``` Javascript
