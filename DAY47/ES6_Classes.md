@@ -17,7 +17,7 @@
   p.s. your favorite arrow does not work on classes :(
  
 
-#  Class declaration
+##  Class declaration
   uses `class` keyword then the class name
  
   thing you should remember:
