@@ -68,9 +68,9 @@ These two concepts, transpilling and polyfilling are core concept for modern jav
 
 As a modern javascript developers, we always tend to use new language features and simplify our code as much as possible to look pro. But the main rule to follow when programming is leaving a legacy for the feature, by writing code that is both readable and maintainable. We need to allow ourselves to follow certain conventions that do not limit our creativity but provide us a certain means of communication. Mr Jonas has some good advice for us.
 
-![FirstAdvice](https://github.com/Scholaa/100DaysJavascript/blob/main/DAY50/Screenshot%20from%202022-12-08%2011-28-39.png)
+![FirstAdvice](https://github.com/Scholaa/100DaysJavascript/blob/main/DAY60/firstImage.png)
 
-![SecondAdvice](https://github.com/Scholaa/100DaysJavascript/blob/main/DAY50/Screenshot%20from%202022-12-08%2011-28-39.png)
+![SecondAdvice](https://github.com/Scholaa/100DaysJavascript/blob/main/DAY60/secondImage.png)
 
 
 
