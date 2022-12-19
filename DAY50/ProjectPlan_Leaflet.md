@@ -10,7 +10,6 @@ Format
 
 
 
-
 ### Step 2 : Features
 
 The different features that will be needed in the application based on the needs identified from the user stories. This is the developer's perspective.
