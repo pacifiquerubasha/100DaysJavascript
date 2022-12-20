@@ -9,8 +9,8 @@ const sevenBoom = function (arrayOfNumbers) {
 		: "There is no seven in the array";
 };
 console.log("Seven Boom Question");
-console.log(sevenBoom([1, 2, 3, 4, 5, 7]));
-console.log(sevenBoom([1, 2, 3, 100]));
+console.log(sevenBoom([1, 2, 3, 4, 5, 74]));
+console.log(sevenBoom([1, 2, 3, 1007]));
 
 /**
  * 2. Tower of Hanoi
@@ -41,7 +41,7 @@ const countBoomerangs = function (array) {
 	return array2.length;
 };
 console.log("Number of Boomerangs Question");
-console.log(countBoomerangs([9, 5, 9, 5, 1, 1, 1]));
+console.log(countBoomerangs([9, 5, 9, 5, 1, 1, 1, 1]));
 console.log(countBoomerangs([5, 6, 6, 7, 6, 3, 9]));
 console.log(countBoomerangs([4, 4, 4, 9, 9, 9, 9]));
 
@@ -59,7 +59,7 @@ const textToNumber = (string) => {
 };
 console.log("Zero and one Question");
 console.log(textToNumber("zero one zero one zero one zero one"));
-console.log(textToNumber("zero one zero one zero one zero one one two"));
+console.log(textToNumber("Zero one zero one zero one zero one one two"));
 
 /**
  * 5. Instances of the Fibonacci Sequence
@@ -83,7 +83,7 @@ function fibbonacciSeq(number) {
 console.log("Fibbonacci Sequence Question");
 console.log(fibbonacciSeq(4));
 console.log(fibbonacciSeq(0));
-console.log(fibbonacciSeq());
+console.log(fibbonacciSeq(7));
 
 /**
  * 6. Oddish vs. Evenish
@@ -96,5 +96,5 @@ const oddishOrEvenish = function (num) {
 	return result;
 };
 console.log("Oddish and Evenish Question");
-console.log(oddishOrEvenish(43));
-console.log(oddishOrEvenish(373));
+console.log(oddishOrEvenish(431));
+console.log(oddishOrEvenish(3731));
