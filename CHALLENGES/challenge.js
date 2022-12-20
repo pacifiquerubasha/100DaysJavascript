@@ -10,4 +10,4 @@ const checkSeven = (array) =>{
     });
 }
 
-console.log(checkSeven([1, 2, 3, 7, 4, 5]))
+console.log(checkSeven([1, 2, 3, 7, 4, 5, 74]))
