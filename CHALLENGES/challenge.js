@@ -111,3 +111,4 @@ const checkOddishEvenish = (number)=>{
 }
 
 console.log(checkOddishEvenish(1251))
+
