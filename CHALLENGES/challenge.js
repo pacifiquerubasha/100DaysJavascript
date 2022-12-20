@@ -5,5 +5,9 @@
 
 
 const checkSeven = (array) =>{
-    return array.
+    array.forEach(element => {
+        return String(element).includes("7") ? "Boom!" : "there is no 7 in the array"        
+    });
 }
+
+console.log(checkSeven([1, 2, 3, 7, 4, 5]))
