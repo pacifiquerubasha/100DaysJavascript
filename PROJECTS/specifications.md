@@ -4,6 +4,10 @@ Congratulations for making it this far. We have finally unlocked the project pha
 
 We will need to also take into account best practices including conventions and code structure to be able to start off this journey wearing professional spirit. The reference to the list of projects can be found [here](https://mikkegoes.com/javascript-projects-for-beginners/#javascript-stopwatch)
 
+## Important Update
+
+Besides creating these projects, we will start writing every week about what we learnt during the entire week. We shall create our medium blog where we will be putting our weekly content. This will eventually demand some more research to be carried out as well as discussions about refactoring. We need to start refining the 10 small blogs that we wrote from day 50 to day 60, and this will happen in concurrency with the projects and the weekly blogs. _[To be discussed further]_.
+
 Courage!
 
 ## PROJECT 1 : STOP WATCH
