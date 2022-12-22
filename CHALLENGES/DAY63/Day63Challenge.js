@@ -51,8 +51,8 @@ console.log(countBoomerangs([4, 4, 4, 9, 9, 9, 9]));
 
 const textToNumber = (string) => {
 	str = string
-		.replaceAll("zero", "0")
-		.replaceAll("one", "1")
+		.replace(/"zero'/gi, "0")
+		.replace(/"one"/gi, "1")
 		.replace(/[^0-1]/g, "");
 
 	return str.slice(0, Math.floor(str.length / 8) * 8);
@@ -92,6 +92,7 @@ const oddishOrEvenish = function (num) {
 	let numbers = String(num);
 	let sum = 0;
 	[...numbers].forEach((number) => (sum = +number));
+	console.log(sum);
 	result = sum % 2 === 0 ? "Evenish" : "Oddish";
 	return result;
 };
