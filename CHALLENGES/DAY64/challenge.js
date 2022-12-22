@@ -39,7 +39,6 @@ const isPaulWinning = (paul, opponent)=>{
     let temp = opponentArray[0];
 
     if(paulArray[0] <= paulArray[1] ){
-
         opponentArray[0] = paulArray[0]
         paulArray[0] = temp
     }
@@ -92,3 +91,18 @@ const checkBrickFit = (height, width, depth, widthHole, heightHole) =>{
 console.log(checkBrickFit(1, 1, 1, 1, 1))
 console.log(checkBrickFit(1, 2, 1, 1, 1))
 console.log(checkBrickFit(1, 2, 2, 1, 1))
+
+/**
+ * 12. Burglary Series (12): Get Vodka Bottle
+ * Given an object with alcoholic drinks and a number, return a string with the name of the Rammstein bottle that matches the given number.
+ */
+
+const getVodka = (object, number)=>{
+
+    for(let [key, value] of  Object.entries(object)){
+        if(value === number && key.includes("Rammstein")) return key;
+    }
+
+}
+
+console.log(getVodka({ whiskey: 100, "Rammstein A": 100, "Rammstein D": 70, beer: 70 }, 70))

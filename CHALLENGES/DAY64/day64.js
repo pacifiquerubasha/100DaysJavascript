@@ -55,6 +55,7 @@ console.log(aveSpd(30, 8, 24));
 const doesBrickFit = function (a, b, c, w, h) {
 	return a * b <= w * h || a * c <= w * h || b * c <= w * h;
 };
+
 console.log("Brick Fits Question");
 console.log(doesBrickFit(1, 1, 1, 1, 1));
 console.log(doesBrickFit(1, 2, 1, 1, 1));
