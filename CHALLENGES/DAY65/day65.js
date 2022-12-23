@@ -34,7 +34,7 @@ console.log();
  */
 
 const combinations = function (...args) {
-	return args.reduce((acc, num) => (num ? num * acc : num));
+	return args.filter((arg) => arg != 0).reduce((acc, num) => num * acc);
 };
 console.log(combinations(2, 3));
 console.log(combinations(3, 7, 4));
@@ -50,7 +50,7 @@ console.log(combinations(3, 7, 4));
 function isPositive(array) {
 	let countPos = 0;
 	let countNeg = 0;
-	array.forEach((num) => {
+	[...new Set(array)].forEach((num) => {
 		if (num > 0) countPos++;
 		if (num < 0) countNeg++;
 	});
