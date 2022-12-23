@@ -101,7 +101,7 @@ const wordedMath = (string)=>{
     
     const finalRes = result.replace('1', 'One').replace('2', 'Two').replace('0', 'Zero');
     
-    console.log(finalRes)
+    return finalRes;
 }
 
-wordedMath("One plus zero")
+console.log(wordedMath("One plus zero"))
