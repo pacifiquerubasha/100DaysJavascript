@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOP WATCH</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        .watch{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap:50px
+        }
+
+        .timer{
+            font-size: 100px;
+            color: rgb(80, 77, 77);
+        }
+
+        .actions{
+            display: flex;
+            gap: 50px;
+        }
+
+        .btn{
+            background-color: rgb(51, 51, 82);
+            padding: 10px 20px;
+            color: white;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="watch">
+        <div class="timer">1:00</div>
+        <div class="actions">
+            <div class="btn">START</div>
+            <div class="btn">PAUSE</div>
+            <div class="btn">RESTART</div>
+        </div>
+    </div>
+    
+</body>
+</html>
