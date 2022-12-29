@@ -25,6 +25,7 @@
             font-size: 100px;
             color: rgb(80, 77, 77);
             display: flex;
+  
         }
 
         .actions{
@@ -39,12 +40,26 @@
             border-radius: 5px;
         }
 
+        .el{
+            width: 6rem;
+            text-align: center;
+        }
+
+     
+
     </style>
 </head>
 <body>
 
     <div class="watch">
-        <div class="timer"><div class="minutes">00</div>:<div class="seconds">00</div></div>
+        <div class="timer">
+            <div class="minutes el">00</div>
+            <div class="el">:</div>
+            <div class="seconds el">00</div>
+            <div class="el">:</div>
+            <div class="milliseconds el">00</div>
+        </div>
+
         <div class="actions">
             <div class="btn start">START</div>
             <div class="btn pause">PAUSE</div>
@@ -57,6 +72,8 @@
 
         const minutes = document.querySelector('.minutes');
         const seconds = document.querySelector('.seconds');
+        const milliseconds = document.querySelector('.milliseconds');
+
         const start = document.querySelector('.start');
         const pause = document.querySelector('.pause');
         const restart = document.querySelector('.restart');
@@ -65,42 +82,48 @@
         let currentValue;
         let interval;
 
-        const formatSeconds = (i)=>{
+        const handleFormatting = (i)=>{
             return i > 9 ? i : `0${i}`
         }
 
+        let time = 0;
+
         const startWatch = (i)=>{
-            
+
             interval = setInterval(()=>{
-                currentValue = i;
 
-                if(i/60 >= 1){
-                    minutes.textContent = Math.floor(i/60);
-                    seconds.textContent = i % 60 === 0 ? "00" : formatSeconds(i % 60)
-                    i--;
+                if(time> 99){
+                    seconds.textContent = handleFormatting(Math.floor(time/100));
 
-                }
-    
-                else{
-                    minutes.textContent = "00";
-
-                    if(i >= 0){
-                        seconds.textContent = formatSeconds(i);                    
-                        i--;                    
+                    if(time > 5999){
+                        seconds.textContent = handleFormatting(Math.floor((time % 5999) / 100));
+                        minutes.textContent = handleFormatting(Math.floor(time/6000))
                     }
+                }
 
-                    else 
-                        clearInterval(this)
-                }    
-    
-            }, 1000)
+                milliseconds.textContent = handleFormatting(time % 99);
+
+                time++;
+
+            }, 10)
+            
         }
 
-        start.addEventListener('click', () => startWatch(150))
+        const restartWatch = ()=>{
+            time = 0;
+            clearInterval(interval);
+            minutes.textContent = '00';
+            seconds.textContent = '00'
+            milliseconds.textContent = '00'
+        }
+
+
+
+        start.addEventListener('click', startWatch)
        
         pause.addEventListener('click', ()=> clearInterval(interval))
 
-        restart.addEventListener('click', ()=> startWatch(currentValue))
+        restart.addEventListener('click', restartWatch)
 
 
     </script>

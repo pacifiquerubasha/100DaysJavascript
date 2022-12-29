@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIMER</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        .watch{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap:50px
+        }
+
+        .timer{
+            font-size: 100px;
+            color: rgb(80, 77, 77);
+            display: flex;
+        }
+
+        .actions{
+            display: flex;
+            gap: 50px;
+        }
+
+        .btn{
+            background-color: rgb(51, 51, 82);
+            padding: 10px 20px;
+            color: white;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="watch">
+        <div class="timer"><div class="minutes">00</div>:<div class="seconds">00</div></div>
+        <div class="actions">
+            <div class="btn start">START</div>
+            <div class="btn pause">PAUSE</div>
+            <div class="btn restart">RESTART</div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+
+        const minutes = document.querySelector('.minutes');
+        const seconds = document.querySelector('.seconds');
+        const start = document.querySelector('.start');
+        const pause = document.querySelector('.pause');
+        const restart = document.querySelector('.restart');
+
+
+        let currentValue;
+        let interval;
+
+        const formatSeconds = (i)=>{
+            return i > 9 ? i : `0${i}`
+        }
+
+        const startWatch = (i)=>{
+            
+            interval = setInterval(()=>{
+                currentValue = i;
+
+                if(i/60 >= 1){
+                    minutes.textContent = Math.floor(i/60);
+                    seconds.textContent = i % 60 === 0 ? "00" : formatSeconds(i % 60)
+                    i--;
+
+                }
+    
+                else{
+                    minutes.textContent = "00";
+
+                    if(i >= 0){
+                        seconds.textContent = formatSeconds(i);                    
+                        i--;                    
+                    }
+
+                    else 
+                        clearInterval(this)
+                }    
+    
+            }, 1000)
+        }
+
+        start.addEventListener('click', () => startWatch(150))
+       
+        pause.addEventListener('click', ()=> clearInterval(interval))
+
+        restart.addEventListener('click', ()=> startWatch(currentValue))
+
+
+    </script>
+    
+</body>
+</html>
