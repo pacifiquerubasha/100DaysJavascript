@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>STOP WATCH</title>
+		<style>
+			body {
+				height: 100vh;
+				width: 100vw;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.watch {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 50px;
+			}
+
+			.timer {
+				font-size: 100px;
+				color: rgb(80, 77, 77);
+				display: flex;
+			}
+
+			.actions {
+				display: flex;
+				gap: 50px;
+			}
+
+			.btn {
+				background-color: rgb(51, 51, 82);
+				padding: 10px 20px;
+				color: white;
+				border-radius: 5px;
+			}
+
+			.title {
+				font-size: 50px;
+				color: rgb(80, 77, 77);
+			}
+
+			.line {
+				width: 300px;
+				height: 1px;
+				background-color: black;
+			}
+
+			.aiguille {
+				position: relative;
+				margin-top: 10rem;
+				/* border: 1px solid gray; */
+			}
+
+			.dot {
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				background-color: black;
+				border-radius: 100%;
+				top: -4px;
+				left: 50%;
+			}
+
+			.clock {
+				border: 1px solid black;
+				width: 15rem;
+				height: 15rem;
+				border-radius: 100%;
+				padding: 0.5rem;
+			}
+
+			.hour-1 {
+				transform: rotate(30deg);
+			}
+
+			.hour-2 {
+				transform: rotate(60deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="watch">
+			<div class="title">First clock</div>
+
+			<div class="timer">
+				<div class="hours">
+					<span id="hours">00</span>:<span id="minutes">00</span>:<span
+						id="seconds"
+						>00 </span
+					><span id="ms"> AM</span>
+				</div>
+			</div>
+
+			<div class="aiguille">
+				<div class="line">
+					<div class="dot"></div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			const digitalClock = function () {
+				let date = new Date();
+				let hr = date.getHours();
+				let min = date.getMinutes();
+				let sec = date.getSeconds();
+				let ms = "AM";
+				const hour = document.getElementById("hours");
+				const minutes = document.getElementById("minutes");
+				const seconds = document.getElementById("seconds");
+				const m = document.getElementById("ms");
+
+				hr <= 9 ? (hour.innerHTML = "0" + hr) : (hour.innerHTML = hr);
+
+				min <= 9 ? (minutes.innerHTML = "0" + min) : (minutes.innerHTML = min);
+
+				sec <= 9 ? (seconds.innerHTML = "0" + sec) : (seconds.innerHTML = sec);
+
+				hr >= 12 ? (ms = "PM") : (ms = "AM");
+				m.innerHTML = ms;
+
+				setTimeout(digitalClock, 1000);
+			};
+			digitalClock();
+		</script>
+	</body>
+</html>
