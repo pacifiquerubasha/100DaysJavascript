@@ -1,55 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STOP WATCH</title>
-    <style>
-        body{
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            justify-content: center;
-            align-items: center
-        }
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>STOP WATCH</title>
+		<style>
+			body {
+				height: 100vh;
+				width: 100vw;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
 
-        .watch{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap:50px
-        }
+			.watch {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 50px;
+			}
 
-        .timer{
-            font-size: 100px;
-            color: rgb(80, 77, 77);
-        }
+			.timer {
+				font-size: 100px;
+				color: rgb(80, 77, 77);
+			}
 
-        .actions{
-            display: flex;
-            gap: 50px;
-        }
+			.actions {
+				display: flex;
+				gap: 50px;
+			}
 
-        .btn{
-            background-color: rgb(51, 51, 82);
-            padding: 10px 20px;
-            color: white;
-            border-radius: 5px;
-        }
+			.btn {
+				background-color: rgb(51, 51, 82);
+				padding: 10px 20px;
+				color: white;
+				border-radius: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="watch">
+			<div class="timer">
+				<p>
+					<span id="sec">00</span><span>:</span><span id="millisec">00</span>
+				</p>
+			</div>
+			<div class="actions">
+				<div class="btn" id="start">START</div>
+				<div class="btn" id="pause">PAUSE</div>
+				<div class="btn" id="restart">RESTART</div>
+			</div>
+		</div>
+		<script>
+			const startButton = document.getElementById("start");
+			const pauseButton = document.getElementById("pause");
+			const restartButton = document.getElementById("restart");
+			let millisec = document.getElementById("millisec");
+			let seconds = document.getElementById("sec");
+			let interval;
+			let mill = 0;
+			let sec = 0;
 
-    </style>
-</head>
-<body>
+			startButton.onclick = () => {
+				clearInterval(interval);
+				interval = setInterval(startTimer, 10);
+			};
+			pauseButton.onclick = () => {
+				clearInterval(interval);
+			};
 
-    <div class="watch">
-        <div class="timer">1:00</div>
-        <div class="actions">
-            <div class="btn">START</div>
-            <div class="btn">PAUSE</div>
-            <div class="btn">RESTART</div>
-        </div>
-    </div>
-    
-</body>
+			restartButton.onclick = () => {
+				clearInterval(interval);
+				sec = "00";
+				mill = "00";
+				seconds.innerHTML = sec;
+				millisec.innerHTML = mill;
+			};
+			const startTimer = function () {
+				mill++;
+				if (mill <= 9) millisec.innerHTML = "0" + mill;
+				if (mill > 9) millisec.innerHTML = mill;
+
+				if (mill > 99) {
+					sec++;
+					seconds.innerHTML = "0" + sec;
+					mill = 0;
+					millisec.innerHTML = "0" + 0;
+				}
+				if (sec > 9) {
+					seconds.innerHTML = sec;
+				}
+			};
+		</script>
+	</body>
 </html>
