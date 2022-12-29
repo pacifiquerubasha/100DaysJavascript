@@ -9,7 +9,6 @@ Format
 > As a _[type of user]_, I want to _[an action]_ to that _[a benefit]_
 
 
-
 ### Step 2 : Features
 
 The different features that will be needed in the application based on the needs identified from the user stories. This is the developer's perspective.
