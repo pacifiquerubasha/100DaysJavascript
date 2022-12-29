@@ -52,6 +52,7 @@
 
         .aiguille{
             position: relative;
+            margin-top: 10rem;
             /* border: 1px solid gray; */
         }
 
@@ -91,7 +92,7 @@
         <div class="title">First clock</div>
 
         <div class="timer">
-            <div class="hours">00</div>
+            <div class="hours">00:00:00 AM</div>
         </div>
 
         <div class="aiguille">
@@ -100,10 +101,6 @@
             </div>
         </div>
 
-
-        <div class="clock">
-           
-        </div>
 
 
 
@@ -115,26 +112,20 @@
         const minutes = document.querySelector('.minutes')
         const seconds = document.querySelector('.seconds')
         const line = document.querySelector('.line')
-        const clock = document.querySelector('.clock')
 
-        Array.from(clock.children).forEach((node, key)=>{
-            console.log(node)
-            node.style.transform = `rotate(${30 * key}deg)`
-        })
+        setInterval(()=>{
+            hours.textContent = new Date().toLocaleTimeString()
+        }, 1000)
 
-        console.log(clock.children)
-
-
-        // setInterval(()=>{
-        //     hours.textContent = new Date().toLocaleTimeString()
-        // }, 1000)
+        /**
+         * WILL UPGRADE TO DIGITAL CLOCK
+        */
 
         let degree = 0;
 
         setInterval(()=>{
-            // line.style.transform = `rotate(${degree}deg)`;
-            // degree += 6
-            // console.log(degree)
+            line.style.transform = `rotate(${degree}deg)`;
+            degree += 6
             
         }, 1000)
 
