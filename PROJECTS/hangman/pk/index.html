@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HANGMAN</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: gray;
+        }
+        .hangman{
+            border: 1px solid white;
+            text-align: center;
+            padding: 1rem;
+            max-width: 80vw;
+
+        }
+
+        .alphabet{
+            width: auto;
+            min-width: 40rem;
+            max-width: 75vw;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .letter{
+            width: 3rem;
+            height: 3rem;
+            background-color: white;
+            margin: .5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .field{
+            margin-top: 5rem;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .character{
+            height: 4rem !important;
+            width: 4rem;
+            border: 2px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: .5rem;
+            color: white;
+            font-size: 30px;
+        }
+
+        p{
+            font-size: 20px;
+        }
+
+        .trials{
+            border: 1px solid rgb(161, 159, 159);
+            height: 3rem;
+            margin-top: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .replay{
+            width: 10rem;
+            padding: 1rem;
+            background-color: white;
+            margin: 1rem auto;
+            border-radius: 5px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="hangman">
+        <h1>THE HANGMAN</h1>
+        <p>Use the alphabet below to guess the word</p>
+
+        <div class="alphabet">
+            
+        </div>
+
+        <div class="field">
+            
+        </div>
+        
+        <div class="trials">
+
+        </div>
+        <div class="replay">
+            REPLAY
+        </div>
+
+    </div>
+
+    <script>
+
+        const play =() => {
+
+            const alphabetLetters = 'abcdefghijklmnopqrstuvwxyz&() ';
+            const alphabetContainer = document.querySelector('.alphabet');
+    
+            
+            alphabetLetters.split('').forEach((el)=>{
+                const html = `<div class="letter">${el}</div>`;
+                alphabetContainer.insertAdjacentHTML('beforeend', html);
+            })
+    
+            const letters = document.querySelectorAll('.letter');
+            const countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas" ,"Bahrain","Bangladesh","Barbados" ,"Belarus","Belgium" ,"Belize","Benin","Bermuda" ,"Bhutan","Bolivia","Bosnia & Herzegovina" ,"Botswana","Brazil" ,"British Virgin Islands" ,"Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada" ,"Cape Verde","Cayman Islands" ,"Chad","Chile" ,"China","Colombia","Congo" ,"Cook Islands","Costa Rica" ,"Cote D Ivoire","Croatia" ,"Cruise Ship","Cuba","Cyprus" ,"Czech Republic","Denmark" ,"Djibouti","Dominica" ,"Dominican Republic","Ecuador","Egypt" ,"El Salvador","Equatorial Guinea" ,"Estonia","Ethiopia","Falkland Islands" ,"Faroe Islands","Fiji" ,"Finland","France" ,"French Polynesia","French West Indies" ,"Gabon","Gambia","Georgia" ,"Germany","Ghana" ,"Gibraltar","Greece","Greenland" ,"Grenada","Guam","Guatemala" ,"Guernsey","Guinea" ,"Guinea Bissau","Guyana","Haiti" ,"Honduras","Hong Kong","Hungary" ,"Iceland","India" ,"Indonesia","Iran","Iraq" ,"Ireland","Isle of Man" ,"Israel","Italy" ,"Jamaica","Japan" ,"Jersey","Jordan" ,"Kazakhstan","Kenya" ,"Kuwait","Kyrgyz Republic" ,"Laos","Latvia" ,"Lebanon","Lesotho" ,"Liberia","Libya" ,"Liechtenstein","Lithuania" ,"Luxembourg","Macau" ,"Macedonia","Madagascar" ,"Malawi","Malaysia" ,"Maldives","Mali" ,"Malta","Mauritania" ,"Mauritius","Mexico" ,"Moldova","Monaco" ,"Mongolia","Montenegro" ,"Montserrat","Morocco" ,"Mozambique","Namibia" ,"Nepal","Netherlands" ,"Netherlands Antilles","New Caledonia" ,"New Zealand","Nicaragua" ,"Niger","Nigeria" ,"Norway","Oman" ,"Pakistan","Palestine" ,"Panama","Papua New Guinea" ,"Paraguay","Peru" ,"Philippines","Poland" ,"Portugal","Puerto Rico" ,"Qatar","Reunion" ,"Romania","Russia" ,"Rwanda","Saint Pierre & Miquelon" ,"Samoa","San Marino" ,"Satellite","Saudi Arabia" ,"Senegal","Serbia" ,"Seychelles","Sierra Leone" ,"Singapore","Slovakia" ,"Slovenia","South Africa" ,"South Korea","Spain" ,"Sri Lanka","St Kitts & Nevis" ,"St Lucia","St Vincent" ,"St. Lucia","Sudan" ,"Suriname","Swaziland" ,"Sweden","Switzerland" ,"Syria","Taiwan" ,"Tajikistan","Tanzania" ,"Thailand","Timor L'Este" ,"Togo","Tonga" ,"Trinidad & Tobago","Tunisia" ,"Turkey","Turkmenistan" ,"Turks & Caicos","Uganda" ,"Ukraine","United Arab Emirates" ,"United Kingdom","United States" ,"United States Minor Outlying Islands","Uruguay" ,"Uzbekistan","Venezuela" ,"Vietnam","Virgin Islands (US)" ,"Yemen","Zambia","Zimbabwe"];
+    
+            const randomCountry = countries[Math.floor(Math.random() * 208)]
+            const field = document.querySelector('.field')
+            const randomCountryArray = randomCountry.toLowerCase().split("")
+    
+            randomCountryArray.forEach((char, i)=>{
+                const html = `<div class="character" id="char-${i}""></div>`;
+                field.insertAdjacentHTML('beforeend', html);
+    
+            })
+    
+            let trials = randomCountryArray.length + Math.floor(Math.random() * 5);
+    
+            const livesLeftContainer = document.querySelector('.trials');
+            livesLeftContainer.textContent = `You have ${trials} trials left`;
+    
+            const endGame = (array)=>{
+                array.forEach((el)=>el.style.pointerEvents = 'none')
+            }
+    
+    
+            const responseArray = Array(randomCountryArray.length).fill(0);
+            
+            letters.forEach((letter)=>{
+                letter.addEventListener('click', ()=>{
+    
+                    letter.style.background = 'gray';
+                    letter.style.pointerEvents = 'none';
+                    const positions = [];
+    
+                    randomCountryArray.forEach((el, i)=>{
+                        if(el === letter.textContent) positions.push(i);
+    
+                    })
+    
+                    if(positions.length > 0)                
+                        positions.forEach((pos)=>{
+                            document.querySelector(`#char-${pos}`).textContent += letter.textContent;
+                            responseArray[pos] = letter.textContent;
+    
+                            if(!responseArray.includes(0)) {
+                                livesLeftContainer.textContent = `You have WON`;
+                                endGame(letters)
+                            }
+                        })
+                    
+                    else{
+                        if(trials > 1){
+                            trials--;
+                            livesLeftContainer.textContent = `You have ${trials} trials left`;
+                        }
+    
+                        else{
+                            livesLeftContainer.textContent = `You have FAILED`;
+                            endGame(letters)
+                        }
+                    }
+    
+                    console.log("COUNTRY", randomCountry, responseArray)
+            
+    
+                })
+            })
+
+        }    
+
+        play();
+
+        document.querySelector('.replay').addEventListener('click', ()=>{
+            window.location.reload();
+        })
+
+
+    </script>
+    
+</body>
+</html>

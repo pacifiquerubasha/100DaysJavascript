@@ -167,19 +167,52 @@
 
 			operationButtons.forEach((btn)=>{
 				btn.addEventListener('click', ()=>{
-					if(isAfterOperation){
-						input.textContent = btn.id;
-						isAfterOperation = 0;
+					try{
+
+						if(isAfterOperation){
+							if(btn.id === "*" || btn.id === "/") throw new Error('Invalid start');
+							else{
+								input.textContent = btn.id;
+								isAfterOperation = 0;
+							}
+	
+						}
+						else {
+							if(input.textContent === "" && (btn.id === "*" || btn.id === "/")) throw new Error('Invalid start')
+
+							else{
+								input.textContent += btn.id;
+							}
+						}
+					}catch(e){
+						input.textContent = ""
 					}
-					else 
-						input.textContent += btn.id;
+
+						
 				})
 			})
 
 			result.addEventListener('click', ()=>{
-				const res = eval(input.textContent);
+				console.log(Number(input.textContent[input.textContent.length-1]))
+
+				let operation = input.textContent;
+				const lastChar = operation[operation.length-1]
+
+				let res;
+				if(!Number(lastChar)){
+					operation = operation.slice(0, operation.length - 1);
+					res = eval(operation);
+				}
+
+				else{
+					res = eval(operation);
+				}
+
 				input.textContent = res;
 				isAfterOperation = 1
+
+
+				
 			})
 
 			clear.addEventListener('click', ()=>{
