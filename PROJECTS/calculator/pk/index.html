@@ -163,7 +163,6 @@
 			const operationButtons = document.querySelectorAll('.calcBtn')
 			const clear = document.querySelector('#clear');
 
-
 			let isAfterOperation = 0;
 
 			operationButtons.forEach((btn)=>{
@@ -182,7 +181,6 @@
 				input.textContent = res;
 				isAfterOperation = 1
 			})
-
 
 			clear.addEventListener('click', ()=>{
 				input.textContent = '';

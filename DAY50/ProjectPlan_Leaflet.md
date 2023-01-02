@@ -1,6 +1,8 @@
 
 # Planning for a Project
 
+
+
 ### Step 1 : User stories
 
 Describe the application's functionalities from the perspective of the user. We can use story cards for that.
