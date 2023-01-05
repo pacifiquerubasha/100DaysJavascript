@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAIRS</title>
+    <style>
+        body {
+				height: 100vh;
+				width: 100vw;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+                flex-direction: column;
+                gap: 20px;
+		}
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            height: auto;
+            width: 40%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+
+        
+
+        .game{
+            font-size: 3rem;
+            color: rgb(71, 71, 71);
+        }
+
+        .square{
+            height: 7rem;
+            width: 5rem;
+            border: 1px solid gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            margin: 1rem;
+            background-color: gray;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .content{
+            display: flex;
+            visibility: hidden;
+            font-size: 40px;
+            font-weight: 900;
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .title{
+            color: green;
+            font-weight: 900;
+            font-size: 40px;
+            /* width: 17rem; */
+            text-align: center;
+            height: 6rem;
+        }
+
+        .replay{
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgb(6, 153, 104);
+            width: 15rem;
+            text-align: center;
+            cursor: pointer;
+        }
+
+   
+    </style>
+</head>
+<body>
+    <div class="game">WELCOME TO PAIRS GAME</div>
+    <div class="title"></div>
+    <div class="container">
+
+        <div class="square" id="1">
+            <div class="content"></div>
+        </div>
+        <div class="square" id="2">
+            <div class="content"></div>
+        </div>
+        <div class="square" id="3">
+            <div class="content"></div>
+        </div>
+        <div class="square" id="4">
+            <div class="content"></div>
+        </div>
+        <div class="square" id="5">
+            <div class="content"></div>
+        </div>
+        <div class="square" id="6">
+            <div class="content"></div>
+        </div>
+        <div class="square" id="7">
+            <div class="content"></div>
+        </div>
+        <div class="square" id="8">
+            <div class="content"></div>
+        </div>
+        <div class="square" id="9">
+            <div class="content"></div>
+        </div>
+        <div class="square" id="10"> 
+            <div class="content"></div>
+        </div>
+
+    </div>
+
+    <div class="replay">Replay</div>
+        
+    <script>
+
+
+        const shuffleCards = ()=>{
+            const numbers = [1, 2, 3, 4, 5]
+            const shuffledArray = []
+    
+            const randomNumber = Math.round(Math.random() * 5)
+    
+            const generateRandom = (number)=> (number + randomNumber) % 5 === 0 ? 5 : (number + randomNumber) % 5
+    
+            const nums = numbers.map((number, key)=>{
+                const randomItem = generateRandom(number)
+                shuffledArray.push(randomItem)
+                return randomItem;
+            })
+            
+            nums.forEach((num, i)=>{
+                shuffledArray[i+5] = generateRandom(num);
+            })
+
+            return shuffledArray;
+        }
+
+        const cardsColors = ['#000000', '#A52A2A', '#00008B', '#006400', '#8B0000' ]
+
+        const cards = shuffleCards();
+        const squares = document.querySelectorAll('.square');
+        const cardContainers = document.querySelectorAll('.content');
+        const title =  document.querySelector('.title');
+        const replay = document.querySelector('.replay');
+
+
+        let played = []
+        let prevEl;
+        let leftToWin = 5;
+
+        const temporaryStop = (trigger)=>{
+            squares.forEach((square) => square.style.pointerEvents = trigger ? 'none' : 'all')
+        }
+
+        cardContainers.forEach((container, i)=>{
+            container.textContent = cards[i];
+            container.style.backgroundColor = cardsColors[cards[i] === 5 ? 0 : cards[i]]
+            
+            container.parentNode.addEventListener('click', ()=>{
+                container.style.visibility = 'visible';
+
+                if(played.length > 0){
+                    played.push(cards[i]);
+
+                    if(played[0] === played[1]){
+                        prevEl.style.pointerEvents = 'none';
+                        prevEl.style.opacity = '60%';
+
+                        container.style.visibility = 'none';
+                        container.style.opacity = '60%';
+                        played=[];
+                        leftToWin--;
+                        leftToWin === 0 ? title.textContent = "You have won!" : '';
+                        console.log(leftToWin)
+                    }
+
+                    else{
+                        temporaryStop(true);
+                        setTimeout(()=>{
+                            prevEl.style.visibility = 'hidden';
+                            container.style.visibility = 'hidden';
+                            played=[];
+                            prevEl = null;
+                            temporaryStop(false)
+                        }, 1000)
+                    }
+
+                }
+
+                else{
+                    played.push(cards[i]);
+                    prevEl = container;
+                }
+
+                
+            })
+        })
+
+        replay.addEventListener('click', () => window.location.reload())
+
+
+        
+
+    </script>
+    
+</body>
+</html>
