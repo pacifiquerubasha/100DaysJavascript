@@ -35,6 +35,7 @@
             border-color: rgb(7, 122, 117);
             outline: none !important;
             border-width: 1px;
+            font-size: 1.2rem;
         }
 
         .copy{
@@ -55,7 +56,6 @@
         }
 
 
-
         .element label{
             font-size: 24px;
             margin-left: 1rem;
@@ -69,6 +69,19 @@
             border-radius: 5px;
             outline: none;
             margin-top: 2rem;
+
+            background-color: rgb(7, 122, 117);
+            color: white;
+
+        }
+
+        .title{
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            color: rgb(3, 85, 81);
+            font-weight: 900;
+
+
         }
 
 
@@ -77,6 +90,7 @@
 <body>
 
     <div class="container">
+        <div class="title">PASSWORD GENERATOR</div>
         <div class="passworContainer">
             <input aria-label="password" type="text" name="password" id="password" class="password" disabled>
             <label for="password" class="copy">Copy</label>
@@ -87,19 +101,15 @@
             <label for="uppercase">Uppercase</label>
         </div>
 
-        <div class="element">
-            <input aria-label="lowercase" type="checkbox" name="lowercase" id="lowercase">
-            <label for="uppercase">Lowercase</label>
-        </div>
 
         <div class="element">
             <input aria-label="number" type="checkbox" name="number" id="number">
-            <label for="uppercase">Number</label>
+            <label for="number">Number</label>
         </div>
 
         <div class="element">
             <input aria-label="special" type="checkbox" name="special" id="special">
-            <label for="uppercase">Special character</label>
+            <label for="special">Special character</label>
         </div>
 
         <button class="generate">GENERATE</button>
@@ -107,6 +117,94 @@
     </div>
 
     <script>
+        const checkboxes = document.querySelectorAll('input[type=checkbox]');
+        const generate = document.querySelector('.generate');
+        const password = document.querySelector('.password')
+
+        const toInclude = {};
+
+        checkboxes.forEach((checkbox)=>{
+            checkbox.addEventListener('click', ()=>{
+                if(checkbox.checked){
+                    toInclude[checkbox.name] = true
+                }
+
+                else{
+                    delete toInclude[checkbox.name]
+                }
+            })
+
+        })
+
+
+        const generateRandomPosition = (total)=>Math.floor(Math.random()*total);
+
+        
+
+        const generatePassword = (minLength)=>{
+
+            const letters = 'abcdefghijklmnopqrstuvwxyz';
+            const numbers = '1234567890';
+            const specialChars = '!@#$%&_+?/|'
+
+            let randomPassword = [];
+
+            const handleSplicing = (elementToInclude, condition)=>{
+                if(!condition) return;
+                const pos = generateRandomPosition(randomPassword.length)
+                condition && randomPassword.splice(pos, 0, elementToInclude[generateRandomPosition(elementToInclude.length - 1)])
+            }
+
+            for(i = 0; i<minLength; i++){
+            
+                handleSplicing(letters, true)
+                handleSplicing(specialChars, Object.keys(toInclude).includes('special'))
+            }
+
+            handleSplicing(letters.toUpperCase(), Object.keys(toInclude).includes('uppercase'))
+
+
+            for(i = 0; i<2; i++){
+                handleSplicing(numbers, Object.keys(toInclude).includes('number'))
+            }
+            
+            return randomPassword.join('')
+        }
+        
+        // const generatePassword = (minLength)=>{
+
+        //     const letters = 'abcdefghijklmnopqrstuvwxyz';
+        //     const numbers = '1234567890';
+        //     const specialChars = '!@#$%&_+?/|'
+
+        //     let randomPassword = [];
+
+        //     for(i = 0; i<minLength; i++){
+        //         const posLetter = generateRandomPosition(randomPassword.length)
+        //         randomPassword.splice(posLetter, 0, letters[generateRandomPosition(25)])
+                
+        //         const postSpecial = generateRandomPosition(randomPassword.length)
+
+        //         Object.keys(toInclude).includes('special') && randomPassword.splice(postSpecial, 0,  specialChars[generateRandomPosition(10)])
+        //     }
+
+        //     const randomCapital = generateRandomPosition(randomPassword.length);
+        //     Object.keys(toInclude).includes('uppercase') && randomPassword.splice(randomCapital, 0,  letters.toUpperCase()[generateRandomPosition(25)])
+
+        //     if(Object.keys(toInclude).includes('number'))            
+        //         for(i = 0; i<2; i++){
+        //             const pos = generateRandomPosition(randomPassword.length)
+        //             randomPassword.splice(pos, 0, numbers[generateRandomPosition(9)])
+        //         }
+
+        //     return randomPassword.join('')
+        // }
+
+
+        generate.addEventListener('click', ()=>{
+            password.value = generatePassword(6);
+        })
+
 
     </script>
     
