@@ -81,7 +81,6 @@
             color: rgb(3, 85, 81);
             font-weight: 900;
 
-
         }
 
 
@@ -131,10 +130,16 @@
                 checkbox.addEventListener('click', ()=>{
                     if(checkbox.checked){
                         toInclude[checkbox.name] = true
+                        checkbox.nextElementSibling.style.fontStyle = 'italic';
+                        checkbox.nextElementSibling.style.color = 'gray';
+
                     }
     
                     else{
                         delete toInclude[checkbox.name]
+                        checkbox.nextElementSibling.style.fontStyle = 'normal';
+                        checkbox.nextElementSibling.style.color = 'black';
+
                     }
                 })
     
@@ -231,7 +236,7 @@
                 password.value = generatePassword(6, toInclude);
             })
 
-            
+
             const copyToClipoard = ()=> {
                 password.select();
                 password.setSelectionRange(0, 99999); 
