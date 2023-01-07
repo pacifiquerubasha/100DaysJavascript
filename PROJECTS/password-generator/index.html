@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PASSWORD GENERATOR</title>
+    <style>
+         body {
+				height: 100vh;
+				width: 100vw;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+                flex-direction: column;
+                gap: 20px;
+		}
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .password{
+            padding: .5rem 1rem;
+            width: 20rem;
+            border-radius: 5px;
+            border-color: rgb(7, 122, 117);
+            outline: none !important;
+            border-width: 1px;
+        }
+
+        .copy{
+            padding: .5rem;
+            background-color: rgb(7, 122, 117);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .element{
+            display: flex;
+            justify-content: flex-start;
+            /* border: 1px solid red; */
+            margin: .75rem;
+            width: 23rem;
+            cursor: pointer;
+        }
+
+
+
+        .element label{
+            font-size: 24px;
+            margin-left: 1rem;
+            color: rgb(73, 73, 73);
+        }
+
+        .generate{
+            width: 23rem;
+            padding: .5rem;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            margin-top: 2rem;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="passworContainer">
+            <input aria-label="password" type="text" name="password" id="password" class="password" disabled>
+            <label for="password" class="copy">Copy</label>
+        </div>
+
+        <div class="element">
+            <input aria-label="uppercase" type="checkbox" name="uppercase" id="uppercase">
+            <label for="uppercase">Uppercase</label>
+        </div>
+
+        <div class="element">
+            <input aria-label="lowercase" type="checkbox" name="lowercase" id="lowercase">
+            <label for="uppercase">Lowercase</label>
+        </div>
+
+        <div class="element">
+            <input aria-label="number" type="checkbox" name="number" id="number">
+            <label for="uppercase">Number</label>
+        </div>
+
+        <div class="element">
+            <input aria-label="special" type="checkbox" name="special" id="special">
+            <label for="uppercase">Special character</label>
+        </div>
+
+        <button class="generate">GENERATE</button>
+
+    </div>
+
+    <script>
+
+    </script>
+    
+</body>
+</html>
