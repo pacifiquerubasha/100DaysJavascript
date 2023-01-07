@@ -116,94 +116,139 @@
 
     </div>
 
-    <script>
-        const checkboxes = document.querySelectorAll('input[type=checkbox]');
-        const generate = document.querySelector('.generate');
-        const password = document.querySelector('.password')
+    <script type="text/javascript">
 
-        const toInclude = {};
+        const passwordGenerator = ()=>{
 
-        checkboxes.forEach((checkbox)=>{
-            checkbox.addEventListener('click', ()=>{
-                if(checkbox.checked){
-                    toInclude[checkbox.name] = true
+            const checkboxes = document.querySelectorAll('input[type=checkbox]');
+            const generate = document.querySelector('.generate');
+            const password = document.querySelector('.password')
+            const copyBtn = document.querySelector('.copy')
+
+            const toInclude = {};
+    
+            checkboxes.forEach((checkbox)=>{
+                checkbox.addEventListener('click', ()=>{
+                    if(checkbox.checked){
+                        toInclude[checkbox.name] = true
+                    }
+    
+                    else{
+                        delete toInclude[checkbox.name]
+                    }
+                })
+    
+            })
+    
+    
+            /**
+             * @function generatePassword
+             * @description Generates random password based on specified conditions
+             * 
+             * @param {Number} minLength - the minimum length of the password
+             * @param {Object} toInclude - the object to contain the conditions
+             * 
+             * @return {String} - the random password generated
+             * @example const password = generatePassword(minLength, toInclude)
+             * 
+             **/
+    
+            const generatePassword = (minLength, toInclude)=>{
+    
+                const letters = 'abcdefghijklmnopqrstuvwxyz';
+                const numbers = '1234567890';
+                const specialChars = '!@#$%&_+?/|'
+    
+                let randomPassword = [];
+    
+                const generateRandomPosition = (total)=>Math.floor(Math.random()*total);
+    
+    
+                /**
+                 * @function handleSplicing
+                 * @description Adds a character to the randomPassword array at a random position
+                 * 
+                 * @param {String} elementToInclude - the string to get the character from
+                 * @param {Boolean} condition - the condition to allow character insertion
+                 * 
+                 * @example handleSplicing(letters, false)
+                 * 
+                 **/
+    
+                const handleSplicing = (elementToInclude, condition)=>{
+                    if(!condition) return;
+                    const pos = generateRandomPosition(randomPassword.length)
+                    condition && randomPassword.splice(pos, 0, elementToInclude[generateRandomPosition(elementToInclude.length - 1)])
                 }
-
-                else{
-                    delete toInclude[checkbox.name]
+    
+                for(i = 0; i<minLength; i++){
+                    handleSplicing(letters, true)
+                    handleSplicing(specialChars, Object.keys(toInclude).includes('special'))
                 }
+    
+                handleSplicing(letters.toUpperCase(), Object.keys(toInclude).includes('uppercase'))
+    
+    
+                for(i = 0; i<2; i++){
+                    handleSplicing(numbers, Object.keys(toInclude).includes('number'))
+                }
+                
+                return randomPassword.join('')
+            }
+            
+            //A PRIMARY VERSION OF THE GENERATE FUNCTIONS (HERE FOR FURTHER DOCUMENTATION)
+            // const generatePassword = (minLength)=>{
+    
+            //     const letters = 'abcdefghijklmnopqrstuvwxyz';
+            //     const numbers = '1234567890';
+            //     const specialChars = '!@#$%&_+?/|'
+    
+            //     let randomPassword = [];
+    
+            //     for(i = 0; i<minLength; i++){
+            //         const posLetter = generateRandomPosition(randomPassword.length)
+            //         randomPassword.splice(posLetter, 0, letters[generateRandomPosition(25)])
+                    
+            //         const postSpecial = generateRandomPosition(randomPassword.length)
+    
+            //         Object.keys(toInclude).includes('special') && randomPassword.splice(postSpecial, 0,  specialChars[generateRandomPosition(10)])
+            //     }
+    
+            //     const randomCapital = generateRandomPosition(randomPassword.length);
+            //     Object.keys(toInclude).includes('uppercase') && randomPassword.splice(randomCapital, 0,  letters.toUpperCase()[generateRandomPosition(25)])
+    
+            //     if(Object.keys(toInclude).includes('number'))            
+            //         for(i = 0; i<2; i++){
+            //             const pos = generateRandomPosition(randomPassword.length)
+            //             randomPassword.splice(pos, 0, numbers[generateRandomPosition(9)])
+            //         }
+    
+            //     return randomPassword.join('')
+            // }
+    
+    
+            generate.addEventListener('click', ()=>{
+                password.value = generatePassword(6, toInclude);
             })
 
-        })
-
-
-        const generateRandomPosition = (total)=>Math.floor(Math.random()*total);
-
-        
-
-        const generatePassword = (minLength)=>{
-
-            const letters = 'abcdefghijklmnopqrstuvwxyz';
-            const numbers = '1234567890';
-            const specialChars = '!@#$%&_+?/|'
-
-            let randomPassword = [];
-
-            const handleSplicing = (elementToInclude, condition)=>{
-                if(!condition) return;
-                const pos = generateRandomPosition(randomPassword.length)
-                condition && randomPassword.splice(pos, 0, elementToInclude[generateRandomPosition(elementToInclude.length - 1)])
-            }
-
-            for(i = 0; i<minLength; i++){
             
-                handleSplicing(letters, true)
-                handleSplicing(specialChars, Object.keys(toInclude).includes('special'))
+            const copyToClipoard = ()=> {
+                password.select();
+                password.setSelectionRange(0, 99999); 
+                navigator.clipboard.writeText(password.value);
+
+                copyBtn.textContent = 'Copied'
+                setTimeout(()=>{
+                    copyBtn.textContent = 'Copy'
+                }, 1500)
+
             }
 
-            handleSplicing(letters.toUpperCase(), Object.keys(toInclude).includes('uppercase'))
+            copyBtn.addEventListener('click', copyToClipoard)
 
-
-            for(i = 0; i<2; i++){
-                handleSplicing(numbers, Object.keys(toInclude).includes('number'))
-            }
-            
-            return randomPassword.join('')
         }
-        
-        // const generatePassword = (minLength)=>{
 
-        //     const letters = 'abcdefghijklmnopqrstuvwxyz';
-        //     const numbers = '1234567890';
-        //     const specialChars = '!@#$%&_+?/|'
-
-        //     let randomPassword = [];
-
-        //     for(i = 0; i<minLength; i++){
-        //         const posLetter = generateRandomPosition(randomPassword.length)
-        //         randomPassword.splice(posLetter, 0, letters[generateRandomPosition(25)])
-                
-        //         const postSpecial = generateRandomPosition(randomPassword.length)
-
-        //         Object.keys(toInclude).includes('special') && randomPassword.splice(postSpecial, 0,  specialChars[generateRandomPosition(10)])
-        //     }
-
-        //     const randomCapital = generateRandomPosition(randomPassword.length);
-        //     Object.keys(toInclude).includes('uppercase') && randomPassword.splice(randomCapital, 0,  letters.toUpperCase()[generateRandomPosition(25)])
-
-        //     if(Object.keys(toInclude).includes('number'))            
-        //         for(i = 0; i<2; i++){
-        //             const pos = generateRandomPosition(randomPassword.length)
-        //             randomPassword.splice(pos, 0, numbers[generateRandomPosition(9)])
-        //         }
-
-        //     return randomPassword.join('')
-        // }
-
-
-        generate.addEventListener('click', ()=>{
-            password.value = generatePassword(6);
-        })
+        passwordGenerator();
 
 
     </script>
