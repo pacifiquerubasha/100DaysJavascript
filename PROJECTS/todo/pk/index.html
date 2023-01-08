@@ -112,7 +112,6 @@
         const form = document.querySelector('form');
         const input = document.querySelector('.inputData');
         const itemsContainer = document.querySelector('.items');
-        const deleteBtns = document.querySelectorAll('.delete');
 
         const items = [];
 
@@ -120,25 +119,29 @@
             const template = `
             <div class="item" key="${key}">
                 <span>${item}</span>
-                <img aria-label="item" src="./delete.png" alt="${item}"" class="delete"/>
+                <img aria-label="item" src="./delete.png" alt="${item}"" class="delete del-${key}"/>
             </div>
             `
             itemsContainer.insertAdjacentHTML("beforeend", template)
         }
 
+
         form.addEventListener('submit', (e)=>{
             e.preventDefault();
             items.push(input.value);
-            displayItem(items[items.length-1], items.length-1);
-        })
-
-        deleteBtns.forEach(()=>{
             
+            localStorage.setItem("items", JSON.stringify(items));
+            displayItem(items[items.length-1], items.length-1);
+
         })
+            
+        window.addEventListener('load', ()=>{
+            const items = JSON.parse(localStorage.getItem("items"));
 
-
-
-        
+            items && items.forEach((item, key)=>{
+                displayItem(item, key)
+            })
+        })
 
     </script>
 
