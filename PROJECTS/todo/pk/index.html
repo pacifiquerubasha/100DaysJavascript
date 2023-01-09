@@ -113,34 +113,49 @@
         const input = document.querySelector('.inputData');
         const itemsContainer = document.querySelector('.items');
 
-        const items = [];
+        const itemsArray = [];
+
+        const deleteElement = ()=>{
+            console.log('eee')
+        }
 
         const displayItem = (item, key)=>{
             const template = `
             <div class="item" key="${key}">
                 <span>${item}</span>
-                <img aria-label="item" src="./delete.png" alt="${item}"" class="delete del-${key}"/>
+                <img aria-label="item" src="./delete.png" alt="${item}"" class="delete del-${key}" onclick="${deleteElement}()" />
             </div>
             `
             itemsContainer.insertAdjacentHTML("beforeend", template)
         }
 
+        
+
 
         form.addEventListener('submit', (e)=>{
             e.preventDefault();
-            items.push(input.value);
+            itemsArray.push(input.value);
             
-            localStorage.setItem("items", JSON.stringify(items));
-            displayItem(items[items.length-1], items.length-1);
+            localStorage.setItem("items", JSON.stringify(itemsArray));
+            displayItem(itemsArray[itemsArray.length-1], itemsArray.length-1);
 
         })
+
             
         window.addEventListener('load', ()=>{
             const items = JSON.parse(localStorage.getItem("items"));
 
-            items && items.forEach((item, key)=>{
-                displayItem(item, key)
-            })
+            if(items){
+                items.forEach((item, key)=>{
+                    displayItem(item, key)
+                })
+
+                itemsArray.push(...items)
+            }
+            
+
+
+            
         })
 
     </script>

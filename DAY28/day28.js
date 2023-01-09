@@ -170,16 +170,21 @@ console.log("MOST COMMON", findMostCommonlyUsed('Here we gggggggooo againo'))
 
     console.log("8. ############################")
 
-const checkPalindrome = (firstString, secondString)=>{
 
+/**
+ * 
+ * @param {*} firstString 
+ * @param {*} secondString 
+ * @returns 
+ */
+const checkPalindrome = (firstString, secondString)=>{
+    //THIS IS WRONG, VERY WRONG
+    
     if(firstString.length === secondString.length){
         let tempStringArray = [];
         for(const letter of secondString){
             tempStringArray.unshift(letter)
         }
-
-        console.log(Array.from(firstString))
-        console.log(tempStringArray)
 
         const secondArrayString = Array.from(firstString);
 
