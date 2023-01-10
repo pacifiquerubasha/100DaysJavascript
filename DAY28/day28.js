@@ -33,12 +33,10 @@ console.log(clearNegativeNumbers([1, 2, -4, 5]))
         if(letter !==" ") temp+=letter
     }
 
-    console.log(string)
-
-    console.log(temp)
+    return temp;
  }
 
- clearEmptySpaces("I    went              there");
+ console.log(clearEmptySpaces("I    went              there"));
 
  /**
  * 3. Return a Boolean if a number is divisible by 10
@@ -139,7 +137,6 @@ console.log("MOST COMMON", findMostCommonlyUsed('Here we gggggggooo againo'))
  /**
  * 7. Two Strings Are Anagrams of Each Other
  * 
- * 
  */
 
   console.log("7. ############################")
@@ -164,12 +161,10 @@ console.log("MOST COMMON", findMostCommonlyUsed('Here we gggggggooo againo'))
 
 /**
  * 8. String Permutation is Palindrome?
- * 
- * 
+ *
  */
 
     console.log("8. ############################")
-
 
 /**
  * 
