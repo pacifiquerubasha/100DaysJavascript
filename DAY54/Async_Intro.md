@@ -2,7 +2,7 @@
 
 # Asynchronous Javascript
 
-When running javascript, the general behavior is that a line of code is executed after the one written one a line before it has ended executing. This is called synchronous javascript. Synchronous javascript executes code line by line, and as a consequence, if a line of code takes time to execute, the entire execution will stop until the heavy task has ended. To solve this issue, asynchronous javascript was created. I guess you know exactly what is does. Or rather what it does not do. Either way, asynchronous javascript code does not block the execution flow in the sense that it is put on a background where it runs until finished. It is only when the asynchronous code finished executing that it will be put back on the stack. 
+When running javascript, the general behavior is that a line of code is executed after the one written a line before it has ended executing. This is called synchronous javascript. Synchronous javascript executes code line by line, and as a consequence, if a line of code takes time to execute, the entire execution will stop until the heavy task has ended. To solve this issue, asynchronous javascript was created. I guess you know exactly what is does. Or rather what it does not do. Either way, asynchronous javascript code does not block the execution flow in the sense that it is put on a background where it runs until finished. It is only when the asynchronous code finished executing that it will be put back on the stack. 
 
 Example of Synchronous JS
 ```Javascript
@@ -38,7 +38,7 @@ Well, no one does. We get access to the data through what is called APIs. An API
 
 ### How do we access the APIs?
 
-AJAX is one of the ways. AJAX, which stands for Asynchronous Javascript And HML, allows us to communicate with remote servers in an asynchronous way. It provides us with an easy way to request the data that we need from an interface and receive a response containing what we asked for. Modern AJAX uses JSON format because it is widely used but some time back the response data was retrived in XML format(remember the X in AJAX). JSON(Javascipt Object Notation) is prefered because of its structure that is close to Javascript objects.
+AJAX is one of the ways. AJAX, which stands for Asynchronous Javascript And XML, allows us to communicate with remote servers in an asynchronous way. It provides us with an easy way to request the data that we need from an interface and receive a response containing what we asked for. Modern AJAX uses JSON format because it is widely used but some time back the response data was retrived in XML format(remember the X in AJAX). JSON(Javascipt Object Notation) is prefered because of its structure that is close to Javascript objects.
 
 Let's put ourselves in the old shoes and make some old-fashioned AJAX call to the weather API! We need to create an account with [WeatherAPI](https://www.weatherapi.com/signup.aspx) which will give us an API key to use in our request
 
