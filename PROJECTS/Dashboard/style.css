@@ -33,12 +33,28 @@
 .container {
 	padding-left: 5px;
 }
+/* .expandable {
+	width: 180px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+} */
 i {
 	height: 20px;
 	width: 20px;
 	padding: 12px;
 	margin: 12px;
 	color: grey;
+}
+.fa-angle-right {
+	color: blueviolet;
+	position: absolute;
+	margin-right: 8px;
+}
+.fa-heart {
+	color: red;
+	margin: 0;
+	padding: 0;
 }
 .schedule {
 	height: 85px;
