@@ -1,10 +1,24 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: "Montserrat";
-	--main-color: green;
-	--color-orange: rgb(255, 102, 0);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    --main-color:green;
+    --color-orange: rgb(255, 102, 0);
+    --color-red-gradient:linear-gradient(to right, rgba(199, 89, 89,0.5), rgba(199, 89, 89,1));
+    --color-red:rgba(199, 89, 89);
+
+	--color-white:white;
+
+    --color-green-gradient: linear-gradient(to right, rgba(0, 128, 0,0.5), rgba(0, 128, 0, 1));
+    
+	--color-blue-gradient:linear-gradient(to right, rgba(75, 75, 172,0.5), rgba(75, 75, 172,1));
+	--color-blue: rgba(75, 75, 172);
+
+	--color-purple-gradient:linear-gradient(to right, rgba(150, 26, 150,0.5), rgba(150, 26, 150,1));
+	--color-purple:rgba(150, 26, 150);
+	
+	--main-background:rgb(228, 228, 228);
 }
 
 .main {
@@ -14,6 +28,7 @@
 	flex-direction: row;
 	padding-top: 1rem;
 	padding-right: 1rem;
+	background-color: var(--main-background);
 }
 
 .navigation {
@@ -39,7 +54,8 @@
 	justify-content: space-between;
 	align-items: center;
 } */
-i {
+
+.navigation i {
 	height: 20px;
 	width: 20px;
 	padding: 12px;
@@ -80,6 +96,7 @@ i {
 
 .header-left i {
 	color: var(--main-color);
+    cursor: pointer;
 }
 
 .header-left span {
@@ -185,6 +202,7 @@ i {
 	justify-content: center;
 	align-items: center;
 	padding: 0.5rem 1rem;
+    overflow: hidden;
 }
 
 .search-container input {
@@ -192,16 +210,173 @@ i {
 	height: 100%;
 	margin-bottom: 0;
 	box-shadow: none !important;
+	background-color: transparent;
 }
 
-.settings {
-	width: 3rem;
-	height: 3rem;
-	border-radius: 3rem;
-	background-color: var(--color-orange);
+.settings{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3rem;
+    background-color: var(--color-orange);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* STATS --------------*/
+
+.bg-red{
+    background-image: var(--color-red-gradient);
+
+}
+
+.bg-green{
+    background-image: var(--color-green-gradient);
+
+}
+
+.bg-blue{
+    background-image: var(--color-blue-gradient);
+
+}
+
+.bg-purple{
+    background-image: var(--color-purple-gradient);
+
+}
+
+.stats{
+    display: flex;
+    gap: 1.5rem;
+
+}
+.stat-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem .75rem;
+    border-radius: 10px;
+    color: var(--color-white);
+    flex: 1;
+
+}
+
+.stat-box-left{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stat-title{
+    font-size: 1.1rem;
+}
+
+.stat-data{
+    display: flex;
+    justify-content: space-between;
+}
+
+.amount{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.stat-chart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.chart{
+
+}
+.stat-box-right{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-white);
+    font-size: 1.5rem;
+}
+
+
+/* CHARTS -----------*/
+
+.statistics{
 	display: flex;
-	justify-content: center;
+	gap: 2rem;
+}
+.statistics-left{
+	flex: 2;
+	background-color: var(--color-white);
+	border-radius: 15px;
+	padding: 20px;
+}
+.stats-header{
+	display: flex;
+	justify-content: space-between;
+}
+
+.header-title{
+	font-size: 1.2rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+}
+.header-year{
+	font-weight: 600;
+}
+
+.stats-totals{
+	margin-bottom: 1rem;
+}
+
+.big-total{
+	font-size: 1.4rem;
+	color: var(--color-blue);
+	font-weight: 800;
+}
+.small-total{
+	font-size: 1.2rem;
+	margin-left: 1rem;
+	color: var(--color-purple);
+	font-weight: 600;
+}
+.statistics-right{
+	flex: 5;
+	background-color: var(--color-white);
+	border-radius: 15px;
+	padding: 20px;
+}
+.filters{
+	display: flex;
+	gap: .5rem;
+
+}
+
+.filterBtn{
+	height: 2.5rem;
+	display: flex;
 	align-items: center;
-	font-size: 1.5rem;
+	justify-content: center;
+	padding: .25rem .5rem;
+	border-radius: 5px;
+}
+
+.monthly{
+	background-color: var(--main-color);
 	color: white;
+
+}
+
+.weekly{
+	color: var(--main-color);
+
+}
+.today{
+	color: var(--main-color);
 }
