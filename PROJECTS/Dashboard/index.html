@@ -159,11 +159,12 @@
 						<div class="stats-header">
 							<span class="header-title">Patient Statistic</span>
 							<div class="filters">
-								<div class="monthly filterBtn">Monthly</div>
-								<div class="weekly filterBtn">Weekly</div>
-								<div class="today filterBtn">Today</div>
+								<div id="month" class="filterBtn btn-green">Monthly</div>
+								<div id="week" class="filterBtn">Weekly</div>
+								<div id="today" class="filterBtn">Today</div>
 							</div>
 						</div>
+						<canvas id="line-chart"></canvas>
 					</div>
 
 					<!-- <canvas id="bar-chart" width="800" height="450"></canvas> -->
@@ -236,5 +237,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 		<script src="./script.js"></script>
+		<script src="./charts.js"></script>
+
 	</body>
 </html>
