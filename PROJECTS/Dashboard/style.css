@@ -29,6 +29,7 @@
 	padding-top: 1rem;
 	padding-right: 1rem;
 	background-color: var(--main-background);
+	overflow: hidden;
 }
 
 .navigation {
@@ -41,7 +42,7 @@
 	flex: 3;
 	display: flex;
 	flex-direction: column;
-	gap: 4rem;
+	gap: 2rem;
 }
 /* MENU ---------------*/
 
@@ -351,6 +352,7 @@
 	background-color: var(--color-white);
 	border-radius: 15px;
 	padding: 20px;
+
 }
 .filters{
 	display: flex;
@@ -365,18 +367,16 @@
 	justify-content: center;
 	padding: .25rem .5rem;
 	border-radius: 5px;
+	cursor: pointer;
 }
 
-.monthly{
+.btn-green{
 	background-color: var(--main-color);
 	color: white;
-
 }
 
-.weekly{
-	color: var(--main-color);
 
-}
-.today{
-	color: var(--main-color);
+canvas{
+	max-height: 17rem;
+	max-width: 100%;
 }
