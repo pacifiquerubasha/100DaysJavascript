@@ -102,6 +102,12 @@ input{
 	margin: 12px;
 	color: grey;
 }
+
+.navigation .logo img{
+	width: 3rem;
+	height: 3rem;
+}
+
 .navigation .fa-angle-right {
 	color: blueviolet;
 	position: absolute;
