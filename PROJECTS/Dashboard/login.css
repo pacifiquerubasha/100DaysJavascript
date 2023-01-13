@@ -41,6 +41,10 @@
     height: 3rem;
 }
 
+.section1 span{
+    color: var(--main-color);
+}
+
 .section2{
     height: 20rem;
     width: 100%;
