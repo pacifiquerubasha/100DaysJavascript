@@ -34,7 +34,7 @@
 	);
 	--color-purple: rgba(150, 26, 150);
 
-	--main-background: rgb(228, 228, 228);
+	--main-background: rgba(228, 228, 228, 0.356);
 }
 
 input{
@@ -78,6 +78,7 @@ input{
 .expandable{
 	display: flex;
 	width: 60%;
+	cursor: pointer;
 }
 
 .expandable div {
@@ -113,19 +114,44 @@ input{
 	position: absolute;
 	margin-right: 8px;
 }
+
 .navigation .fa-heart {
 	color: red;
 	margin: 0;
 	padding: 0;
 }
+
 .schedule {
-	height: 85px;
-	width: 180px;
-	padding: 8px;
-	margin: 8px;
+	height: auto;
+	width: 60%;
+	padding: 16px;
+	margin: 3rem 8px;
 	border-radius: 8px;
 	background-color: var(--color-orange);
+	color: var(--color-white);
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	overflow: hidden;
 }
+
+.schedule i{
+	color: white;
+	margin-left: 0;
+	padding-left: 0;
+
+}
+
+.schedule .icon-calendar{
+	position: absolute;
+	right: 80px;
+	font-size: 6rem;
+	z-index: 0;
+	transform: rotate(330deg);
+	opacity: .5;
+}
+
+
 .footer {
 	font-size: 12px;
 	margin: 14px;
