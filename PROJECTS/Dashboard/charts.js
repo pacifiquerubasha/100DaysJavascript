@@ -1,4 +1,5 @@
 
+
 const labels = [
   {
     type:"monthly",
@@ -27,6 +28,16 @@ const labels = [
 
 let dataToShow = labels[0]
 
+const chartOptions = {
+  scales: {
+    x: {
+      grid: {
+        display: false
+      }
+    },
+    
+  }
+}
 
 const lineChart = new Chart(document.getElementById("line-chart"), {
       type: 'line',
@@ -49,17 +60,7 @@ const lineChart = new Chart(document.getElementById("line-chart"), {
           }
         ]
       },
-      options: {
-          scales: {
-              x: {
-                grid: {
-                  display: false
-                }
-              },
-              
-          },
-  
-      }
+      options: {...chartOptions}
     });
 
   // console.log("LLLL", lineChart.data.datasets[0].data)
@@ -107,39 +108,27 @@ new Chart(document.getElementById("bar-chart"), {
         {
           label: "Income",
           backgroundColor: ["#3e95cd"],
-          data: [2478,5267,734,784,433],
+          data: [410,570,810,205,650],
           borderRadius: 5,
-          barPercentage:0.3
+          barPercentage:0.3,
         },
         {
             label: "Expenses",
             backgroundColor: ["rgba(0, 128, 0)"],
-            data: [2478,5267,734,784,433],
+            data: [175,810,70,60,210],
             borderRadius: 5,
-            barPercentage:0.3
+            barPercentage:0.3,
 
           }
       ]
     },
     options: {
-      legend: { 
-        display: true,
-        position: 'bottom',
-      },
-      title: {
-        display: true,
-        text: 'Total revenue'
-      },
-
-      scales: {
-        x: {
-          grid: {
-            display: false
-          }
-        },
-        
-      }
+      ...chartOptions,
+      xAxes: [{
+        categoryPercentage: 0.5,
+        barPercentage: 0.5
+      }]
     }
-});
+  });
 
 

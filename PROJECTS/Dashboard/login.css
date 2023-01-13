@@ -1,0 +1,201 @@
+@import url('./style.css');
+
+.container{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container-left{
+    background-color: rgba(228, 228, 228, 0.356);
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-right{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+.loginInfo{
+    padding: 2rem;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+}
+
+.section1{
+    margin-bottom: 5rem;
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.section1 img{
+    width: 3rem;
+    height: 3rem;
+}
+
+.section1 span{
+    color: var(--main-color);
+}
+
+.section2{
+    height: 20rem;
+    width: 100%;
+
+}
+.section3{
+    margin-top: 5rem;
+}
+
+.section3 .title{
+    font-size: 30px;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.section3 .description{
+    color: rgb(99, 97, 97);
+    font-weight: 600;
+}
+
+
+.loginForm{
+    height: 100vh;
+    width: 50%;
+    padding: 2rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.formIntro{
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    margin-bottom: 3rem;
+}
+
+.title{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.subtitle{
+    color: rgb(99, 97, 97);
+}
+
+.inputContainer{
+    width: 100%;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    background-color:rgba(183, 183, 228, 0.24);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    gap: 3px;
+}
+
+.inputContainer input{
+    height: 100% !important;
+    border: none;
+    background-color: transparent;
+    flex: 1;
+    
+}
+
+.iconContainer{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 5px;
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.icon-eye-open{
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+.forgotten{
+    width: 100%;
+    text-align: right;
+    color: var(--color-blue);
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+button[type=submit]{
+    padding: 10px;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: var(--color-blue);
+    border: none;
+    color: var(--color-white);
+}
+
+
+.separator{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 100%;
+    margin: 3rem 0rem;
+}
+
+.separator div{
+    height: 1px;
+    flex: 1;
+    background-color: rgba(128, 128, 128, 0.452);
+}
+
+.socialLogins{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 3rem;
+    gap: .75rem;
+}
+
+.socialLogins>div{
+    border: 1px solid rgba(128, 128, 128, 0.486);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    flex: 1;
+    cursor: pointer;
+}
+
+.socialLogins img{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 5px;
+}
+
+.signup, .login, .copy{
+    text-align: center;
+    width: 100%;
+}
+
+.signup, .login{
+    margin: 3rem 0;
+}
+
+.border-red{
+    border: 1.5px solid var(--color-red);
+}
