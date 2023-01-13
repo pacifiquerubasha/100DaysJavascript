@@ -38,14 +38,13 @@
 }
 
 .main {
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	/* height: 100vh; */
 	display: flex;
 	flex-direction: row;
 	padding-top: 1rem;
 	padding-right: 1rem;
 	background-color: var(--main-background);
-	overflow: hidden;
 }
 
 .navigation {
@@ -58,7 +57,7 @@
 	flex: 3;
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	gap: 4rem;
 }
 /* MENU ---------------*/
 
@@ -370,7 +369,6 @@
 	background-color: var(--color-white);
 	border-radius: 15px;
 	padding: 20px;
-
 }
 .filters {
 	display: flex;
@@ -384,44 +382,52 @@
 	justify-content: center;
 	padding: 0.25rem 0.5rem;
 	border-radius: 5px;
-	cursor: pointer;
 }
 
-.btn-green {
+.monthly {
 	background-color: var(--main-color);
 	color: white;
 }
 
-.weekly{
+.weekly {
 	color: var(--main-color);
-
 }
-.today{
+.today {
 	color: var(--main-color);
 }
 
 /* Top Doctors */
+.recents {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
 .doctors {
 	background-color: white;
-	border-radius: 4px;
-	width: 740px;
+	border-radius: 16px;
+	width: 680px;
+	height: 400px;
 	padding: 16px;
 }
 .doctor-card {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	margin: 0 48px 0 48px;
 }
-.doctor-intro {
+.doctor-intro,
+.pat-intro {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 12px;
+	margin-bottom: 24px;
 }
-.doctor-intro #top {
+.doctor-intro #top,
+.pat-intro #top {
 	font-size: 16px;
 	font-weight: 800;
 }
-.doctor-intro #view {
+.doctor-intro #view,
+.pat-intro #view {
 	color: green;
 	font-size: 14px;
 }
@@ -430,7 +436,26 @@
 	width: 100px;
 	border-radius: 8px;
 }
-.doc-name {
+.ratings {
+	background-color: var(--main-color);
+	height: 24px;
+	width: 72px;
+	border-radius: 14px;
+	/* display: flex;
+	justify-content: center; */
+	margin-top: -14px;
+	position: absolute;
+	z-index: -1;
+}
+.ratings i {
+	color: yellow;
+}
+.ratings span {
+	font-size: 10px;
+	color: white;
+}
+.doc-name,
+.pat-name {
 	font-size: 14px;
 	font-weight: 600;
 }
@@ -438,10 +463,65 @@
 	color: green;
 	font-size: 14px;
 	font-weight: 800;
-	display: flex;
-	justify-items: center;
+	text-align: center;
 }
-.doc-address {
+.doc-address,
+.pat-age {
 	font-size: 10px;
 	color: gray;
+}
+.container-icon {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 8px;
+}
+.socials {
+	background-color: rgb(179, 177, 177, 20%);
+	height: 32px;
+	width: 32px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container-icon i {
+	color: green;
+	content: center;
+}
+
+/* Recent Patients */
+.patients {
+	height: 400px;
+	width: 360px;
+	padding: 16px;
+	background-color: white;
+	border-radius: 16px;
+}
+.pat-info {
+	display: flex;
+	flex-direction: row;
+	gap: 16px;
+}
+.pat {
+	display: flex;
+	flex-direction: row;
+	gap: 64px;
+}
+.pat-image img {
+	height: 40px;
+	width: 40px;
+	border-radius: 40px;
+}
+.pat-status {
+	color: rgb(255, 102, 0);
+	font-size: 14px;
+	text-align: right;
+}
+.divider {
+	height: 1px;
+	width: 320px;
+	background-color: rgb(179, 177, 177, 20%);
+	margin-top: 12px;
+	margin-bottom: 12px;
 }
