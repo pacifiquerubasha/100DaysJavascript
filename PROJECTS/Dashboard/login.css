@@ -195,3 +195,7 @@ button[type=submit]{
 .signup, .login{
     margin: 3rem 0;
 }
+
+.border-red{
+    border: 1.5px solid var(--color-red);
+}

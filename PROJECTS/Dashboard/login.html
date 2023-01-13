@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.ico"/>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ERES - Login</title>
+    <title>Cyrrus - Login</title>
     <script
         src="https://kit.fontawesome.com/b49da0b9f4.js"
         crossorigin="anonymous"
@@ -59,13 +61,14 @@
                         <div class="iconContainer">
                             <i class="icon-envelope"></i>
                         </div>
-                        <input aria-label="email" type="email" class="email" placeholder="youremail@gmail.com">
+                        <input aria-label="email" id="loginEmail" type="email" class="email" placeholder="youremail@gmail.com">
                     </div>
+
                     <div class="inputContainer">
                         <div class="iconContainer">
                             <i class="icon-lock"></i>
                         </div>
-                        <input aria-label="password" type="password" class="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+                        <input aria-label="password" id="loginPassword" type="password" class="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
                         <i class="icon-eye-open"></i>
                     </div>
                     <div class="forgotten">Forgot password?</div>
@@ -92,6 +95,8 @@
             </div>
         </div>
     </div>
+
+    <script src="./login.js"></script>
     
 </body>
 </html>

@@ -41,6 +41,8 @@ input{
 	margin-bottom: 0 !important;
 	box-shadow: none !important;
 	background-color: transparent !important;
+	color: black !important;
+	font-weight: 800;
 }
 
 .main {
