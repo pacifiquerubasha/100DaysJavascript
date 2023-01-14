@@ -37,7 +37,7 @@
 	--main-background: rgba(228, 228, 228, 0.356);
 }
 
-input{
+input {
 	margin-bottom: 0 !important;
 	box-shadow: none !important;
 	background-color: transparent !important;
@@ -76,7 +76,7 @@ input{
 	padding-left: 5px;
 }
 
-.expandable{
+.expandable {
 	display: flex;
 	width: 60%;
 	cursor: pointer;
@@ -86,7 +86,7 @@ input{
 	flex: 1;
 }
 
-.expandable i{
+.expandable i {
 	position: relative !important;
 }
 
@@ -105,7 +105,7 @@ input{
 	color: grey;
 }
 
-.navigation .logo img{
+.navigation .logo img {
 	width: 3rem;
 	height: 3rem;
 }
@@ -136,22 +136,20 @@ input{
 	overflow: hidden;
 }
 
-.schedule i{
+.schedule i {
 	color: white;
 	margin-left: 0;
 	padding-left: 0;
-
 }
 
-.schedule .icon-calendar{
+.schedule .icon-calendar {
 	position: absolute;
 	right: 80px;
 	font-size: 6rem;
 	z-index: 0;
 	transform: rotate(330deg);
-	opacity: .5;
+	opacity: 0.5;
 }
-
 
 .footer {
 	font-size: 12px;
@@ -363,7 +361,6 @@ input{
 	align-items: center;
 }
 .chart {
-
 }
 .stat-box-right {
 	height: 3rem;
@@ -383,7 +380,7 @@ input{
 	gap: 2rem;
 }
 
-canvas{
+canvas {
 	max-height: 15rem;
 }
 
@@ -464,7 +461,7 @@ canvas{
 	background-color: white;
 	border-radius: 16px;
 	width: 680px;
-	height: 400px;
+	height: 360px;
 	padding: 16px;
 }
 
@@ -476,7 +473,7 @@ canvas{
 	justify-content: space-around;
 }
 
-.doctor-card div{
+.doctor-card div {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -494,7 +491,7 @@ canvas{
 	font-weight: 800;
 }
 
-.doctor-intro i{
+.doctor-intro i {
 	font-weight: 900;
 }
 .doctor-intro #view,
@@ -504,21 +501,38 @@ canvas{
 	cursor: pointer;
 }
 
-.doc-image{
+.doc-image {
 	position: relative;
 	margin-bottom: 1rem;
 }
 
 .doc-image img {
-	height: 90px;
-	width: 90px;
+	height: 100px;
+	width: 100px;
 	border-radius: 8px;
 	object-fit: cover;
 }
-
+.doctor-card .ratingBox {
+	height: 22px;
+	width: 60px;
+	border-radius: 16px;
+	background-color: green;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 4px;
+	margin-top: -10px;
+}
+.ratingBox i {
+	color: yellow;
+}
+.ratingBox span {
+	color: white;
+	font-size: 10px;
+}
 .doc-name {
 	font-size: 14px;
-	font-weight: 800;
+	font-weight: 900;
 	margin-bottom: 0 !important;
 }
 
@@ -527,7 +541,7 @@ canvas{
 	font-size: 14px;
 	font-weight: 900;
 	text-align: center;
-	margin-bottom: .25rem !important;
+	margin-bottom: 0.25rem !important;
 }
 
 .doc-address,
@@ -535,11 +549,12 @@ canvas{
 	font-size: 10px;
 	color: gray;
 }
-.container-icon {
+.doctor-card .container-icon {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	gap: 8px;
+	margin-top: 16px;
 }
 .socials {
 	background-color: rgb(179, 177, 177, 20%);
@@ -557,7 +572,7 @@ canvas{
 
 /* Recent Patients */
 .patients {
-	height: 400px;
+	height: 360px;
 	width: 360px;
 	padding: 16px;
 	background-color: white;
@@ -571,7 +586,7 @@ canvas{
 .pat {
 	display: flex;
 	flex-direction: row;
-	gap: 64px;
+	gap: 96px;
 }
 .pat-image img {
 	height: 40px;
@@ -579,9 +594,21 @@ canvas{
 	border-radius: 40px;
 }
 .pat-status {
-	color: rgb(255, 102, 0);
 	font-size: 14px;
 	text-align: right;
+	font-weight: bolder;
+}
+.pat .pending {
+	color: orangered;
+}
+.pat .recovery {
+	color: rgba(75, 75, 172);
+}
+.pat .rejected {
+	color: red;
+}
+.pat .recovered {
+	color: green;
 }
 .divider {
 	height: 1px;
@@ -589,4 +616,17 @@ canvas{
 	background-color: rgb(179, 177, 177, 20%);
 	margin-top: 12px;
 	margin-bottom: 12px;
+}
+/* scrolls */
+.scroll {
+	height: 48px;
+	width: 48px;
+	border-radius: 18px;
+	background-color: white;
+	box-shadow: 4px 8px rgb(179, 177, 177, 4%);
+	display: flex;
+	justify-content: center;
+}
+.scroll i {
+	color: green;
 }
