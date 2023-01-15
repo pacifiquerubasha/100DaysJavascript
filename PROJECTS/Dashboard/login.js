@@ -1,23 +1,60 @@
 
 const loginEmail = document.querySelector('#loginEmail');
 const loginPassword = document.querySelector('#loginPassword');
+const loginForm = document.querySelector('.login-page-form');
+const loginBtn = document.querySelector('.loginBtn');
+const togglePassword = document.querySelector('.icon-eye-open')
+
+const handleTogglePassword = (input, toggle)=>{
+    if(input.type === 'password'){
+        input.type = "text";
+        toggle.classList.replace('icon-eye-open', 'icon-eye-close')
+    }
+
+    else{
+        input.type = "password";
+        toggle.classList.replace('icon-eye-close', 'icon-eye-open')
+
+    }
+}
+
+togglePassword.addEventListener('click', ()=> handleTogglePassword(loginPassword, togglePassword));
+
 
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const PASSWORD_REGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
 
-loginEmail.addEventListener('keyup', (e)=>{
-
-    setTimeout(()=>{
-        if(!e.target.value.match(EMAIL_REGEX)){
-            e.target.parentNode.classList.add('border-red')
-        }else{
-            e.target.parentNode.classList.remove('border-red')
+const loader = (button)=>{
+    let i = 0
+    button.innerHTML = '';
+    setInterval(()=>{
+        if(button.textContent.length < 3){
+            button.innerHTML += '&#9679;';
         }
-    }, 2000)
 
-}, {once:true})
+        else button.innerHTML = '&#9679;';
+        i++;
 
-console.log(loginEmail)
+    }, 300)
+}
+
+
+const handleLogin = (e)=>{
+    e.preventDefault();
+
+    if(!loginPassword.value.match(PASSWORD_REGEX)){
+        loginPassword.parentElement.classList.add('border-red');
+    }
+
+    else{
+        loginPassword.parentElement.classList.remove('border-red');
+        loader(loginBtn);
+    }
+}
+
+
+loginForm.addEventListener('submit', handleLogin)
 
 
 const formIntroTitle = document.querySelector('.formIntro .title');
@@ -27,6 +64,7 @@ const formIntroTitle = document.querySelector('.formIntro .title');
  * @param {*} text 
  * @param {*} container 
  */
+
 const displayLetterAfterLetter = (text, container)=>{
     let index = 0;
     const classesList = ["var(--color-blue)", 'black', 'black', "var(--main-color)",'black','black', "var(--color-red)",'black', "var(--color-purple)", "black"]

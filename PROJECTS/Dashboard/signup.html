@@ -56,7 +56,8 @@
 							>Enter your details to create an account</span
 						>
 					</div>
-					<form>
+
+					<form class="signUpForm">
 						<div class="inputContainer">
 							<div class="iconContainer">
 								<i class="icon-user"></i>
@@ -104,7 +105,7 @@
 								placeholder="Password"
 								required
 							/>
-							<i class="icon-eye-open"></i>
+							<i class="icon-eye-open togglePassword"></i>
 						</div>
 
 						<div class="inputContainer">
@@ -118,10 +119,10 @@
 								placeholder="Confirm password"
 								required
 							/>
-							<i class="icon-eye-open"></i>
+							<i class="icon-eye-open toggleConfirmPassword"></i>
 						</div>
 
-						<button type="submit">Signup</button>
+						<button type="submit" class="signUpBtn">Signup</button>
 					</form>
 
 					<div class="separator">
@@ -148,5 +149,7 @@
 				</div>
 			</div>
 		</div>
+
+		<script src="./signup.js"></script>
 	</body>
 </html>
