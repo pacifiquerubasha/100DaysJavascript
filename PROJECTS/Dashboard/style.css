@@ -37,6 +37,32 @@
 	--main-background: rgba(228, 228, 228, 0.356);
 }
 
+/* ::-webkit-scrollbar{
+	width: 5px;
+	background-color: var(--main-background);
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: var(--main-color);
+}
+
+::-webkit-scrollbar-track{
+	width: 2rem;
+
+} */
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	border: 3.5px solid rgba(0, 0, 0, 0);
+	background-clip: padding-box;
+	border-radius: 9999px;
+	background-color: #AAAAAA;
+}
+
+
 input {
 	margin-bottom: 0 !important;
 	box-shadow: none !important;
@@ -51,8 +77,13 @@ input {
 	display: flex;
 	flex-direction: row;
 	padding-top: 1rem;
-	padding-right: 1rem;
+	padding-right: .5rem;
 	background-color: var(--main-background);
+	overflow: hidden !important;
+}
+
+body{
+	overflow: hidden !important;
 }
 
 .navigation {
@@ -69,6 +100,7 @@ input {
 	height: 100vh;
 	overflow-y: auto;
 	overflow-x: hidden;
+	padding-bottom: 5rem;
 }
 /* MENU ---------------*/
 
@@ -456,13 +488,15 @@ canvas {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	gap: 2rem;
 }
 .doctors {
 	background-color: white;
 	border-radius: 16px;
-	width: 680px;
+	/* width: 680px; */
 	height: 360px;
 	padding: 16px;
+	flex: 3;
 }
 
 .doctor-card {
@@ -572,12 +606,13 @@ canvas {
 
 /* Recent Patients */
 .patients {
-	height: 360px;
+	height: auto;
 	width: 360px;
 	padding: 16px;
 	background-color: white;
 	border-radius: 16px;
 }
+
 .pat-info {
 	display: flex;
 	flex-direction: row;
@@ -592,6 +627,7 @@ canvas {
 	height: 40px;
 	width: 40px;
 	border-radius: 40px;
+	object-fit: cover;
 }
 .pat-status {
 	font-size: 14px;
@@ -630,3 +666,4 @@ canvas {
 .scroll i {
 	color: green;
 }
+
