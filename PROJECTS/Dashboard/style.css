@@ -37,19 +37,6 @@
 	--main-background: rgba(228, 228, 228, 0.356);
 }
 
-/* ::-webkit-scrollbar{
-	width: 5px;
-	background-color: var(--main-background);
-}
-
-::-webkit-scrollbar-thumb{
-	background-color: var(--main-color);
-}
-
-::-webkit-scrollbar-track{
-	width: 2rem;
-
-} */
 
 ::-webkit-scrollbar {
 	width: 10px;
