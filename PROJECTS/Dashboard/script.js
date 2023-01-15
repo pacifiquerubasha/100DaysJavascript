@@ -193,6 +193,67 @@ doctorsDetails.forEach((doctor)=>{
 })
 
 
+const navigationData = [
+    {
+        icon:'fa-chart-line',
+        title:'Dashboard',
+        isExpendable:true
+    },
+    {
+        icon:'fa-chart-line',
+        title:'Appointment',
+        isExpendable:false
+    },{
+        icon:'fa-chart-line',
+        title:'Staff',
+        isExpendable:true
+    },{
+        icon:'fa-chart-line',
+        title:'Apps',
+        isExpendable:true
+    },{
+        icon:'fa-chart-line',
+        title:'Charts',
+        isExpendable:true
+    },{
+        icon:'fa-chart-line',
+        title:'Bootstrap',
+        isExpendable:true
+    },{
+        icon:'fa-chart-line',
+        title:'Plugins',
+        isExpendable:true
+    },{
+        icon:'fa-chart-line',
+        title:'Widget',
+        isExpendable:false
+    },{
+        icon:'fa-chart-line',
+        title:'Forms',
+        isExpendable:true
+    },{
+        icon:'fa-chart-line',
+        title:'Table',
+        isExpendable:true
+    },{
+        icon:'fa-chart-line',
+        title:'Pages',
+        isExpendable:true
+    }
+]
 
+const navContainer = document.querySelector('.nav-container');
 
-
+navigationData.forEach((item)=>{
+    const template = `    
+        <div class="expandable">
+            <div>
+                <i class="fa-solid fa-chart-line"></i>
+                <span>${item.title}</span>
+            </div>
+            ${item.isExpendable ? `<i class="fa-solid fa-angle-right"></i>` : ''}
+        </div>
+        `
+    navContainer.insertAdjacentHTML("afterbegin", template)
+    
+})
