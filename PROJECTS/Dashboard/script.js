@@ -195,48 +195,59 @@ doctorsDetails.forEach((doctor)=>{
 
 const navigationData = [
     {
+        id:1,
         icon:'fa-chart-line',
         title:'Dashboard',
         isExpendable:true
     },
     {
-        icon:'fa-chart-line',
+        id:2,
+        icon:'fa-calendar-check',
         title:'Appointment',
         isExpendable:false
     },{
-        icon:'fa-chart-line',
+        id:3,
+        icon:'fa-id-badge',
         title:'Staff',
         isExpendable:true
     },{
-        icon:'fa-chart-line',
+        id:4,
+        icon:'fa-heart-circle-plus',
         title:'Apps',
         isExpendable:true
     },{
-        icon:'fa-chart-line',
+        id:5,
+        icon:'fa-chart-simple',
         title:'Charts',
         isExpendable:true
     },{
-        icon:'fa-chart-line',
+        id:6,
+        icon:'fa-globe',
         title:'Bootstrap',
         isExpendable:true
     },{
-        icon:'fa-chart-line',
+        id:7,
+        icon:'fa-gears',
         title:'Plugins',
         isExpendable:true
     },{
-        icon:'fa-chart-line',
+        id:8,
+        icon:'fa-certificate',
         title:'Widget',
         isExpendable:false
     },{
-        icon:'fa-chart-line',
+        id:9,
+        icon:'fa-align-justify',
         title:'Forms',
         isExpendable:true
     },{
-        icon:'fa-chart-line',
+        id:10,
+        icon:'fa-table',
         title:'Table',
         isExpendable:true
     },{
-        icon:'fa-chart-line',
+        id:11,
+        icon:'fa-layer-group',
         title:'Pages',
         isExpendable:true
     }
@@ -246,9 +257,9 @@ const navContainer = document.querySelector('.nav-container');
 
 navigationData.forEach((item)=>{
     const template = `    
-        <div class="expandable">
+        <div class="expandable" id=${item.id}>
             <div>
-                <i class="fa-solid fa-chart-line"></i>
+                <i class="fa-solid ${item.icon}"></i>
                 <span>${item.title}</span>
             </div>
             ${item.isExpendable ? `<i class="fa-solid fa-angle-right"></i>` : ''}
@@ -256,4 +267,35 @@ navigationData.forEach((item)=>{
         `
     navContainer.insertAdjacentHTML("afterbegin", template)
     
+})
+
+
+const toggleNavBtn = document.querySelector('.toggle-nav');
+const navigation = document.querySelector('.navigation');
+const dashboard = document.querySelector('.dashboard');
+const main = document.querySelector('.main');
+
+toggleNavBtn.addEventListener('click', ()=>{
+    navigation.classList.toggle('toggled-nav-menu');
+    
+    if(toggleNavBtn.classList.contains('icon-align-right'))
+        toggleNavBtn.classList.replace('icon-align-right', 'icon-align-left')
+    else toggleNavBtn.classList.replace('icon-align-left', 'icon-align-right')
+})
+
+
+const toggleYearList = document.querySelector('.header-year');
+const yearList = document.querySelector('.yearsList')
+
+toggleYearList.addEventListener('click', ()=>{
+    yearList.classList.toggle('toggle-year-list')
+})
+
+const listOfYears = document.querySelectorAll('.unique-year');
+
+listOfYears.forEach((year)=>{
+    year.addEventListener('click', ()=>{
+        yearList.classList.toggle('toggle-year-list');
+        toggleYearList.firstElementChild.textContent = year.textContent;
+    })
 })
