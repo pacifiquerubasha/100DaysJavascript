@@ -18,3 +18,28 @@ loginEmail.addEventListener('keyup', (e)=>{
 }, {once:true})
 
 console.log(loginEmail)
+
+
+const formIntroTitle = document.querySelector('.formIntro .title');
+
+/**
+ * Utitlity function to display text letter after another
+ * @param {*} text 
+ * @param {*} container 
+ */
+const displayLetterAfterLetter = (text, container)=>{
+    let index = 0;
+    const classesList = ["var(--color-blue)", 'black', 'black', "var(--main-color)",'black','black', "var(--color-red)",'black', "var(--color-purple)", "black"]
+    let interval = setInterval(()=>{
+        if(index < text.length){
+            container.textContent += text[index]
+            container.style.color = classesList[index];
+            index++;
+        }
+
+        else clearInterval(interval)
+    
+    }, 100)
+}
+
+displayLetterAfterLetter('Welcome Back', formIntroTitle);
