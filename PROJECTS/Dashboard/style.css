@@ -109,6 +109,15 @@ body{
 	display: flex;
 	width: 60%;
 	cursor: pointer;
+	color: grey;
+}
+
+.expandable:hover,
+.expandable:focus,
+.expandable:hover i{
+	color: var(--main-color);
+	text-decoration: none;
+	font-weight: 700;
 }
 
 .expandable div {
@@ -188,6 +197,35 @@ body{
 	margin-top: 12px;
 	font-size: 10px;
 }
+
+.sub-items{
+	display: flex;
+	flex-direction: column;
+	gap: .75rem;
+	width: 40%;
+	margin-left: 4rem;
+	transition: all ease-in-out 500ms;
+	padding-top: 1rem;
+
+}
+
+.hidden{
+	display: none;
+}
+
+.sub-items a{
+	text-decoration: none;
+	color: var(--main-color);
+	font-weight: 800;
+}
+
+.expandable-green{
+	color: var(--main-color) !important;
+	font-weight: 700 !important;
+}
+
+
+
 
 /* HEADER ----------- */
 
@@ -354,6 +392,7 @@ body{
 .bg-purple {
 	background-image: var(--color-purple-gradient);
 }
+
 
 .stats {
 	display: flex;

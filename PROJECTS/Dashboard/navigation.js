@@ -1,0 +1,147 @@
+
+const navigationData = [
+    {
+        id:3,
+        icon:'fa-id-badge',
+        title:'Patients',
+        isExpendable:true,
+        subItems:[
+            {
+                label:'Register Patient', 
+                link:"./staff.html"
+            },
+            {
+                label:'View Patients', 
+                link:"./staff.html"
+            },
+            
+        ]
+    },
+    {
+        id:2,
+        icon:'fa-id-badge',
+        title:'Staff',
+        isExpendable:true,
+        subItems:[
+            {
+                label:'Add Staff', 
+                link:"./staff.html"
+            },
+            {
+                label:'View Staffs', 
+                link:"./staff.html"
+            },
+            
+        ]
+    },
+    {
+        id:1,
+        icon:'fa-chart-line',
+        title:'Dashboard',
+        isExpendable:false,
+        link:'./index.html'
+    },
+    // {
+    //     id:2,
+    //     icon:'fa-calendar-check',
+    //     title:'Appointment',
+    //     isExpendable:false
+    // },
+    
+    
+    // {
+    //     id:4,
+    //     icon:'fa-heart-circle-plus',
+    //     title:'Apps',
+    //     isExpendable:true
+    // },
+    // {
+    //     id:5,
+    //     icon:'fa-chart-simple',
+    //     title:'Charts',
+    //     isExpendable:true
+    // },
+    // {
+    //     id:6,
+    //     icon:'fa-globe',
+    //     title:'Bootstrap',
+    //     isExpendable:true
+    // },
+    // {
+    //     id:7,
+    //     icon:'fa-gears',
+    //     title:'Plugins',
+    //     isExpendable:true
+    // },
+    // {
+    //     id:8,
+    //     icon:'fa-certificate',
+    //     title:'Widget',
+    //     isExpendable:false
+    // },{
+    //     id:9,
+    //     icon:'fa-align-justify',
+    //     title:'Forms',
+    //     isExpendable:true
+    // },
+    // {
+    //     id:10,
+    //     icon:'fa-table',
+    //     title:'Table',
+    //     isExpendable:true
+    // },
+    // {
+    //     id:11,
+    //     icon:'fa-layer-group',
+    //     title:'Pages',
+    //     isExpendable:true
+    // }
+]
+
+const navContainer = document.querySelector('.nav-container');
+
+navigationData.forEach((item, index)=>{
+    const template = `  
+
+        <a ${!item.isExpendable && `href= ${item.link}` } class="expandable" id=${item.id}>
+            <div>
+                <i class="fa-solid ${item.icon}"></i>
+                <span>${item.title}</span>
+            </div>
+            ${item.isExpendable ? `<i class="fa-solid fa-angle-right" id="expandable-icon-${item.id}"></i>` : ''}
+
+        </a>
+
+        ${item.subItems ? (
+            `<div class="sub-items hidden" id="sub-item-${item.id}">
+                ${item.subItems.map((item, i)=>{
+                    return `<a href="${item.link}">${item.label}</a>`
+                }).join("")
+                }
+            </div>`
+            ) : ""
+        }
+        `
+    navContainer.insertAdjacentHTML("afterbegin", template)
+    
+})
+
+
+const expandables = document.querySelectorAll('.expandable');
+
+
+expandables.forEach((expandable, i)=>{
+    expandable.addEventListener('click', ()=>{
+        const expandableSubitem = document.getElementById(`sub-item-${expandable.id}`);
+
+        expandableSubitem.classList.toggle('hidden');
+        expandable.classList.toggle('expandable-green');
+        
+        const icon = document.getElementById(`expandable-icon-${expandable.id}`);
+
+        icon.classList.contains('fa-angle-right') ? 
+        icon.classList.replace('fa-angle-right', "fa-angle-down"):
+        icon.classList.replace('fa-angle-down', "fa-angle-right")
+
+    })
+})

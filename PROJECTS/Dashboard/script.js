@@ -91,6 +91,8 @@ const patientDetails = [
     },
 ]
 
+
+
 patientDetails.forEach((patient)=>{
     const template = `    
         <div class="pat-info">
@@ -192,82 +194,6 @@ doctorsDetails.forEach((doctor)=>{
     
 })
 
-
-const navigationData = [
-    {
-        id:1,
-        icon:'fa-chart-line',
-        title:'Dashboard',
-        isExpendable:true
-    },
-    {
-        id:2,
-        icon:'fa-calendar-check',
-        title:'Appointment',
-        isExpendable:false
-    },{
-        id:3,
-        icon:'fa-id-badge',
-        title:'Staff',
-        isExpendable:true
-    },{
-        id:4,
-        icon:'fa-heart-circle-plus',
-        title:'Apps',
-        isExpendable:true
-    },{
-        id:5,
-        icon:'fa-chart-simple',
-        title:'Charts',
-        isExpendable:true
-    },{
-        id:6,
-        icon:'fa-globe',
-        title:'Bootstrap',
-        isExpendable:true
-    },{
-        id:7,
-        icon:'fa-gears',
-        title:'Plugins',
-        isExpendable:true
-    },{
-        id:8,
-        icon:'fa-certificate',
-        title:'Widget',
-        isExpendable:false
-    },{
-        id:9,
-        icon:'fa-align-justify',
-        title:'Forms',
-        isExpendable:true
-    },{
-        id:10,
-        icon:'fa-table',
-        title:'Table',
-        isExpendable:true
-    },{
-        id:11,
-        icon:'fa-layer-group',
-        title:'Pages',
-        isExpendable:true
-    }
-]
-
-const navContainer = document.querySelector('.nav-container');
-
-navigationData.forEach((item)=>{
-    const template = `    
-        <div class="expandable" id=${item.id}>
-            <div>
-                <i class="fa-solid ${item.icon}"></i>
-                <span>${item.title}</span>
-            </div>
-            ${item.isExpendable ? `<i class="fa-solid fa-angle-right"></i>` : ''}
-        </div>
-        `
-    navContainer.insertAdjacentHTML("afterbegin", template)
-    
-})
 
 
 const toggleNavBtn = document.querySelector('.toggle-nav');
