@@ -81,7 +81,7 @@ formsContainers.forEach((container, index)=>{
             </div>
         </div>        
         `
-        container.insertAdjacentHTML('afterbegin', template)
+        container.insertAdjacentHTML(`${index === 1 ? "afterbegin" :"beforeend"}`, template)
     })
 
 
