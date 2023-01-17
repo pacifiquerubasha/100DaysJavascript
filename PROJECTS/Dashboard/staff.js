@@ -1,4 +1,8 @@
 
+/**
+ * Loading Staff registration form items 
+ */
+
 const formsFields = {
     left:[
         {
@@ -85,4 +89,85 @@ formsContainers.forEach((container, index)=>{
     })
 
 
+})
+
+
+/**
+ * Display list of staff data
+ */
+
+const staffs = [
+    {
+        id:"LM30KH",
+        name:'Lady',
+        lastname:"Mary",
+        title:"Dr",
+        department:"Surgery",
+        nationality:"African",
+        insertionDate:"11/12/2023",
+
+    },
+    {
+        id:"LM30KH",
+        name:'Lady',
+        lastname:"Mary",
+        title:"Dr",
+        department:"Surgery",
+        nationality:"African",
+        insertionDate:"11/12/2023",
+
+    },
+    {
+        id:"LM30KH",
+        name:'Lady',
+        lastname:"Mary",
+        title:"Dr",
+        department:"Surgery",
+        nationality:"African",
+        insertionDate:"11/12/2023",
+
+    },
+    {
+        id:"LM30KH",
+        name:'Lady',
+        lastname:"Mary",
+        title:"Dr",
+        department:"Surgery",
+        nationality:"African",
+        insertionDate:"11/12/2023",
+
+    },
+    {
+        id:"LM30KH",
+        name:'Lady',
+        lastname:"Mary",
+        title:"Dr",
+        department:"Surgery",
+        nationality:"African",
+        insertionDate:"11/12/2023",
+
+    }
+]
+
+const staffListContainer = document.querySelector('.staffTable');
+
+staffs.forEach((staff)=>{
+    const template = `
+        <div class="staff-table-row">
+            <span>${staff.id}</span>
+            <span>${staff.name}</span>                                                         
+            <span>${staff.lastname}</span>
+            <span>${staff.title}</span>
+            <span>${staff.department}</span>
+            <span>${staff.nationality}</span>
+            <span>${staff.insertionDate}</span>
+            <span class="actions">
+                <i class="icon-trash"></i>
+                <i class="icon-edit"></i>
+            </span>
+        </div>    
+    
+    `
+
+    staffListContainer.insertAdjacentHTML('beforeend', template);
 })

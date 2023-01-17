@@ -5,6 +5,11 @@ const loginForm = document.querySelector('.login-page-form');
 const loginBtn = document.querySelector('.loginBtn');
 const togglePassword = document.querySelector('.icon-eye-open')
 
+/**
+ * Simple utility function to handle hide/show password
+ * @param {*} input(the input element) 
+ * @param {*} toggle(the icon to be toggle eye/eye-slash)
+ */
 const handleTogglePassword = (input, toggle)=>{
     if(input.type === 'password'){
         input.type = "text";
@@ -20,11 +25,10 @@ const handleTogglePassword = (input, toggle)=>{
 
 togglePassword.addEventListener('click', ()=> handleTogglePassword(loginPassword, togglePassword));
 
-
-
-const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-const PASSWORD_REGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
-
+/**
+ * Simple utility function to show a loading animation
+ * @param {*} button 
+ */
 const loader = (button)=>{
     let i = 0
     button.innerHTML = '';
@@ -38,6 +42,16 @@ const loader = (button)=>{
 
     }, 300)
 }
+
+
+/**
+ * Function to handle login of users
+ * @param {*} e 
+ */
+
+//Email and password REGEX to allow for easy validation
+const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; //Not used yet because of built-in validation
+const PASSWORD_REGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/; // At least 8 characters, 1 uppercase, 1 lowercase, 1 special character and 1 digit
 
 
 const handleLogin = (e)=>{

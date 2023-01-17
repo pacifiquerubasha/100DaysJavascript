@@ -195,21 +195,9 @@ doctorsDetails.forEach((doctor)=>{
 })
 
 
-
-const toggleNavBtn = document.querySelector('.toggle-nav');
-const navigation = document.querySelector('.navigation');
-const dashboard = document.querySelector('.dashboard');
-const main = document.querySelector('.main');
-
-toggleNavBtn.addEventListener('click', ()=>{
-    navigation.classList.toggle('toggled-nav-menu');
-    
-    if(toggleNavBtn.classList.contains('icon-align-right'))
-        toggleNavBtn.classList.replace('icon-align-right', 'icon-align-left')
-    else toggleNavBtn.classList.replace('icon-align-left', 'icon-align-right')
-})
-
-
+/**
+ * Handles Display/Hide of year list for the first dashboard chart
+ */
 const toggleYearList = document.querySelector('.header-year');
 const yearList = document.querySelector('.yearsList')
 

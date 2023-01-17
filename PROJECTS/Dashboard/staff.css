@@ -80,3 +80,51 @@
     margin-bottom: 10px;
     color: var(--main-color);
 }
+
+.searchContainer{
+    margin: 3rem 0;
+    font-size: 20px;
+
+}
+
+.searchContainer input{
+    border: none !important;
+}
+
+
+
+.staff-table-row{
+    width: 90%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+    border-radius: 10px;
+    font-weight: 800;
+    background-color: var(--color-white);
+    margin: 1rem 0;;
+}
+
+.table-header{
+    background-color: var(--main-color);
+    color: var(--color-white);
+}
+
+.staff-table-row span:not(:last-of-type){
+    flex: 1;
+}
+
+.staff-table-row i{
+    font-size: 20px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.icon-trash{
+    color: var(--color-red);
+}
+
+.icon-edit{
+    color: var(--main-color);
+}
+

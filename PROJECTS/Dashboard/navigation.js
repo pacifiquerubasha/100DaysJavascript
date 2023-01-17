@@ -12,7 +12,7 @@ const navigationData = [
             },
             {
                 label:'View Patients', 
-                link:"./staff.html"
+                link:"./view-staff.html"
             },
             
         ]
@@ -29,7 +29,7 @@ const navigationData = [
             },
             {
                 label:'View Staffs', 
-                link:"./staff.html"
+                link:"./view-staff.html"
             },
             
         ]
@@ -98,6 +98,9 @@ const navigationData = [
     // }
 ]
 
+/**
+ * Loading navigation items in the navigation section
+ */
 const navContainer = document.querySelector('.nav-container');
 
 navigationData.forEach((item, index)=>{
@@ -127,8 +130,10 @@ navigationData.forEach((item, index)=>{
 })
 
 
+/**
+ * Handles click on navigation items to expand them
+ */
 const expandables = document.querySelectorAll('.expandable');
-
 
 expandables.forEach((expandable, i)=>{
     expandable.addEventListener('click', ()=>{
@@ -144,4 +149,21 @@ expandables.forEach((expandable, i)=>{
         icon.classList.replace('fa-angle-down', "fa-angle-right")
 
     })
+})
+
+
+/**
+ * Toggle navigation
+ */
+const toggleNavBtn = document.querySelector('.toggle-nav');
+const navigation = document.querySelector('.navigation');
+const dashboard = document.querySelector('.dashboard');
+const main = document.querySelector('.main');
+
+toggleNavBtn.addEventListener('click', ()=>{
+    navigation.classList.toggle('toggled-nav-menu');
+    
+    if(toggleNavBtn.classList.contains('icon-align-right'))
+        toggleNavBtn.classList.replace('icon-align-right', 'icon-align-left')
+    else toggleNavBtn.classList.replace('icon-align-left', 'icon-align-right')
 })

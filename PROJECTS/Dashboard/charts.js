@@ -1,5 +1,9 @@
 
+/**
+ * Display first chart
+ */
 
+//Data to be filtered
 const labels = [
   {
     type:"monthly",
@@ -26,8 +30,10 @@ const labels = [
 
 ]
 
+//Variable to facilitate filtering
 let dataToShow = labels[0]
 
+//Chart options(Reusable options)
 const chartOptions = {
   scales: {
     x: {
@@ -39,6 +45,7 @@ const chartOptions = {
   }
 }
 
+//Chart object creation
 const lineChart = new Chart(document.getElementById("line-chart"), {
       type: 'line',
       data: {
@@ -73,6 +80,10 @@ const updateChart = (data)=>{
   lineChart.update();
 }
 
+
+/**
+ * Handling filtering of the second chart data
+ */
 const filterBtns = document.querySelectorAll('.filterBtn');
 
 filterBtns.forEach((btn)=>{
@@ -99,7 +110,9 @@ filterBtns.forEach((btn)=>{
 })
 
 
-
+/**
+ * Display first chart
+ */
 new Chart(document.getElementById("bar-chart"), {
     type: 'bar',
     data: {
