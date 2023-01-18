@@ -79,6 +79,7 @@
     height: auto;
     gap: 1rem;
     margin-bottom: 1.5rem;
+    position: relative;
 }
 
 .inputContainer>span{
@@ -88,17 +89,23 @@
 .inputContainer>div{
     display: flex;
     gap: 1rem;
-    
+    position: relative;
 }
 
 .inputContainer>div>input{
     flex: 1;
-    border: none;
+    border: none !important;
     font-size: 20px;
+}
+
+.inputContainer>div>input:focus{
+    border: none !important;
+    outline: none;
 }
 
 .inputContainer>div>input::placeholder{
     font-size: 16px;
+    font-family: 'Montserrat';
 }
 
 .submitBtn{

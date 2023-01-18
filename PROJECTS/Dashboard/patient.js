@@ -11,21 +11,24 @@ const patientFormFields = [
     },
     {
         label:"Patient Picture",
-        type:"text",
+        type:"file",
         placeholder:"Select patient picture",
         icon:"icon-picture"
     },
     {
         label:"Contact Number",
-        type:"text",
+        type:"tel",
         placeholder:"Enter contact number",
         icon:"icon-phone"
     },
     {
         label:"Relation",
-        type:"text",
-        placeholder:"Enter relationship",
-        icon:"icon-group"
+        type:"select",
+        placeholder:"Select relationship",
+        icon:"icon-group",
+        values:["Father", "Mother", "Son", "Daughter", "Husband", "Wife", "Brother", "Sister", "Grandfather", "Grandmother", "Grandson", "Granddaughter", "Uncle", "Aunt", "Nephew", "Niece", "cousin"]
+
+        
     },
     {
         label:"Emergency Contact Person",
@@ -53,46 +56,65 @@ const patientFormFields = [
     },
     {
         label:"Marital status",
-        type:"text",
-        placeholder:"Enter marital status",
-        icon:"icon-link"
+        type:"select",
+        placeholder:"Select marital status",
+        icon:"icon-link",
+        values:["single", "married", "widowed", "divorced", "separated"]
     },
   
     {
         label:"Blood group",
-        type:"text",
-        placeholder:"Enter blood group",
-        icon:"icon-tint"
+        type:"select",
+        placeholder:"Select blood group",
+        icon:"icon-tint",
+        values:["A+", "A-", "B-", "O+","O-", "AB+", "AB-", "B+"]
     },
     {
         label:"Nationality",
-        type:"text",
-        placeholder:"Enter nationality",
-        icon:"icon-flag"
+        type:"select",
+        placeholder:"Select nationality",
+        icon:"icon-flag",
+        values:["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia",
+        "Austria","Azerbaijan","Bahamas" ,"Bahrain","Bangladesh","Barbados" ,"Belarus","Belgium" ,"Belize","Benin","Bermuda" ,"Bhutan","Bolivia","Bosnia & Herzegovina" ,
+        "Botswana","Brazil" ,"British Virgin Islands" ,"Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada" ,"Cape Verde","Cayman Islands" ,
+        "Chad","Chile" ,"China","Colombia","Congo" ,"Cook Islands","Costa Rica" ,"Cote D Ivoire","Croatia" ,"Cruise Ship","Cuba","Cyprus" ,"Czech Republic","Denmark" ,
+        "Djibouti","Dominica" ,"Dominican Republic","Ecuador","Egypt" ,"El Salvador","Equatorial Guinea" ,"Estonia","Ethiopia","Falkland Islands" ,"Faroe Islands","Fiji" ,
+        "Finland","France" ,"French Polynesia","French West Indies" ,"Gabon","Gambia","Georgia" ,"Germany","Ghana" ,"Gibraltar","Greece","Greenland" ,"Grenada","Guam",
+        "Guatemala" ,"Guernsey","Guinea" ,"Guinea Bissau","Guyana","Haiti" ,"Honduras","Hong Kong","Hungary" ,"Iceland","India" ,"Indonesia","Iran","Iraq" ,"Ireland",
+        "Isle of Man" ,"Israel","Italy" ,"Jamaica","Japan" ,"Jersey","Jordan" ,"Kazakhstan","Kenya" ,"Kuwait","Kyrgyz Republic" ,"Laos","Latvia" ,"Lebanon","Lesotho" ,
+        "Liberia","Libya" ,"Liechtenstein","Lithuania" ,"Luxembourg","Macau" ,"Macedonia","Madagascar" ,"Malawi","Malaysia" ,"Maldives","Mali" ,"Malta","Mauritania" ,
+        "Mauritius","Mexico" ,"Moldova","Monaco" ,"Mongolia","Montenegro" ,"Montserrat","Morocco" ,"Mozambique","Namibia" ,"Nepal","Netherlands" ,"Netherlands Antilles",
+        "New Caledonia" ,"New Zealand","Nicaragua" ,"Niger","Nigeria" ,"Norway","Oman" ,"Pakistan","Palestine" ,"Panama","Papua New Guinea" ,"Paraguay","Peru" ,"Philippines",
+        "Poland" ,"Portugal","Puerto Rico" ,"Qatar","Reunion" ,"Romania","Russia" ,"Rwanda","Saint Pierre & Miquelon" ,"Samoa","San Marino" ,"Satellite","Saudi Arabia" ,
+        "Senegal","Serbia" ,"Seychelles","Sierra Leone" ,"Singapore","Slovakia" ,"Slovenia","South Africa" ,"South Korea","Spain" ,"Sri Lanka","St Kitts & Nevis" ,
+        "St Lucia","St Vincent" ,"St. Lucia","Sudan" ,"Suriname","Swaziland" ,"Sweden","Switzerland" ,"Syria","Taiwan" ,"Tajikistan","Tanzania" ,"Thailand","Timor L'Este" ,
+        "Togo","Tonga" ,"Trinidad & Tobago","Tunisia" ,"Turkey","Turkmenistan" ,"Turks & Caicos","Uganda" ,"Ukraine","United Arab Emirates" ,"United Kingdom","United States" ,
+        "United States Minor Outlying Islands","Uruguay" ,"Uzbekistan","Venezuela" ,"Vietnam","Virgin Islands (US)" ,"Yemen","Zambia","Zimbabwe"]
     },
     {
         label:"Email",
-        type:"text",
+        type:"email",
         placeholder:"Enter email",
         icon:"icon-envelope"
     },
     {
         label:"Date of birth",
-        type:"text",
-        placeholder:"Enter date of birth",
+        type:"date",
+        placeholder:"Select date of birth",
         icon:"icon-calendar"
     },
     {
         label:"Phone No",
-        type:"text",
+        type:"tel",
         placeholder:"Enter phone number",
         icon:"icon-phone"
     },
     {
         label:"Gender",
-        type:"text",
-        placeholder:"Enter gender",
-        icon:"icon-female"
+        type:"select",
+        placeholder:"Select gender",
+        icon:"icon-female",
+        values:["M", "F"]
     },
 
     {
@@ -119,20 +141,96 @@ const patientFormFields = [
 
 const formsContainer = document.querySelector('.formFields');
 
-patientFormFields.forEach((field)=>{
-    const template = `
+patientFormFields.forEach((field, key)=>{
+    const templateText = `
     <div class="inputContainer">
         <span>${field.label}</span>
         <div>
-            <input aria-label="${field.label}" type="${field.type}" placeholder="${field.placeholder}">
+
+            ${field.type === "date" ? `<label for="${key}-${field.label.replace(/\s+/g, '')}">Pick date</label>` : ""}
+            <input aria-label="${field.label}" type="${field.type}" id="${key}-${field.label.replace(/\s+/g, '')}" class="${field.type === "date" && "invisible"}" placeholder="${field.placeholder}">
+            
+
             <i class="${field.icon}"></i>
         </div>
     </div>        
     `
+    const templateSelect = `
+        <div class="inputContainer">
+            <span>${field.label}</span>
+            <div>
+                <span id="select-${key}" class="inputContainer-selectText">${field.placeholder}</span>
+                <i class="${field.icon}"></i>
+                
+            </div>
+
+            <div class="select-items hidden" id="item-${key}">
+                ${field.values?.map((field, index)=>{
+                    return `<span class="field-element" id="field-element-${index}"=>${field}</span>`
+                }).join("")
+                }
+                
+            </div>
+        </div> 
+    `
+
+    let template;
+
+    switch(field.type){
+        case "select":
+            template = templateSelect;
+            break;
+        default:
+            template = templateText;
+    }
+    
     formsContainer.insertAdjacentHTML("afterbegin", template)
 })
 
+/**
+ * 
+ */
 
+/**
+ * Custom utility function that handles Hide/Show select items on click
+ */
+const handleToggleCustomSelectInputs = (inputs)=>{
+
+    inputs.forEach((select, i)=>{
+        const KEY = select.id.split("-")[1]
+        const correspondingItemsContainer = document.getElementById(`item-${KEY}`);
+
+        select.addEventListener('click', ()=>{
+            correspondingItemsContainer.classList.toggle('hidden')
+        })
+
+        /**
+         * Simple function that, for each element of the items list toggled, adds the value to the field on click
+         */
+        const handleSelectElement = ()=>{
+            const fieldElements = document.querySelectorAll(`#item-${KEY} .field-element`);
+    
+            fieldElements.forEach((element)=>{
+                element.addEventListener('click', ()=>{
+                    correspondingItemsContainer.classList.toggle('hidden')
+
+                    const selectedValueContainer = document.getElementById(`select-${KEY}`);
+                    selectedValueContainer.innerHTML = `<span class="selected-value">${element.textContent}</span>`
+                })
+            })
+
+        }
+
+        handleSelectElement();
+
+
+    })   
+
+}
+
+const patientFormSelects = document.querySelectorAll('.inputContainer-selectText');
+
+handleToggleCustomSelectInputs(patientFormSelects);
 
 
 const staffs = [
