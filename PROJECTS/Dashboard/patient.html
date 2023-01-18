@@ -10,7 +10,7 @@
 			src="https://kit.fontawesome.com/b49da0b9f4.js"
 			crossorigin="anonymous"
 		></script>
-		<title>Staff</title>
+		<title>Patients</title>
 		<link
 			href="https://fonts.googleapis.com/css?family=Montserrat"
 			rel="stylesheet"
@@ -27,6 +27,8 @@
 		/>
 		<link rel="stylesheet" href="./style.css" />
         <link rel="stylesheet" href="./staff.css">
+        <link rel="stylesheet" href="./patient.css">
+
 	</head>
 	
 	<body>
@@ -61,7 +63,7 @@
 				<div class="header">
 					<div class="header-left">
 						<i class="icon-align-right toggle-nav"></i>
-						<span>Staff</span>
+						<span>Patients</span>
 					</div>
 					<div class="header-right">
 						<div class="icon-container colorable">
@@ -86,30 +88,31 @@
 
                 <div class="addStaffContainer">
 
-					<div class="add-staff-header">
+					<div class="add-patient-header ">
 						<div class="description">
-							<span>Register Staff</span>
+							<span>Register Patient</span>
 							<span class="desc">Enter the required fields</span>
 						</div>
-						<a href="./view-staff.html">View Staff List</a>
-
+						<a href="./view-patient.html">View Patients List</a>
 					</div>
 
-                    <div class="formsContainer">
-                        <div class="formLeft forms">
+                    <div class="formsContainer patientForm">
+                        <div class="formLeft forms ">
                             <div class="info">
 								<i class="icon-info-sign"></i>
 								<span>Info</span>                                
                             </div>
 
                             <!-- Form fields will be loaded here -->
+                            <div class="formFields">
+                                
 
-                        </div>
-                        <div class="formRight forms">
+                            </div>
 
-                            <!-- Form fields will be loaded here -->
                             <button class="submitBtn">Register</button>
+
                         </div>
+                        
                     </div>
 
                 </div>
@@ -117,8 +120,9 @@
 			</section>
 		</div>
 
+
         <script src="./navigation.js"></script>
-        <script src="./staff.js"></script>
+        <script src="./patient.js"></script>
 
 	</body>
 </html>

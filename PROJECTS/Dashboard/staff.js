@@ -149,11 +149,11 @@ const staffs = [
     }
 ]
 
-const staffListContainer = document.querySelector('.staffTable');
+const staffListContainer = document.querySelector('.dataTable');
 
 staffs.forEach((staff)=>{
     const template = `
-        <div class="staff-table-row">
+        <div class="data-table-row">
             <span>${staff.id}</span>
             <span>${staff.name}</span>                                                         
             <span>${staff.lastname}</span>

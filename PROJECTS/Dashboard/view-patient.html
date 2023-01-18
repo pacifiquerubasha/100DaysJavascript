@@ -10,7 +10,7 @@
 			src="https://kit.fontawesome.com/b49da0b9f4.js"
 			crossorigin="anonymous"
 		></script>
-		<title>Staff</title>
+		<title>View Patients</title>
 		<link
 			href="https://fonts.googleapis.com/css?family=Montserrat"
 			rel="stylesheet"
@@ -27,8 +27,9 @@
 		/>
 		<link rel="stylesheet" href="./style.css" />
         <link rel="stylesheet" href="./staff.css">
+
 	</head>
-	
+    	
 	<body>
 		<div class="main">
 			<section class="navigation">
@@ -61,7 +62,7 @@
 				<div class="header">
 					<div class="header-left">
 						<i class="icon-align-right toggle-nav"></i>
-						<span>Staff</span>
+						<span>Patients</span>
 					</div>
 					<div class="header-right">
 						<div class="icon-container colorable">
@@ -85,32 +86,38 @@
 				</div>
 
                 <div class="addStaffContainer">
-
-					<div class="add-staff-header">
-						<div class="description">
-							<span>Register Staff</span>
-							<span class="desc">Enter the required fields</span>
-						</div>
-						<a href="./view-staff.html">View Staff List</a>
-
-					</div>
-
-                    <div class="formsContainer">
-                        <div class="formLeft forms">
-                            <div class="info">
-								<i class="icon-info-sign"></i>
-								<span>Info</span>                                
-                            </div>
-
-                            <!-- Form fields will be loaded here -->
-
+                    <div class="staff-page-header">
+                        <div class="description">
+                            <span>Patients Data</span>
+                            <span class="desc">Find the list of patients</span>
                         </div>
-                        <div class="formRight forms">
-
-                            <!-- Form fields will be loaded here -->
-                            <button class="submitBtn">Register</button>
-                        </div>
+                        <a href="./patient.html"><i class="icon-plus-sign-alt"></i></a> 
                     </div>
+
+                    <div class="listContainer">
+                        <div class="searchContainer">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input aria-label="Seach staff" name="search-staff" type="text" placeholder="Search for staff">
+                        </div>
+
+                        <div class="staffTable dataTable">
+                           <div class="data-table-row table-header">
+                                <span>ID</span>
+                                <span>Name</span>                                                         
+                                <span>Lastname</span>
+                                <span>Title</span>
+                                <span>Department</span>
+                                <span>Nationality</span>
+                                <span>Insertion Date</span>
+                                <span>Actions</span>
+                           </div>
+
+                           <!-- Load staff list rows here-->
+                                            
+                        </div>
+
+                    </div>                  
+                    
 
                 </div>
 				
@@ -118,7 +125,7 @@
 		</div>
 
         <script src="./navigation.js"></script>
-        <script src="./staff.js"></script>
+        <script src="./patient.js"></script>
 
 	</body>
 </html>

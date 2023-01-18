@@ -1,3 +1,43 @@
+/* ADD STAFF STYLES ----------------------*/
+
+.staff-page-header,
+.add-staff-header,
+.add-patient-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.staff-page-header,
+.add-patient-header{
+    width: 90%;
+}
+
+.add-staff-header{
+    width: 80%;
+}
+
+.staff-page-header i{
+    font-size: 48px;
+    color: var(--color-orange);
+    cursor: pointer;
+}
+
+.add-staff-header a,
+.add-patient-header a{
+    color: white;
+    background-color: var(--color-orange);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: 900;
+}
+
+.add-staff-header a:hover,
+.add-patient-header a:hover{
+    text-decoration: none !important;
+}
+
+
 .description{
     display: flex;
     flex-direction: column;
@@ -13,7 +53,7 @@
 }
 
 .formsContainer{
-    width: 90%;
+    width: 80%;
     display: flex;
     gap: 5rem;
     height: auto;
@@ -35,7 +75,7 @@
     flex-direction: column;
     border: 1.5px solid rgba(128, 128, 128, 0.404);
     border-radius: 10px;
-    width: 75%;
+    width: 100%;
     height: auto;
     gap: 1rem;
     margin-bottom: 1.5rem;
@@ -74,13 +114,15 @@
 .info{
     padding: 5px;
     background-color: rgba(0, 128, 0, 0.075);
-    width: 75%;
+    width: 100%;
     padding: 10px;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     color: var(--main-color);
 }
 
+
+/* VIEW STAFF STYLES ----------------------*/
 .searchContainer{
     margin: 3rem 0;
     font-size: 20px;
@@ -91,9 +133,7 @@
     border: none !important;
 }
 
-
-
-.staff-table-row{
+.data-table-row{
     width: 90%;
     padding: 10px;
     display: flex;
@@ -102,7 +142,7 @@
     border-radius: 10px;
     font-weight: 800;
     background-color: var(--color-white);
-    margin: 1rem 0;;
+    margin: .5rem 0;;
 }
 
 .table-header{
@@ -110,11 +150,11 @@
     color: var(--color-white);
 }
 
-.staff-table-row span:not(:last-of-type){
+.data-table-row span:not(:last-of-type){
     flex: 1;
 }
 
-.staff-table-row i{
+.data-table-row i{
     font-size: 20px;
     margin: 0 5px;
     cursor: pointer;

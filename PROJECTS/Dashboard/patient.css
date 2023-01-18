@@ -1,0 +1,17 @@
+
+
+.formFields{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.patientForm{
+    width: 90% !important;
+}
+
+.formFields .inputContainer{
+    flex-grow: 1;
+    flex-basis: 20%;
+    
+}

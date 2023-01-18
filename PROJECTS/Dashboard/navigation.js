@@ -2,24 +2,24 @@
 const navigationData = [
     {
         id:3,
-        icon:'fa-id-badge',
+        icon:'fa-hospital-user',
         title:'Patients',
         isExpendable:true,
         subItems:[
             {
                 label:'Register Patient', 
-                link:"./staff.html"
+                link:"./patient.html"
             },
             {
                 label:'View Patients', 
-                link:"./view-staff.html"
+                link:"./view-patient.html"
             },
             
         ]
     },
     {
         id:2,
-        icon:'fa-id-badge',
+        icon:'fa-user-doctor',
         title:'Staff',
         isExpendable:true,
         subItems:[
