@@ -132,7 +132,6 @@ You can spot the shape, can't you? This becomes too messy and hard to maintain. 
     })
     .then(()=>{
         console.log('Following callback starting...')
-
     })
     .then(()=>{
         console.log('Another callback starting...')
@@ -151,7 +150,7 @@ You can spot the shape, can't you? This becomes too messy and hard to maintain. 
 A promise is declared as an object of the Promise class. It receives a callback that takes two callbacks as arguments. The first is `resolve` which handles successfull operations, the second `reject` which will execute if an error occurs. This first part creates the promises, then the remaining will consume it. The `then()` methods of the promise receive a callback as argument, and this callback will be executed if the previous operation was successfull. As soon as an error occurs, the promise will just to the `catch()` block and throw an error. Last but not least, whether the promise succeeded or not, the finally method will be called an its message printed in the console. A lot to take in! _[We will discuss more about this in the next version]_.
 
 
-## setTimeout or Promise, who is given the fron seat behind the scenes?
+## setTimeout or Promise, who is given the front seat behind the scenes?
 
 You guessed it wrong! It's the Promise. Promises are special in Javascript because they are called _microtasks_, as opposed to all other operations like `setTimeout` which are normal tasks. Difference? They have their special room called the Microtask queue. The interesting thing about the microtask queue is that code inside it is given priority when the callstack is empty. Before running any other task when the stack is empty, the runtime looks inside the microtask queue, and if there is some promise chilling in there, they will be called to the stack immediately. 
 

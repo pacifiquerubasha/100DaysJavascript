@@ -48,8 +48,12 @@ const reverseString = (string)=>{
 
 }
 
-// console.log("H", reverseString('abcdef'))
 
+const shortHandReverseString = (string)=>{
+    return string.split('').reverse().join('')
+}
+
+console.log("----------", rev("Bisimwa"))
 
 
 const reverseOdds = (string)=>{

@@ -1,0 +1,100 @@
+@import url('./staff.css');
+
+.description span:first-of-type{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.description span i{
+    color: var(--main-color);
+}
+
+.description span:first-of-type{
+    cursor: pointer;
+}
+/* TOP SECTION ------------------*/
+.top-section{
+    display: flex;
+    margin-top: 1rem;
+    gap: 2rem;
+}
+
+.top-section img{
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.top-section .right-section{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.top-section .right-section .header{
+    display: flex;
+    gap: 2rem;
+}
+
+.top-section .right-section .header .name{
+    font-size: 1.75rem;
+    font-weight: 900;
+}
+
+.top-section .right-section .header button{
+    padding: 10px 20px;
+    background-color: var(--main-color);
+    color: var(--color-white);
+    border: none ;
+    border-radius: 5px;
+    font-size: 20px;
+
+}
+
+.top-section .right-section .header button i{
+    color: var(--color-white);
+}
+
+.patient-job{
+    color: var(--color-orange);
+    font-weight: 800;
+}
+
+.blood-group{
+    font-size: 45px;
+    margin: 2rem 0;
+    font-weight: 900;
+}
+
+.profile-detail-group{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-bottom: 1.25rem;
+}
+
+.profile-detail-group span:first-of-type{
+    color: gray;
+    font-weight: 800;
+}
+
+.profile-detail-group span:last-of-type{
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.bottom-section{
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.bottom-section .bottom-left-section{
+    width: 20rem;
+} 
+
+.blood-group i{
+    color: red;
+}

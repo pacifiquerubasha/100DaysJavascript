@@ -101,8 +101,6 @@ function sortArray(arr){
 
 sortArray([3, 5, 2, 100, 7, 1, 6])
 
-
-
 /**
  * Biweekly challenge SCHOLASTIQUE
  *
@@ -179,6 +177,7 @@ const ReverseArray = (arr) => {
 	}
 	return temp;
 };
+
 console.log(`The reversed array is: ${ReverseArray(num5)}`);
 
 /**

@@ -23,7 +23,7 @@
  *     Function expressions/arrow f(x)  => DEPENDS on whether the function is declared using var(HOISTED) or let/const(NOT HOISTED)
  * 
  *  c. TDZ stands for Temporal Dead Zone. It is the zone where let/const variables called before declaration are kept, to say that 
- *     the variables are there but the execution hasn't founc them at that specific line where they are called
+ *     the variables are there but the execution hasn't found them at that specific line where they are called
  * 
  *  d. Variables declared with the var keyword are accessible from the window object but same does not apply to those declared with let/const. 
  *     This can be checked by looking into the values stored in the window object. Log variableName == window.varibleName to check.

@@ -57,3 +57,34 @@
     visibility:hidden;
     z-index: -999;
 }
+
+input[type=date]::-webkit-calendar-picker-indicator{
+   font-size: 17px;
+    
+}
+
+.data-table-row img{
+    width: 3rem !important;
+    height: 3rem !important;
+    border-radius: 3rem !important;
+    object-fit: cover;
+}
+
+.data-table-row span{
+    display: flex;
+    align-items: center;
+    width: 10%;
+}
+
+
+.data-table-row p{
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: 5px;
+}
+
+.data-table-row {
+    cursor: pointer;
+}

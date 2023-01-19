@@ -1,6 +1,6 @@
 /**
  * Method.apply()
- * allows you to call a function with a given this value and arguments provided as an array.
+ * allows you to call a function with a given number of arguments provided as an array.
  */
 
 const person = {
@@ -14,10 +14,10 @@ const person1 = {
 	lastName: "Doe",
 };
 
-// This will return "Mary Doe":
+// This will return "Hello Mary Doe":
 person.fullName.apply(person1, ["Hello"]);
 
-console.log(person.fullName.apply(person1, ["Hello"]));
+console.log("---", person.fullName.apply(person1, ["Hello"]));
 
 /**
  * Method.call()
