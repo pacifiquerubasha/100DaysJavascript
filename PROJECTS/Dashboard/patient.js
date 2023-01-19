@@ -134,3 +134,10 @@ patients.forEach((patient)=>{
     patientListContainer.insertAdjacentHTML('beforeend', template);
 })
 
+const tableRows = document.querySelectorAll('.data-table-row');
+
+tableRows.forEach((row)=>{
+    row.addEventListener('click', ()=>[
+        window.location = './unique-patient.html'
+    ])
+})

@@ -1,18 +1,26 @@
 @import url('./staff.css');
 
-.description span:first-of-type{
+.description a{
+    color: var(--main-color);
+    font-size: 1.5rem;
+}
+
+.description a:hover{
+    text-decoration: none;
+}
+
+.description a:first-of-type{
     display: flex;
     align-items: center;
     gap: 1rem;
+    cursor: pointer;
 }
 
-.description span i{
+.description a i{
     color: var(--main-color);
 }
 
-.description span:first-of-type{
-    cursor: pointer;
-}
+
 /* TOP SECTION ------------------*/
 .top-section{
     display: flex;
