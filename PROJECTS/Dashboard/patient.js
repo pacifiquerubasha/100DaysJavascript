@@ -67,9 +67,9 @@ const patients = [
     },
     {
         id:"LM30KH",
-        firstname:'Lady',
+        firstname:'Emmanuella',
         middlename:"Rubasha",
-        lastname:"Mary",
+        lastname:"Habamungu",
         gender:"F",
         phone:"439483430",
         dob:"12/12/1998",
@@ -89,9 +89,9 @@ const patients = [
     },
     {
         id:"LM30KH",
-        firstname:'Lady',
-        middlename:"Rubasha",
-        lastname:"Mary",
+        firstname:'Audrey',
+        middlename:"Gustavo",
+        lastname:"Sua",
         gender:"F",
         phone:"439483430",
         dob:"12/12/1998",
@@ -113,9 +113,9 @@ const patients = [
 
 const patientListContainer = document.querySelector('.dataTable');
 
-patients.forEach((patient)=>{
+patients.forEach((patient, key)=>{
     const template = `
-        <div class="data-table-row">
+        <div class="data-table-row" id="patient-${key}">
             <span><p>${patient.id}</p></span>
             <span><img src=${patient.picture_url} class="profileImagePatient"/></span>                                                         
             <span><p>${patient.firstname}</p></span>
@@ -134,10 +134,21 @@ patients.forEach((patient)=>{
     patientListContainer.insertAdjacentHTML('beforeend', template);
 })
 
+
 const tableRows = document.querySelectorAll('.data-table-row');
 
 tableRows.forEach((row)=>{
-    row.addEventListener('click', ()=>[
-        window.location = './unique-patient.html'
-    ])
+    row.addEventListener('click', ()=>{
+        const data =patients[Number(row.id.split('-')[1])]; 
+        navigateToDetailsPage(data)
+    })
 })
+
+
+const navigateToDetailsPage = (data)=>{
+    sessionStorage.setItem("unique-patient", JSON.stringify(data))
+
+    if(sessionStorage.getItem("unique-patient"))
+        location.href = './unique-patient.html'
+    
+}

@@ -16,6 +16,11 @@
     cursor: pointer;
 }
 
+.description span{
+    color: gray !important;
+    font-size: 14px !important;
+}
+
 .description a i{
     color: var(--main-color);
 }
