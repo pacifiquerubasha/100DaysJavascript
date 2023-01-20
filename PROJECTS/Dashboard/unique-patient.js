@@ -1,8 +1,9 @@
-
+/**
+ * Dynamically load data from the localstorage to the unique patient page
+ */
 const dataFromSessionStorage = JSON.parse(sessionStorage.getItem("unique-patient"));
 
 const container = document.querySelector('.patientDetails')
-
 const template = `
         <div class="top-section">
             <img src=${dataFromSessionStorage.picture_url} alt="Profile picture">
@@ -85,6 +86,9 @@ const template = `
 
 container.insertAdjacentHTML('beforeend', template)
 
+/**
+ * Handle go back to list of patients
+ */
 const backBtn = document.querySelector('.back-to-patient-list');
 backBtn.addEventListener('click', ()=>{
     sessionStorage.removeItem("unique-patient")
@@ -92,11 +96,16 @@ backBtn.addEventListener('click', ()=>{
 
 })
 
-const element = document.querySelector('.patientDetails');
 
-const printDetails = document.querySelector('.printDetails');
-const filename = `${dataFromSessionStorage.firstname + dataFromSessionStorage.middlename + dataFromSessionStorage.lastname}-${Date.now()}`
+/**
+ * Print details of patient logic
+ */
+const element = document.querySelector('.patientDetails') //HTML Element to print(All parts of this element that I do not want to print have "data-html2canvas-ignore="true"")
 
+const printDetails = document.querySelector('.printDetails'); //The print trigger
+const filename = `${dataFromSessionStorage.firstname + dataFromSessionStorage.middlename + dataFromSessionStorage.lastname}-${Date.now()}` //The unique filename
+
+//HTML2PDF options
 var opt = {
     margin:       0.5,
     filename:     `${filename}.pdf`,
