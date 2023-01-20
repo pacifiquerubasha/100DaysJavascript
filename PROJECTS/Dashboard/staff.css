@@ -2,7 +2,8 @@
 
 .staff-page-header,
 .add-staff-header,
-.add-patient-header{
+.add-patient-header,
+.invoice-page-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,7 +25,8 @@
 }
 
 .add-staff-header a,
-.add-patient-header a{
+.add-patient-header a,
+.invoice-page-header a{
     color: white;
     background-color: var(--color-orange);
     padding: 1rem 2rem;
@@ -33,7 +35,8 @@
 }
 
 .add-staff-header a:hover,
-.add-patient-header a:hover{
+.add-patient-header a:hover,
+.invoice-page-header a{
     text-decoration: none !important;
 }
 

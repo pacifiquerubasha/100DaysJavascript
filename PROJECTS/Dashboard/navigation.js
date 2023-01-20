@@ -1,6 +1,23 @@
 
 const navigationData = [
     {
+        id:4,
+        icon:'fa-hospital-user',
+        title:'Invoices',
+        isExpendable:true,
+        subItems:[
+            {
+                label:'Generate invoice', 
+                link:"./invoice.html"
+            },
+            {
+                label:'View invoices', 
+                link:"./view-patient.html"
+            },
+            
+        ]
+    },
+    {
         id:3,
         icon:'fa-hospital-user',
         title:'Patients',
