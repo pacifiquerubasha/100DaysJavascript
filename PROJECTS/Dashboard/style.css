@@ -52,6 +52,9 @@
 	background-color: #AAAAAA;
 }
 
+::placeholder{
+	font-family: 'Montserrat';
+}
 
 input {
 	margin-bottom: 0 !important;

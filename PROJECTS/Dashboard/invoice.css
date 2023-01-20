@@ -41,6 +41,10 @@
 
 }
 
+.default-image{
+    opacity: .15;
+}
+
 .from .profile-container,
 .to .profile-container{
     background-color: var(--color-white);
@@ -182,6 +186,72 @@
 
 }
 
+
+/* RIGHT DETAILS */
+
 .right-details{
     margin-right: 2rem;
+    padding: 20px;
+    border-radius: 10px;
+    height: auto;
+}
+
+.right-details .invoice-title{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.dept-detail,
+.patient-detail{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+.dept-detail>span:first-of-type,
+.patient-detail>span:first-of-type,
+.invoice-items-right>p{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: .5rem !important;
+}
+
+
+.patient-detail>div,
+.invoice-items-right>div{
+    display: flex;
+}
+
+.invoice-items-right>div{
+    margin-bottom: .25rem;
+}
+
+
+.totals{
+    margin-top: 2rem;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.patient-detail>div>span:first-of-type,
+.invoice-items-right>div>span:first-of-type,
+.totals>p{
+    width: 10rem !important;
+}
+
+.totals p{
+    font-size: 20px;
+}
+
+.totals span{
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.printInvoice{
+    padding: 10px 15px;
+    background-color: var(--main-color);
+    border: none;
+    color: var(--color-white);
+    border-radius: 5px;
 }
