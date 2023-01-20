@@ -37,7 +37,7 @@
 	--main-background: rgba(228, 228, 228, 0.356);
 }
 
-::selection{
+::selection {
 	background-color: rgba(91, 190, 91, 0.158);
 }
 
@@ -49,7 +49,7 @@
 	border: 3.5px solid rgba(0, 0, 0, 0);
 	background-clip: padding-box;
 	border-radius: 9999px;
-	background-color: #AAAAAA;
+	background-color: #aaaaaa;
 }
 
 ::placeholder{
@@ -64,20 +64,18 @@ input {
 	font-weight: 800;
 }
 
-
-
 .main {
 	width: 100%;
 	/* height: 100vh; */
 	display: flex;
 	flex-direction: row;
-	padding-right: .5rem;
+	padding-right: 0.5rem;
 	background-color: var(--main-background);
 	overflow: hidden !important;
 	padding-left: 1rem;
 }
 
-body{
+body {
 	overflow: hidden !important;
 }
 
@@ -87,8 +85,6 @@ body{
 	width: 220px;
 	transition: all ease-in-out 800ms;
 	padding-top: 2rem !important;
-
-
 }
 
 .dashboard {
@@ -103,7 +99,6 @@ body{
 	padding-top: 2rem !important;
 
 	transition: all ease-in-out 800ms;
-
 }
 /* MENU ---------------*/
 
@@ -120,7 +115,7 @@ body{
 
 .expandable:hover,
 .expandable:focus,
-.expandable:hover i{
+.expandable:hover i {
 	color: var(--main-color);
 	text-decoration: none;
 	font-weight: 700;
@@ -204,34 +199,30 @@ body{
 	font-size: 10px;
 }
 
-.sub-items{
+.sub-items {
 	display: flex;
 	flex-direction: column;
-	gap: .75rem;
+	gap: 0.75rem;
 	width: 40%;
 	margin-left: 4rem;
 	transition: all ease-in-out 500ms;
 	padding-top: 1rem;
-
 }
 
-.hidden{
+.hidden {
 	display: none;
 }
 
-.sub-items a{
+.sub-items a {
 	text-decoration: none;
 	color: var(--main-color);
 	font-weight: 800;
 }
 
-.expandable-green{
+.expandable-green {
 	color: var(--main-color) !important;
 	font-weight: 700 !important;
 }
-
-
-
 
 /* HEADER ----------- */
 
@@ -256,9 +247,8 @@ body{
 	font-weight: 900;
 }
 
-.profile-container{
+.profile-container {
 	cursor: pointer;
-
 }
 
 .profile-container img {
@@ -399,7 +389,6 @@ body{
 	background-image: var(--color-purple-gradient);
 }
 
-
 .stats {
 	display: flex;
 	gap: 1.5rem;
@@ -441,8 +430,6 @@ body{
 	justify-content: center;
 	align-items: center;
 }
-.chart {
-}
 .stat-box-right {
 	height: 3rem;
 	width: 3rem;
@@ -477,7 +464,7 @@ canvas {
 	position: relative;
 }
 
-.yearsList{
+.yearsList {
 	position: absolute;
 	bottom: -5rem;
 	right: 0;
@@ -487,23 +474,20 @@ canvas {
 	border-radius: 8px;
 	padding: 5px;
 	background-color: white;
-
 }
 
-.toggle-year-list{
+.toggle-year-list {
 	display: none;
-
 }
 
-.unique-year{
+.unique-year {
 	padding: 2px 5px;
 	border-radius: 5px;
 }
-.unique-year:hover{
+.unique-year:hover {
 	background-color: rgba(128, 128, 128, 0.39);
 	cursor: pointer;
 }
-
 
 .header-title {
 	font-size: 1.2rem;
@@ -564,7 +548,7 @@ canvas {
 	color: var(--main-color);
 }
 
-.btn-green{
+.btn-green {
 	background-color: var(--main-color);
 	color: white;
 }
@@ -755,10 +739,8 @@ canvas {
 	color: green;
 }
 
-
-.toggled-nav-menu{
+.toggled-nav-menu {
 	/* transform: translateX(-500px); */
 	display: none;
 	transition: all ease-in-out 800ms;
 }
-
