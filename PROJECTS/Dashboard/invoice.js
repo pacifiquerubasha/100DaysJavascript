@@ -1,19 +1,24 @@
 
 /**
+ * TODO: MINIMIZE THE USE OF DUPLICATE CODE. WILL BE MORE EFFICIENT WHEN SHIFTING TO MODULES(VITE)
+ */
+
+/**
  * Loading depatments and handling click events for each of the items of the list
  */
+
 const departments = [
     {
         id:1,
         name:"Surgery",
         email:"surgery@cyrrus.com",
-        image:'./assets/cyrrus.png'
+        image:'./assets/surgery.jpg'
     },
     {
         id:2,
         name:"Pediatry",
         email:"pediatry@cyrrus.com",
-        image:'./assets/facebook.png'
+        image:'./assets/pediatry.jpg'
     }
 ]
 
@@ -28,6 +33,7 @@ departments.forEach((dept)=>{
 const departments_list_items = document.querySelectorAll('.departments_list_item');
 const fromDetails_Name = document.querySelector('.from-details .name');
 const fromDetails_Email = document.querySelector('.from-details .email');
+const fromDetails_Image = document.querySelector('.from-Image');
 
 departments_list_items.forEach((item)=>{
     item.addEventListener('click', ()=>{
@@ -35,6 +41,7 @@ departments_list_items.forEach((item)=>{
         
         fromDetails_Name.textContent = data.name;
         fromDetails_Email.textContent = data.email;
+        fromDetails_Image.setAttribute('src', data.image)
 
         departments_container.classList.toggle('hidden')
 
@@ -142,6 +149,7 @@ document.querySelector('.patients-toggle').addEventListener('click', ()=>{
 const patients_list_items = document.querySelectorAll('.patients_list_item');
 const toDetails_name = document.querySelector('.to-details .name');
 const toDetails_email = document.querySelector('.to-details .email');
+const toDetails_image = document.querySelector('.to-Image');
 
 patients_list_items.forEach((item)=>{
     item.addEventListener('click', ()=>{
@@ -150,6 +158,7 @@ patients_list_items.forEach((item)=>{
 
         toDetails_name.textContent = `${data.firstname} ${data.lastname}`;
         toDetails_email.textContent = data.email;
+        toDetails_image.setAttribute('src', data.picture_url)
 
         patients_list.classList.toggle('hidden')
 

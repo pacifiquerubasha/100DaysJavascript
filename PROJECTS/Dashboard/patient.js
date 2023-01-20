@@ -1,5 +1,9 @@
 
 /**
+ * TODO: MINIMIZE THE USE OF DUPLICATE CODE. WILL BE MORE EFFICIENT WHEN SHIFTING TO MODULES(VITE)
+ */
+
+/**
  * Custom utility function that handles Hide/Show select items on click
  */
 

@@ -1,3 +1,7 @@
+/**
+ * TODO: NEED TO CREATE AN INTERFACE TO ALLOW LOADING EXISTING DATA FROM SPREADSHEET TO THE SYSTEM
+ */
+
 let selectedFile;
 
 document.getElementById('selectFile').addEventListener("change", (event) => {
