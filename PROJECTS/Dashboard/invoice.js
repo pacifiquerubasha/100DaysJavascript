@@ -164,3 +164,51 @@ patients_list_items.forEach((item)=>{
 
     })
 })
+
+
+/**
+ * Handle adding items on click Add button
+ */
+const addInvoiceItemBtns = document.querySelectorAll('.addInvoiceItemBtn');
+const invoiceItemsContainer = document.querySelector('.invoiceItems');
+
+let i = 0;
+const handleAddNewInvoiceItem = (e)=>{
+    const template = `
+    <div class="invoice-item-row">
+        <div class="input-container-invoice">
+            <input aria-label="Item Name" type="text" id="item-name" placeholder="Enter item name">
+        </div>
+
+        <div class="input-container-invoice">
+            <input aria-label="Item price" type="text" id="item-price"  placeholder="Enter item price">
+        </div>
+        <div>
+            <i id="btn-${i}" class="icon-plus-sign-alt addInvoiceItemBtn"></i>
+        </div>
+    </div>
+    `
+    invoiceItemsContainer.insertAdjacentHTML('beforeend', template);
+
+    const addedBtn = document.getElementById(`btn-${i}`)
+    addedBtn.addEventListener('click', (e)=>handleAddNewInvoiceItem(e))
+
+    i++;
+    e.target.style.display = "none";
+
+}
+
+
+addInvoiceItemBtns.forEach((btn)=>{
+    btn.addEventListener('click', (e)=>{
+        handleAddNewInvoiceItem(e)
+    })
+
+})
+
+
+
+
+
+
+

@@ -1,3 +1,6 @@
+
+/* INVOICE TITLE*/
+
 .invoiceDetails{
     display: flex;
     gap: 5rem;
@@ -71,7 +74,7 @@
 
 .to-details span:first-of-type,
 .from-details span:first-of-type{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 800;
 }
 
@@ -119,4 +122,66 @@
     background-color:  rgba(128, 128, 128, 0.39);
     cursor: pointer;
     border-radius: 5px;
+}
+
+/* INVOICE FORMS*/
+
+.invoiceItems{
+    display: flex;
+    flex-direction: column;
+}
+
+.invoiceItems>span{
+    font-size: 24px;
+    font-weight: 900;
+    margin: 2rem 0;
+}
+
+.invoice-item-row{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.input-container-invoice input{
+    background-color: var(--color-white) !important;
+    padding: 5px !important;
+    height: 2.5rem;
+    width: 20rem;
+}
+
+.input-container-invoice input:focus{
+    /* outline: 1px solid var(--color-orange) !important;
+    box-shadow: none !important; */
+    border: 2px solid var(--color-orange) !important;
+}
+
+.invoice-item-row>div>i{
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.invoice-item-row>div:last-of-type{
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.invoice-actions{
+    margin-top: 2rem;
+}
+
+.invoice-actions button{
+    padding: 10px;
+    border: none;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+
+}
+
+.right-details{
+    margin-right: 2rem;
 }
