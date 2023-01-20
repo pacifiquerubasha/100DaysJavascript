@@ -42,6 +42,7 @@ departments_list_items.forEach((item)=>{
         fromDetails_Name.textContent = data.name;
         fromDetails_Email.textContent = data.email;
         fromDetails_Image.setAttribute('src', data.image)
+        fromDetails_Image.classList.remove('default-image')
 
         departments_container.classList.toggle('hidden')
 
@@ -159,6 +160,7 @@ patients_list_items.forEach((item)=>{
         toDetails_name.textContent = `${data.firstname} ${data.lastname}`;
         toDetails_email.textContent = data.email;
         toDetails_image.setAttribute('src', data.picture_url)
+        toDetails_image.classList.remove('default-image')
 
         patients_list.classList.toggle('hidden')
 
