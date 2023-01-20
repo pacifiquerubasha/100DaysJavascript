@@ -9,7 +9,7 @@ const template = `
             <div class="right-section">
                 <div class="header">
                     <span class="name">${dataFromSessionStorage.firstname} ${dataFromSessionStorage.middlename} ${dataFromSessionStorage.lastname}</span>
-                    <button><i class="icon-edit"></i> Edit</button>
+                    <button data-html2canvas-ignore="true"><i class="icon-edit"></i> Edit</button>
                 </div>
                 <div class="patient-job">${dataFromSessionStorage.occupation}</div>
                 <div class="blood-group"><i class="icon-tint"></i> ${dataFromSessionStorage.blood_group}</div>
@@ -75,6 +75,12 @@ const template = `
 
         </div>
 
+        <div class="unique-patient-actions" data-html2canvas-ignore="true">
+            <button class="printHistory">Print history</button>
+            <button class="printDetails">Print details</button>
+        
+        </div>
+
 `
 
 container.insertAdjacentHTML('beforeend', template)
@@ -84,4 +90,21 @@ backBtn.addEventListener('click', ()=>{
     sessionStorage.removeItem("unique-patient")
     window.location = "./view-patient.html"
 
+})
+
+const element = document.querySelector('.patientDetails');
+
+const printDetails = document.querySelector('.printDetails');
+const filename = `${dataFromSessionStorage.firstname + dataFromSessionStorage.middlename + dataFromSessionStorage.lastname}-${Date.now()}`
+
+var opt = {
+    margin:       0.5,
+    filename:     `${filename}.pdf`,
+    image:        { type: 'png', quality: 0.98 },
+    html2canvas:  { scale: 3 },
+    jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+};
+
+printDetails.addEventListener('click', ()=>{
+    html2pdf(element, opt);
 })

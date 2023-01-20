@@ -66,7 +66,7 @@ const patients = [
 
     },
     {
-        id:"LM30KH",
+        id:"ER30KH",
         firstname:'Emmanuella',
         middlename:"Rubasha",
         lastname:"Habamungu",
@@ -84,11 +84,12 @@ const patients = [
         relationship:"Father",
         contact_number:"42842940",
         picture_url:"./assets/user-1.jpg",
-        additional_info:`As I said there is nothing `
+        additional_info:`As I said there is nothing As I said there is nothingAs I said there is nothing As I said there is nothing  `
 
     },
+
     {
-        id:"LM30KH",
+        id:"AG30KH",
         firstname:'Audrey',
         middlename:"Gustavo",
         lastname:"Sua",

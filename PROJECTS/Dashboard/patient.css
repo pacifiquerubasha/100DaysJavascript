@@ -88,3 +88,11 @@ input[type=date]::-webkit-calendar-picker-indicator{
 .data-table-row {
     cursor: pointer;
 }
+
+.data-table-row:not(:first-of-type):hover{
+    background-color: rgba(91, 190, 91, 0.158);
+}
+
+.table-header{
+    pointer-events: none !important;
+}

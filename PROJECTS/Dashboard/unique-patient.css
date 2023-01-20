@@ -36,7 +36,7 @@
 .top-section img{
     width: 20rem;
     height: 20rem;
-    object-fit: cover;
+    object-fit: cover !important;
     border-radius: 10px;
 }
 
@@ -54,6 +54,7 @@
 .top-section .right-section .header .name{
     font-size: 1.75rem;
     font-weight: 900;
+    line-height: 1.25;
 }
 
 .top-section .right-section .header button{
@@ -88,6 +89,8 @@
     margin-bottom: 1.25rem;
 }
 
+
+
 .profile-detail-group span:first-of-type{
     color: gray;
     font-weight: 800;
@@ -96,6 +99,7 @@
 .profile-detail-group span:last-of-type{
     font-weight: 900;
     font-size: 20px;
+
 }
 
 .bottom-section{
@@ -104,10 +108,38 @@
     margin-top: 2rem;
 }
 
-.bottom-section .bottom-left-section{
+.bottom-section .bottom-left-section,
+.bottom-section .bottom-right-section{
     width: 20rem;
+    overflow: hidden;
+    height: auto;
 } 
+
 
 .blood-group i{
     color: red;
+}
+
+.unique-patient-actions{
+    display: flex;
+    gap: 2rem;
+}
+
+
+.printHistory,
+.printDetails{
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none !important;
+    border-radius: 5px;
+    color: var(--color-white);
+
+}
+
+.printHistory{
+    background-color: var(--color-orange);
+}
+
+.printDetails{
+    background-color: gray;
 }
