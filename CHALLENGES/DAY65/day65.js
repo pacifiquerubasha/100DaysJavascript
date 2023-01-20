@@ -6,12 +6,12 @@ const numInString = function (strings) {
 	strings.forEach((str) => {
 		let strSplit = str.split("");
 		for (s of strSplit) {
-			if (Number.isInteger(s)) array.push(str);
+			if (Numbergit(s)) array.push(str);
 		}
 	});
 	return array;
 };
-console.log(numInString(["m21", "you6", "m21"]));
+console.log(numInString(["m21", "you6", "2m1"]));
 
 /**
  * 15. Layers in a Rag
