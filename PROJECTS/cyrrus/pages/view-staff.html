@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="icon" type="image/svg+xml" href="../assets/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script
+			src="https://kit.fontawesome.com/b49da0b9f4.js"
+			crossorigin="anonymous"
+		></script>
+		<title>View Staff</title>
+		<link
+			href="https://fonts.googleapis.com/css?family=Montserrat"
+			rel="stylesheet"
+		/>
+
+		<link
+			href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"
+			rel="stylesheet"
+		/>
+
+		<link
+			href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="../styles/style.css" />
+        <link rel="stylesheet" href="../styles/staff.css">
+
+	</head>
+    	
+	<body>
+		<div class="main">
+			<section class="navigation">
+				<div class="logo">
+					<img src="../assets/cyrrus.png" alt="" />
+					Cyrrus
+				</div>
+				<div class="nav-container">
+					<!-- Navigation items will appear here -->
+
+					<div class="schedule">
+						Check your job <br />schedule
+						<i class="icon-long-arrow-right"></i>
+						<i class="icon-calendar"></i>
+					</div>
+
+					<div class="footer">
+						<span class="">Cyrrus Hospital Admin Dashboard</span><br />
+						<span> 2023 All Rights Reserved</span>
+						<p class="signature">
+							<span>Made with</span>
+							<i class="fas fa-heart"></i>
+							<span class="authors">by Cyrrus</span>
+						</p>
+					</div>
+				</div>
+			</section>
+			
+			<section class="dashboard">
+				<div class="header">
+					<div class="header-left">
+						<i class="icon-align-right toggle-nav"></i>
+						<span>Staff</span>
+					</div>
+					<div class="header-right">
+						<div class="icon-container colorable">
+							<i class="fa-solid fa-bell"></i>
+							<div class="counter">6</div>
+						</div>
+						<div class="icon-container colorable">
+							<i class="fa-solid fa-message"></i>
+							<div class="counter">6</div>
+						</div>
+						<div class="icon-container no-color">
+							<i class="fa-solid fa-gift"></i>
+							<div class="counter">6</div>
+						</div>
+
+						<div class="profile-container">
+							<img src="../assets/profile.jpg" alt="Profile" class="" />
+							<span>Hello, <span class="username">Malaika</span></span>
+						</div>
+					</div>
+				</div>
+
+                <div class="addStaffContainer">
+                    <div class="staff-page-header">
+                        <div class="description">
+                            <span>Staff List</span>
+                            <span class="desc">Find the list of staff</span>
+                        </div>
+                        <a href="./staff.html"><i class="icon-plus-sign-alt"></i></a> 
+                    </div>
+
+                    <div class="listContainer">
+                        <div class="searchContainer">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input aria-label="Seach staff" name="search-staff" type="text" placeholder="Search for staff">
+                        </div>
+
+                        <div class="dataTable">
+                           <div class="data-table-row table-header">
+                                <span>ID</span>
+                                <span>Name</span>                                                         
+                                <span>Lastname</span>
+                                <span>Title</span>
+                                <span>Department</span>
+                                <span>Nationality</span>
+                                <span>Insertion Date</span>
+                                <span>Actions</span>
+                           </div>
+
+                           <!-- Load staff list rows here-->
+                                            
+                        </div>
+
+                    </div>                  
+                    
+
+                </div>
+				
+			</section>
+		</div>
+
+        <script type="module" src="../modules/navigation.js"></script>
+        <script  src="../modules/staff.js"></script>
+
+	</body>
+</html>

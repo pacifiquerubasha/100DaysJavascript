@@ -1,0 +1,98 @@
+
+
+.formFields{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.patientForm{
+    width: 90% !important;
+}
+
+.formFields .inputContainer{
+    flex-grow: 1;
+    flex-basis: 20%;
+    
+}
+
+.inputContainer-selectText{
+    flex: 1;
+    color: rgba(128, 128, 128, 0.76);
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.select-items{
+    display: flex;
+    flex-direction: column;
+    position: absolute !important;
+    background-color: var(--color-white);
+    width: 95%;
+    z-index: 999;
+    border: 2px solid rgba(128, 128, 128, 0.562);
+    border-radius: 15px;
+    padding: 10px;
+    top: 105%;
+    box-shadow: 10px 10px 10px rgba(128, 128, 128, 0.233);
+    max-height: 20rem;
+    overflow-y: auto;
+}
+
+.select-items span{
+    padding: 5px;
+}
+.select-items span:hover{
+    background-color:  rgba(128, 128, 128, 0.39);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.selected-value{
+    color: black;
+}
+
+.invisible{
+    visibility:hidden;
+    z-index: -999;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator{
+   font-size: 17px;
+    
+}
+
+.data-table-row img{
+    width: 3rem !important;
+    height: 3rem !important;
+    border-radius: 3rem !important;
+    object-fit: cover;
+}
+
+.data-table-row span{
+    display: flex;
+    align-items: center;
+    width: 10%;
+}
+
+
+.data-table-row p{
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: 5px;
+}
+
+.data-table-row {
+    cursor: pointer;
+}
+
+.data-table-row:not(:first-of-type):hover{
+    background-color: rgba(91, 190, 91, 0.158);
+}
+
+.table-header{
+    pointer-events: none !important;
+}

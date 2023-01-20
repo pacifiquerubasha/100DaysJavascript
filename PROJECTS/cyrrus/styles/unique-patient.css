@@ -1,0 +1,145 @@
+@import url('./staff.css');
+
+.description a{
+    color: var(--main-color);
+    font-size: 1.5rem;
+}
+
+.description a:hover{
+    text-decoration: none;
+}
+
+.description a:first-of-type{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.description span{
+    color: gray !important;
+    font-size: 14px !important;
+}
+
+.description a i{
+    color: var(--main-color);
+}
+
+
+/* TOP SECTION ------------------*/
+.top-section{
+    display: flex;
+    margin-top: 1rem;
+    gap: 2rem;
+}
+
+.top-section img{
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover !important;
+    border-radius: 10px;
+}
+
+.top-section .right-section{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.top-section .right-section .header{
+    display: flex;
+    gap: 2rem;
+}
+
+.top-section .right-section .header .name{
+    font-size: 1.75rem;
+    font-weight: 900;
+    line-height: 1.25;
+}
+
+.top-section .right-section .header button{
+    padding: 10px 20px;
+    background-color: var(--main-color);
+    color: var(--color-white);
+    border: none ;
+    border-radius: 5px;
+    font-size: 20px;
+
+}
+
+.top-section .right-section .header button i{
+    color: var(--color-white);
+}
+
+.patient-job{
+    color: var(--color-orange);
+    font-weight: 800;
+}
+
+.blood-group{
+    font-size: 45px;
+    margin: 2rem 0;
+    font-weight: 900;
+}
+
+.profile-detail-group{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-bottom: 1.25rem;
+}
+
+
+
+.profile-detail-group span:first-of-type{
+    color: gray;
+    font-weight: 800;
+}
+
+.profile-detail-group span:last-of-type{
+    font-weight: 900;
+    font-size: 20px;
+
+}
+
+.bottom-section{
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.bottom-section .bottom-left-section,
+.bottom-section .bottom-right-section{
+    width: 20rem;
+    overflow: hidden;
+    height: auto;
+} 
+
+
+.blood-group i{
+    color: red;
+}
+
+.unique-patient-actions{
+    display: flex;
+    gap: 2rem;
+}
+
+
+.printHistory,
+.printDetails{
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none !important;
+    border-radius: 5px;
+    color: var(--color-white);
+
+}
+
+.printHistory{
+    background-color: var(--color-orange);
+}
+
+.printDetails{
+    background-color: gray;
+}

@@ -1,0 +1,257 @@
+
+/* INVOICE TITLE*/
+
+.invoiceDetails{
+    display: flex;
+    gap: 5rem;
+    margin-top: 2rem;
+}
+
+.left-details{
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+
+}
+
+.right-details{
+    flex: 1;
+    background-color: var(--color-white);
+
+}
+
+.top-section{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.top-section-right,
+.top-section-left{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.top-section img{
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 5px;
+
+}
+
+.default-image{
+    opacity: .15;
+}
+
+.from .profile-container,
+.to .profile-container{
+    background-color: var(--color-white);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0 !important;
+}
+
+.to,
+.from{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: var(--color-white);
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: 20rem;
+}
+
+.to-details,
+.from-details{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.to-details span:first-of-type,
+.from-details span:first-of-type{
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.invoice-section-title{
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.top-section i{
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.to-details p,
+.from-details p{
+    width: 10rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 1.1;
+}
+
+.select-list{
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    max-height: 20rem;
+    box-shadow: 10px 10px 10px rgba(128, 128, 128, 0.233);
+    position: absolute;
+    top: 105%;
+    width: 100%;
+    padding: 10px;
+    gap: 5px;
+    overflow-y: auto;
+}
+
+.select-list span{
+    padding: 5px;
+
+}
+
+.select-list span:hover{
+    background-color:  rgba(128, 128, 128, 0.39);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* INVOICE FORMS*/
+
+.invoiceItems{
+    display: flex;
+    flex-direction: column;
+}
+
+.invoiceItems>span{
+    font-size: 24px;
+    font-weight: 900;
+    margin: 2rem 0;
+}
+
+.invoice-item-row{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.input-container-invoice input{
+    background-color: var(--color-white) !important;
+    padding: 5px !important;
+    height: 2.5rem;
+    width: 20rem;
+}
+
+.input-container-invoice input:focus{
+    /* outline: 1px solid var(--color-orange) !important;
+    box-shadow: none !important; */
+    border: 2px solid var(--color-orange) !important;
+}
+
+.invoice-item-row>div>i{
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.invoice-item-row>div:last-of-type{
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.invoice-actions{
+    margin-top: 2rem;
+}
+
+.invoice-actions button{
+    padding: 10px;
+    border: none;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+
+}
+
+
+/* RIGHT DETAILS */
+
+.right-details{
+    margin-right: 2rem;
+    padding: 20px;
+    border-radius: 10px;
+    height: auto;
+}
+
+.right-details .invoice-title{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.dept-detail,
+.patient-detail{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+.dept-detail>span:first-of-type,
+.patient-detail>span:first-of-type,
+.invoice-items-right>p{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: .5rem !important;
+}
+
+
+.patient-detail>div,
+.invoice-items-right>div{
+    display: flex;
+}
+
+.invoice-items-right>div{
+    margin-bottom: .25rem;
+}
+
+
+.totals{
+    margin-top: 2rem;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.patient-detail>div>span:first-of-type,
+.invoice-items-right>div>span:first-of-type,
+.totals>p{
+    width: 10rem !important;
+}
+
+.totals p{
+    font-size: 20px;
+}
+
+.totals span{
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.printInvoice{
+    padding: 10px 15px;
+    background-color: var(--main-color);
+    border: none;
+    color: var(--color-white);
+    border-radius: 5px;
+}
