@@ -33,7 +33,7 @@ formsContainers.forEach((container, index)=>{
  */
 
 
-const staffListContainer = document.querySelector('.dataTable');
+const staffListContainer = document.querySelector(".dataTable");
 
 staffs.forEach((staff)=>{
     const template = `

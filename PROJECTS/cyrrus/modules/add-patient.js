@@ -1,4 +1,5 @@
 import { patientFormFields } from "../utils/form-data.js";
+import { handleToggleCustomSelectInputs, loader } from "../utils/utils.js";
 
 
 /**
@@ -49,5 +50,52 @@ patientFormFields.forEach((field, key)=>{
             template = templateText;
     }
     
-    formsContainer.insertAdjacentHTML("afterbegin", template)
+    formsContainer.insertAdjacentHTML("afterbegin", template);
 })
+
+
+const patientFormSelects = document.querySelectorAll('.inputContainer-selectText');
+
+handleToggleCustomSelectInputs(patientFormSelects);
+
+
+const registerPatientSubmitBtn = document.querySelector('.formsContainer.patientForm .submitBtn');
+
+registerPatientSubmitBtn.addEventListener('click', ()=>{
+    const allInputs = document.querySelectorAll('.inputContainer div input');
+    const allSelectsInputs = document.querySelectorAll('.inputContainer-selectText');
+
+    let fieldsValid = [];
+
+    allInputs.forEach((input)=>{
+        if(input.value === ""){
+            input.parentElement.parentElement.style.border = "1px solid red";
+            fieldsValid.push(false)
+        }
+        else{
+            input.parentElement.parentElement.style.border = "1.5px solid rgba(128, 128, 128, 0.404)";
+            fieldsValid.push(true)
+
+        }
+    })
+
+    allSelectsInputs.forEach((select)=>{
+        if(select.textContent.includes('Select')){
+            select.parentElement.parentElement.style.border = "1px solid red";
+            fieldsValid.push(false)
+        }
+        else{
+            select.parentElement.parentElement.style.border = "1.5px solid rgba(128, 128, 128, 0.404)";
+            fieldsValid.push(true)
+
+        }
+
+    })
+
+    if(!fieldsValid.includes(false)){
+        loader(registerPatientSubmitBtn)
+    }
+
+
+})
+

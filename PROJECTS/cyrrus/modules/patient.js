@@ -1,20 +1,11 @@
-
 import { patients } from "../utils/data.js";
-import { handleToggleCustomSelectInputs } from "../utils/utils.js";
+
 
 /**
  * TODO: MINIMIZE THE USE OF DUPLICATE CODE. WILL BE MORE EFFICIENT WHEN SHIFTING TO MODULES(VITE)
  */
 
 
-/**
- * Custom utility function that handles Hide/Show select items on click
- */
-
-
-const patientFormSelects = document.querySelectorAll('.inputContainer-selectText');
-
-handleToggleCustomSelectInputs(patientFormSelects);
 
 const loadPatientsList = (data)=>{
     const patientListContainer = document.querySelector('.dataTable');
