@@ -1,5 +1,5 @@
 import { patients, departments } from "../utils/data.js";
-
+import { handlePrinting } from "../utils/utils.js";
 
 /**
  * TODO: MINIMIZE THE USE OF DUPLICATE CODE. WILL BE MORE EFFICIENT WHEN SHIFTING TO MODULES(VITE)
@@ -205,6 +205,17 @@ const handleInitialValidation = ()=>{
 
 }
 
+const generateInvoiceId = (number)=>{
+    let formattedInvoiceNumber;
+
+    if(number < 10) formattedInvoiceNumber = `CY00${invoiceNumber}`;
+    else if(number < 100) formattedInvoiceNumber = `CY0${invoiceNumber}`;
+    else formattedInvoiceNumber = `CY${invoiceNumber}`;
+
+    return formattedInvoiceNumber;
+}
+
+let invoiceNumber = 1;
 
 generateInvoiceBtn.addEventListener('click', ()=>{
     
@@ -214,7 +225,7 @@ generateInvoiceBtn.addEventListener('click', ()=>{
 
     const template = `
 
-    <span class="invoice-title">Invoice CY234</span>
+    <span class="invoice-title">Invoice ${generateInvoiceId(invoiceNumber)}</span>
 
     <div class="dept-detail">
         <span>Issuing department</span>
@@ -260,17 +271,20 @@ generateInvoiceBtn.addEventListener('click', ()=>{
         </span>
     </div>
 
-    <button class="printInvoice">Print invoice</button>
+    <button class="printInvoice" data-html2canvas-ignore="true">Print invoice</button>
     
     
     `
     printableDetailsContainer.innerHTML = template;
 
+    const elementToPrint = document.querySelector('.right-details');
 
+    document.querySelector('.printInvoice').addEventListener('click', ()=>{
+        handlePrinting(elementToPrint, `Invoice-${toDetails_name.textContent.replace(/\s+/g, '')}-${fromDetails_Name.textContent.replace(/\s+/g, '')}-${invoiceNumber}-${Date.now()}`)
+    })
+
+    invoiceNumber++;
 })
-
-
-
 
 
 
