@@ -156,3 +156,42 @@ listOfYears.forEach((year)=>{
         toggleYearList.firstElementChild.textContent = year.textContent;
     })
 })
+
+
+const dropdownToggler = document.querySelector('.profile-container');
+const dropdownProfile = document.querySelector('.dropdown-profile');
+
+dropdownToggler.addEventListener('click', ()=>{
+    dropdownProfile.classList.toggle('hidden');
+})
+
+
+const dropdown_list = [
+    {
+        title:"Settings",
+        icon:"icon-cog",
+        url:'/'
+    },
+    {
+        title:"Modify Profile",
+        icon:"icon-edit",
+        url:'/'
+    }
+]
+
+
+const dropdownListContainer = document.querySelector('.dropdown-list');
+
+dropdown_list.forEach((item)=>{
+    const template = `
+    <a href=${item.url}>
+        <div>
+            <i class="${item.icon}"></i>
+            <span>${item.title}</span>
+        </div>
+        <i class="icon-angle-right"></i>
+    </a>
+    `
+    dropdownListContainer.insertAdjacentHTML('afterbegin', template )
+
+})

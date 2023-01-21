@@ -197,6 +197,17 @@ button[type=submit]{
     margin: 3rem 0;
 }
 
+.signup a, .login a{
+    color: var(--color-blue);
+
+}
+
+.signup a:hover,
+ .login a:hover{
+    text-decoration: none;
+ }
+
+
 .border-red{
     border: 1.5px solid var(--color-red);
 }

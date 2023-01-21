@@ -1,5 +1,5 @@
 
-import { patients } from "../utils/dummy_data/patients_data.js";
+import { patients } from "../utils/data.js";
 import { handleToggleCustomSelectInputs } from "../utils/utils.js";
 
 /**
