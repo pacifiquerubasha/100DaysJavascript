@@ -1,3 +1,5 @@
+import { handlePrinting } from "../utils/utils.js";
+
 /**
  * Dynamically load data from the localstorage to the unique patient page
  */
@@ -105,15 +107,8 @@ const element = document.querySelector('.patientDetails') //HTML Element to prin
 const printDetails = document.querySelector('.printDetails'); //The print trigger
 const filename = `${dataFromSessionStorage.firstname + dataFromSessionStorage.middlename + dataFromSessionStorage.lastname}-${Date.now()}` //The unique filename
 
-//HTML2PDF options
-var opt = {
-    margin:       0.5,
-    filename:     `${filename}.pdf`,
-    image:        { type: 'png', quality: 0.98 },
-    html2canvas:  { scale: 3 },
-    jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-};
 
 printDetails.addEventListener('click', ()=>{
-    html2pdf(element, opt);
+    handlePrinting(element, filename)
+
 })

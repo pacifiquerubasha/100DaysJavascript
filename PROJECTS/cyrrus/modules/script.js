@@ -1,4 +1,7 @@
 
+import { patients as patientDetails, doctorsDetails } from "../utils/data.js";
+
+
 /**
  * Loading dashboard statistics data 
  */
@@ -66,48 +69,22 @@ statsDetails.forEach((stat)=>{
  */
 const patientsContainer = document.querySelector('.patients');
 
-const patientDetails = [
-    {
-        name:"Lady Mary",
-        profile:"../assets/profile.jpg",
-        age:50,
-        status:'Pending'
-    },
-    {
-        name:"Lady Mary",
-        profile:"../assets/profile.jpg",
-        age:50,
-        status:'On Recovery'
-    },{
-        name:"Lady Mary",
-        profile:"../assets/profile.jpg",
-        age:50,
-        status:'Rejected'
-    },{
-        name:"Lady Mary",
-        profile:"../assets/profile.jpg",
-        age:50,
-        status:'Recovered'
-    },
-]
-
-
 
 patientDetails.forEach((patient)=>{
     const template = `    
         <div class="pat-info">
             <div class="pat-image">
                 <img
-                    src=${patient.profile}
+                    src=${patient.picture_url}
                     alt="patient's profile"
                     class=""
                 />
             </div>
             <div class="pat">
                 <p>
-                    <span class="pat-name">${patient.name}</span><br /><span
+                    <span class="pat-name">${patient.firstname}&nbsp;${patient.lastname}</span><br /><span
                         class="pat-age"
-                        >${patient.age} Years</span
+                        >${Math.floor((new Date() - new Date(patient.dob))/1000/3600/24/365)} Years</span
                     >
                 </p>
 
@@ -125,40 +102,6 @@ patientDetails.forEach((patient)=>{
  * Loading sample doctors data for dashboard
  */
 const doctorsContainer = document.querySelector('.doctor-card');
-
-const doctorsDetails = [
-    {
-        name: 'Dr. Stephany',
-        image: "../assets/profile.jpg",
-        rating: 4.2,
-        title: 'Dentist',
-        address:`795 Folsom Ave, Suite 600<br />
-        San Francisco, CADGE 94107`
-    },
-    {
-        name: 'Dr. Lil Mbwa',
-        image: "../assets/profile.jpg",
-        rating: 4.2,
-        title: 'Gynecologist',
-        address:`795 Folsom Ave, Suite 600<br />
-        San Francisco, CADGE 94107`
-    },{
-        name: 'Dr Louis Ng',
-        image: "../assets/profile.jpg",
-        rating: 4.2,
-        title: 'Cardiologist',
-        address:`795 Folsom Ave, Suite 600<br />
-        San Francisco, CADGE 94107`
-    },
-    {
-        name: 'Dr. Stephany',
-        image: "../assets/profile.jpg",
-        rating: 4.2,
-        title: 'Dentist',
-        address:`795 Folsom Ave, Suite 600<br />
-        San Francisco, CADGE 94107`
-    },
-]
 
 doctorsDetails.forEach((doctor)=>{
     const template = `    

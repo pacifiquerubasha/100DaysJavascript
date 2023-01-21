@@ -1,73 +1,9 @@
+import { staffs } from "../utils/data.js";
+import { staffFormsFields as formsFields } from "../utils/form-data.js";
 
 /**
  * Loading Staff registration form items 
  */
-
-const formsFields = {
-    left:[
-        {
-            label:"Name",
-            type:"text",
-            placeholder:"Enter your name",
-            icon:"fa-solid fa-gift"
-        },
-        {
-            label:"Name",
-            type:"text",
-            placeholder:"Enter your name",
-            icon:"fa-solid fa-gift"
-        },
-        {
-            label:"Name",
-            type:"text",
-            placeholder:"Enter your name",
-            icon:"fa-solid fa-gift"
-        },
-        {
-            label:"Name",
-            type:"text",
-            placeholder:"Enter your name",
-            icon:"fa-solid fa-gift"
-        },
-        {
-            label:"Name",
-            type:"text",
-            placeholder:"Enter your name",
-            icon:"fa-solid fa-gift"
-        },
-        {
-            label:"Name",
-            type:"text",
-            placeholder:"Enter your name",
-            icon:"fa-solid fa-gift"
-        },
-
-    ],
-
-    right:[
-        {
-            label:"Name",
-            type:"text",
-            placeholder:"Enter your name",
-            icon:"fa-solid fa-gift"
-        },
-        {
-            label:"Name",
-            type:"text",
-            placeholder:"Enter your name",
-            icon:"fa-solid fa-gift"
-        },
-        {
-            label:"Name",
-            type:"text",
-            placeholder:"Enter your name",
-            icon:"fa-solid fa-gift"
-        },
-
-
-    ]
-}
-
 
 const formsContainers = document.querySelectorAll('.forms');
 
@@ -96,58 +32,6 @@ formsContainers.forEach((container, index)=>{
  * Display list of staff data
  */
 
-const staffs = [
-    {
-        id:"LM30KH",
-        name:'Lady',
-        lastname:"Mary",
-        title:"Dr",
-        department:"Surgery",
-        nationality:"African",
-        insertionDate:"11/12/2023",
-
-    },
-    {
-        id:"LM30KH",
-        name:'Lady',
-        lastname:"Mary",
-        title:"Dr",
-        department:"Surgery",
-        nationality:"African",
-        insertionDate:"11/12/2023",
-
-    },
-    {
-        id:"LM30KH",
-        name:'Lady',
-        lastname:"Mary",
-        title:"Dr",
-        department:"Surgery",
-        nationality:"African",
-        insertionDate:"11/12/2023",
-
-    },
-    {
-        id:"LM30KH",
-        name:'Lady',
-        lastname:"Mary",
-        title:"Dr",
-        department:"Surgery",
-        nationality:"African",
-        insertionDate:"11/12/2023",
-
-    },
-    {
-        id:"LM30KH",
-        name:'Lady',
-        lastname:"Mary",
-        title:"Dr",
-        department:"Surgery",
-        nationality:"African",
-        insertionDate:"11/12/2023",
-
-    }
-]
 
 const staffListContainer = document.querySelector('.dataTable');
 

@@ -692,8 +692,19 @@ canvas {
 .pat {
 	display: flex;
 	flex-direction: row;
-	gap: 96px;
+	justify-content: space-between;
+	flex: 1;
+	align-items: center;
+
 }
+
+.pat p:first-of-type{
+	width: 10rem;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .pat-image img {
 	height: 40px;
 	width: 40px;

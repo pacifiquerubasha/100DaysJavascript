@@ -1,3 +1,5 @@
+import { patients, departments } from "../utils/data.js";
+
 
 /**
  * TODO: MINIMIZE THE USE OF DUPLICATE CODE. WILL BE MORE EFFICIENT WHEN SHIFTING TO MODULES(VITE)
@@ -7,22 +9,9 @@
  * Loading depatments and handling click events for each of the items of the list
  */
 
-const departments = [
-    {
-        id:1,
-        name:"Surgery",
-        email:"surgery@cyrrus.com",
-        image:'../assets/surgery.jpg'
-    },
-    {
-        id:2,
-        name:"Pediatry",
-        email:"pediatry@cyrrus.com",
-        image:'../assets/pediatry.jpg'
-    }
-]
 
-const departments_container = document.querySelector('.depatments-list')
+
+const departments_container = document.querySelector('.departments-list')
 
 departments.forEach((dept)=>{
     const template = `<span class="departments_list_item" id="dept-${dept.id}" ><p>${dept.name}</p> </span>`;
@@ -55,76 +44,6 @@ departments_list_items.forEach((item)=>{
 /**
  * Dynamically loading patient list and handling click events on each of the elements of the list
  */
-
-const patients = [
-    {
-        id:"LM30KH",
-        firstname:'Lady',
-        middlename:"Rubasha",
-        lastname:"Mary",
-        gender:"F",
-        phone:"439483430",
-        dob:"12/12/1998",
-        email:"ladymary@gmail.com",
-        nationality:"Algeria",
-        blood_group:"0+",
-        marital_status:"married",
-        occupation:"Software Developer",
-        card_no:"239427824",
-        address:"Pamplemousses, ALC Campus",
-        contact_person:"Senior Rubasha",
-        relationship:"Father",
-        contact_number:"42842940",
-        picture_url:"../assets/profile.jpg",
-        additional_info:`As I said there is nothing `
-
-    },
-    {
-        id:"ER30KH",
-        firstname:'Emmanuella',
-        middlename:"Rubasha",
-        lastname:"Habamungu",
-        gender:"F",
-        phone:"439483430",
-        dob:"12/12/1998",
-        email:"daniella@gmail.com",
-        nationality:"Algeria",
-        blood_group:"B+",
-        marital_status:"married",
-        occupation:"Nutritionist",
-        card_no:"239427824",
-        address:"Pamplemousses, ALC Campus",
-        contact_person:"Senior Rubasha",
-        relationship:"Father",
-        contact_number:"42842940",
-        picture_url:"../assets/user-1.jpg",
-        additional_info:`As I said there is nothing As I said there is nothingAs I said there is nothing As I said there is nothing  `
-
-    },
-
-    {
-        id:"AG30KH",
-        firstname:'Audrey',
-        middlename:"Gustavo",
-        lastname:"Sua",
-        gender:"F",
-        phone:"439483430",
-        dob:"12/12/1998",
-        email:"audrey@gmail.com",
-        nationality:"Algeria",
-        blood_group:"A+",
-        marital_status:"married",
-        occupation:"Business Analyst",
-        card_no:"239427824",
-        address:"Pamplemousses, ALC Campus",
-        contact_person:"Senior Rubasha",
-        relationship:"Father",
-        contact_number:"42842940",
-        picture_url:"../assets/user-2.jpg",
-        additional_info:`As I said there is nothing `
-
-    },
-]
 
 
 const patients_list = document.querySelector('.patients-list')
