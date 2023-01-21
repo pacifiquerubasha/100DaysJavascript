@@ -40,7 +40,6 @@ departments_list_items.forEach((item)=>{
 
 
 
-
 /**
  * Dynamically loading patient list and handling click events on each of the elements of the list
  */
@@ -94,28 +93,54 @@ const addInvoiceItemBtns = document.querySelectorAll('.addInvoiceItemBtn');
 const invoiceItemsContainer = document.querySelector('.invoiceItems');
 
 let i = 0;
+const invoiceItemsArray = [];
+
+
+
 const handleAddNewInvoiceItem = (e)=>{
-    const template = `
-    <div class="invoice-item-row">
-        <div class="input-container-invoice">
-            <input aria-label="Item Name" type="text" id="item-name" placeholder="Enter item name">
-        </div>
 
-        <div class="input-container-invoice">
-            <input aria-label="Item price" type="text" id="item-price"  placeholder="Enter item price">
-        </div>
-        <div>
-            <i id="btn-${i}" class="icon-plus-sign-alt addInvoiceItemBtn"></i>
-        </div>
-    </div>
-    `
-    invoiceItemsContainer.insertAdjacentHTML('beforeend', template);
+    const firstPrevInput = e.target.parentElement.previousElementSibling.previousElementSibling.lastElementChild;
+    const secondPrevInput = e.target.parentElement.previousElementSibling.lastElementChild;
+   
+    if(firstPrevInput.value === ""){
+        firstPrevInput.focus();
+    }
 
-    const addedBtn = document.getElementById(`btn-${i}`)
-    addedBtn.addEventListener('click', (e)=>handleAddNewInvoiceItem(e))
+    else if(secondPrevInput.value == ""){
+        secondPrevInput.focus()
+    }
 
-    i++;
-    e.target.style.display = "none";
+    else{
+
+        invoiceItemsArray.push({
+            name:firstPrevInput.value,
+            price:secondPrevInput.value
+        });
+
+        const template = `
+        <div class="invoice-item-row">
+            <div class="input-container-invoice">
+                <input aria-label="Item Name" type="text" id="item-name" placeholder="Enter item name" required>
+            </div>
+    
+            <div class="input-container-invoice">
+                <input aria-label="Item price" type="number" id="item-price"  placeholder="Enter item price" required>
+            </div>
+            <div>
+                <i id="btn-${i}" class="icon-plus-sign-alt addInvoiceItemBtn"></i>
+            </div>
+        </div>
+        `
+        invoiceItemsContainer.insertAdjacentHTML('beforeend', template);
+    
+        const addedBtn = document.getElementById(`btn-${i}`)
+        addedBtn.addEventListener('click', (e)=>handleAddNewInvoiceItem(e))
+    
+        i++;
+        e.target.style.display = "none";
+
+    }
+
 
 }
 
@@ -127,6 +152,122 @@ addInvoiceItemBtns.forEach((btn)=>{
 
 })
 
+
+/**
+ * 
+ * Generating invoices logic
+ */
+const generateInvoiceBtn = document.querySelector('.invoice-actions button');
+const printableDetailsContainer = document.querySelector('.printable-details');
+
+/**
+ * Function that handles the validation of the data before generating invoices
+ * 
+ * @returns validation metric
+ */
+const handleInitialValidation = ()=>{
+
+    const initalFirstInput = document.querySelector('.initalFirstInput');
+    const initalSecondInput = document.querySelector('.initalSecondInput');
+
+    const fromBox = document.querySelector('.from');
+    const toBox = document.querySelector('.to');
+
+    const validateTitleDetails = (field, value, parent)=>{
+        
+        parent.style.border = field.textContent === value ? '2px solid red' : "none";
+
+        return field.textContent !== value;
+    }
+
+    const validateFirstInput = validateTitleDetails(fromDetails_Name, "Select Department", fromBox);
+    const validateSecondInput = validateTitleDetails(toDetails_name, "Select Patient", toBox);
+
+    if(!validateFirstInput) return false;
+    if(!validateSecondInput) return false;
+
+
+    if(initalFirstInput.value !== "" && initalSecondInput.value != ""){
+
+        if(printableDetailsContainer.textContent.trim() === "" && invoiceItemsArray.length === 0)
+            invoiceItemsArray.push({
+                name:initalFirstInput.value,
+                price:initalSecondInput.value
+            });
+
+    }
+
+    else if(invoiceItemsArray.length === 0){
+        return false;
+    }
+
+    return true;
+
+}
+
+
+generateInvoiceBtn.addEventListener('click', ()=>{
+    
+    const isValid = handleInitialValidation();
+
+    if(!isValid) return;
+
+    const template = `
+
+    <span class="invoice-title">Invoice CY234</span>
+
+    <div class="dept-detail">
+        <span>Issuing department</span>
+        <span>${fromDetails_Name.textContent}</span>
+    </div>
+
+    <div class="patient-detail">
+        <span>Patient</span>
+        <div>
+            <span>ID</span>
+            <span>Lady Mary</span>
+        </div>
+        <div>
+            <span>Names</span>
+            <span>${toDetails_name.textContent}</span>
+        </div>
+
+        <div>
+            <span>Email</span>
+            <span>${toDetails_email.textContent}</span>
+        </div>
+
+    </div>
+    <div class="invoice-items-right">
+        <p class="title">Items</p>
+        ${invoiceItemsArray.map((item)=>{
+            return `
+            <div>
+                <span>${item.name}</span>
+                <span>${item.price}$</span>
+            </div>
+            
+            `
+        }).join("")
+        }
+
+    </div>
+
+    <div class="totals">
+        <p>Total</p>
+        <span>
+        ${invoiceItemsArray.reduce((acc, item)=> acc+=Number(item.price), 0)}$
+        </span>
+    </div>
+
+    <button class="printInvoice">Print invoice</button>
+    
+    
+    `
+    printableDetailsContainer.innerHTML = template;
+
+
+})
 
 
 

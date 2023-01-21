@@ -5,7 +5,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<link rel="icon" type="image/svg+xml" href="../assets/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" type="text/css" href="style.css" />
 		<script
 			src="https://kit.fontawesome.com/b49da0b9f4.js"
 			crossorigin="anonymous"
@@ -109,7 +108,7 @@
                                         </div>
                                         <i class="icon-angle-down dept-toggle"></i>
                                     </div>
-                                    <div class="select-list departments-list">
+                                    <div class="select-list departments-list hidden">
                                         <!-- Departments will be loaded here-->                                                                            
                                     </div>
 
@@ -140,12 +139,12 @@
                                 <div class="invoice-item-row">
                                     <div class="input-container-invoice">
                                         <label for="item-name">Item Name</label>
-                                        <input aria-label="Item Name" type="text" id="item-name"  placeholder="Enter item name">
+                                        <input aria-label="Item Name" type="text" class="initalFirstInput" id="item-name"  placeholder="Enter item name" required>
                                     </div>
 
                                     <div class="input-container-invoice">
                                         <label for="item-price">Price</label>
-                                        <input aria-label="Item Name" type="number" id="item-price"  placeholder="Enter item price">
+                                        <input aria-label="Item Price" type="number" class="initalSecondInput" id="item-price"  placeholder="Enter item price" required>
                                     </div>
                                     <div>
                                         <i class="icon-plus-sign-alt addInvoiceItemBtn"></i>
@@ -163,55 +162,14 @@
 
                         </div>
                         <div class="right-details">
-                            <span class="invoice-title">Invoice CY234</span>
-
-                            <div class="dept-detail">
-                                <span>Issuing department</span>
-                                <span>Surgery</span>
+                            <div class="watermark">
+                                <div>Cyrrus</div> 
                             </div>
 
-                            <div class="patient-detail">
-                                <span>Patient</span>
-                                <div>
-                                    <span>ID</span>
-                                    <span>Lady Mary</span>
-                                </div>
-                                <div>
-                                    <span>Names</span>
-                                    <span>Lady Mary</span>
-                                </div>
-                                <div>
-                                    <span>Email</span>
-                                    <span>ladymary@gmail.com</span>
-                                </div>
+                            <div class="printable-details">
 
-                            </div>
-                            <div class="invoice-items-right">
-                                <p class="title">Items</p>
-                                <div>
-                                    <span>Item 1</span>
-                                    <span>300$</span>
-                                </div>
-                                <div>
-                                    <span>Item 1</span>
-                                    <span>300$</span>
-                                </div>
-                                <div>
-                                    <span>Item 1</span>
-                                    <span>300$</span>
-                                </div>
-                                <div>
-                                    <span>Item 1</span>
-                                    <span>300$</span>
-                                </div>
-                            </div>
-
-                            <div class="totals">
-                                <p>Total</p>
-                                <span>12,000$</span>
-                            </div>
-
-                            <button class="printInvoice">Print invoice</button>
+                                
+                            </div>                           
 
 
                         </div>

@@ -194,10 +194,15 @@
     padding: 20px;
     border-radius: 10px;
     height: auto;
+    background-color: gray;
+    position: relative;
+    overflow: hidden;
+    opacity: .95;
+
 }
 
 .right-details .invoice-title{
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
 }
 
@@ -239,13 +244,14 @@
     width: 10rem !important;
 }
 
+
 .totals p{
     font-size: 20px;
 }
 
 .totals span{
     font-size: 24px;
-    font-weight: 800;
+    font-weight: 900;
 }
 
 .printInvoice{
@@ -254,4 +260,21 @@
     border: none;
     color: var(--color-white);
     border-radius: 5px;
+}
+
+.watermark{
+    position: absolute;
+    font-size: 150px;
+    width: 95%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -100;
+}
+
+.watermark div{
+    transform: rotate(330deg);
+    opacity: .1;
 }
