@@ -63,15 +63,17 @@ export const loader = (button)=>{
 export const checkPasswords = (password, confirmPassword) => {
     if(!password.value.match(PASSWORD_REGEX)){
         password.parentElement.classList.add('border-red');
-        return false;
+        confirmPassword.parentElement.classList.remove('border-red');
+        return "Password too weak";
     }
 
-    if(confirmPassword.value !== password.value){
+    else if(confirmPassword.value !== password.value){
         confirmPassword.parentElement.classList.add('border-red');
-        return false;
+        password.parentElement.classList.remove('border-red');
+        return "Passwords do not match";
     }
 
-    return true;
+    return "pass";
 }
 
 

@@ -1,4 +1,4 @@
-import { handleTogglePassword, checkPasswords, loader } from "../utils/utils";
+import { handleTogglePassword, checkPasswords, loader } from "../utils/utils.js";
 
 
 const passwordInput = document.querySelector('.password');
@@ -21,12 +21,23 @@ const handleSignup = (e)=>{
     e.preventDefault();
     
     const isValidForm = checkPasswords(passwordInput, confirmPasswordInput);
-    if(isValidForm){
+
+    if(isValidForm === "pass"){
         passwordInput.parentElement.classList.remove('border-red');
         confirmPasswordInput.parentElement.classList.remove('border-red');
+        
+        if(!messageContainer.classList.contains('hidden'))
+            messageContainer.classList.add('hidden')
 
         loader(signUpBtn)
+    }
 
+    else{
+        let messageContainer = document.querySelector('.message-container .core-message');
+        messageContainer.textContent = isValidForm;
+
+        if(messageContainer.classList.contains('hidden'))
+            messageContainer.classList.remove('hidden')
     }
 
 }
