@@ -76,7 +76,7 @@ This is just, in 5 simple steps how event loop works in Javascript. Of course if
 
 ## What are promises ?
 
-Promises are a way of handling asynchronous operations in javascript. But we already had a way of doing that with Ajax's  `XMLHttpRequest`? Of course! But the big problem with the previous method is that if we had to do five dependant API calls, we would result in what is called callback hell. Callback hell is simply nested block of code, of triangular shape that chains API calls based on the results of previous calls. 
+Promises are a way of handling asynchronous operations in javascript. But we already had a way of doing that with Ajax's  `XMLHttpRequest`? Of course! But the big problem with the previous method is that if we had to do five dependent API calls, we would result in what is called callback hell. Callback hell is simply nested block of code, of triangular shape that chains API calls based on the results of previous calls. 
 
 Example
 

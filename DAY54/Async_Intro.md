@@ -2,7 +2,7 @@
 
 # Asynchronous Javascript
 
-When running javascript, the general behavior is that a line of code is executed after the one written a line before it has ended executing. This is called synchronous javascript. Synchronous javascript executes code line by line, and as a consequence, if a line of code takes time to execute, the entire execution will stop until the heavy task has ended. To solve this issue, asynchronous javascript was created. I guess you know exactly what is does. Or rather what it does not do. Either way, asynchronous javascript code does not block the execution flow in the sense that it is put on a background where it runs until finished. It is only when the asynchronous code finished executing that it will be put back on the stack. 
+When running javascript, the general behavior is that a line of code is executed after the one written before it has ended executing. This is called synchronous javascript. Synchronous javascript executes code line by line, and as a consequence, if a line of code takes time to execute, the entire execution will stop until the heavy task has ended. To solve this issue, asynchronous javascript was created. I guess you know exactly what is does. Or rather what it does not do. Either way, asynchronous javascript code does not block the execution flow in the sense that it is put on a background where it runs until finished. It is only when the asynchronous code finished executing that it will be put back on the stack. 
 
 Example of Synchronous JS
 ```Javascript
