@@ -1,14 +1,16 @@
 # Asynchronous Javascript and the event loop
 
-Javascript code is run by the javascript engine in collaboration with a runtime environment, which is either a web browser or Nodejs, making it capable to run in almost any kind of device. The engine reads and executes the code line by line, or at least that is what used to be the case before Javascript decided to incorporate asynchronous operations. The reason for this is because Javascript does not normally allow multithreading(will explore multithreading with Web workers in another paper). The problem with the not allowing more than one operation to be run simultanuously is that heavy operations will block the execution of subsequent tasks, resulting in, say, a browser freezing while waiting for the heavy operation to end. Async Javascript was introduced to adapt to the situation and overcome the issues that developers were facing. 
+The fact that Javascript code is executed by the javascript engine in conjunction with a runtime environment—either a web browser or Nodejs—allows it to run on virtually any device. The engine was used to execute the code line by line before Javascript made the decision to include asynchronous operations. This is because Javascript typically does not support multithreading. Heavy operations will impede the completion of subsequent tasks, causing, for example, a browser to freeze while waiting for the heavy operation to finish, which is the drawback of preventing more than one operation from being carried out simultaneously. The development of asynchronous Javascript was an answer to developers' issues and a response to shifting circumstances.
 
-## How does all this work behind the scenes?
+Because it is run in the background until it is ready to be used, resource-intensive code in asynchronous JavaScript does not impede the execution flow. The asynchronous code will not be put back on the stack until it has finished running.
 
-A short analogy might help! 
+## What actually occurs beneath the surface in all of this?
 
-Mary is a Javascript developer. She has been invited to a developers conference. Our fictional conference has three rooms and once in a room, the door behind you disappears. She enters the first room where the registration happens, it has two front doors. One that leads out, and the other that leads to a waiting room. In this registration room, she will be directed where to go based on her profile. If sent out, she is ready for the conference. But if sent to the waiting room, more stress, Mary! After the decision is made, the next person comes in. As for you Mary who is judged not yet ready for the conference, she enters the waiting room and takes a chair. In the waiting room, she needs to do the necessary tasks set for herself and once done, there is one front door that leads to the queue room. Mary finishes her tasks and gets out of the waiting rooms No work to do, just chill on the queue until she is called. By who? The conference attendant. To go where? Back to the registration desk! When? As soon as the registration room is empty and she is at the start of the waiting queue! :unamused:
+A brief analogy may be helpful!
 
-To dive into the core of how Javascript deals with both asynchronous and synchronous code in a program based on our analogy, let's take an example of a simple javascript code and examine how the Javascript engine executes it.
+Mary is a Javascript developer. She has been invited to a conference for developers. There are three rooms in our fictional conference, and once inside, the door behind you disappears. She enters the first room, which has two front doors and is where the registration takes place. One door leads out, and the other to a lounge area. She will be told where to go from this registration room based on her profile. She is prepared for the conference if sent out. Mary, however, more stress would result if she were sent to the waiting room. The next person enters the room after the decision is made. Regarding Mary, who is deemed unprepared for the conference, enters the waiting room. She must complete the assigned tasks in the waiting room, and when she is done, there is a single front door that leads to the queue room. Mary completes her tasks and exits the waiting areas. There is no work for her; she can simply relax in the line until she is called. By who? The conference attendant. Where to go? Back to the registration desk! When? As soon as the registration room is empty and she is at the start of the waiting queue!: unamused:
+
+Let's look at an example of simple code and how the Javascript engine executes it to get down to the core of how Javascript handles both asynchronous and synchronous code in a program. This will help us relate the process to the one we used in our analogy.
 
 ```Javascript
 
@@ -27,21 +29,21 @@ Let's run the code !
 
 Step 1
 
-When the program runs, the first code to be executed will be the first line(`console.log('I am the first log');`). It will be sent to the call stack. Since its profile is just a synchronous piece of code, it will be executed and we will see in the console `I am the first log`. The code will be marked as "executed" then removed from the call stack.
+When the program runs, the first code to be executed will be the first line(`console.log('I am the first log');`). It will be forwarded to the call stack. Because its profile is just a synchronous piece of code, it will be executed and we will see `I am the first log` in the console. The code will be marked as "executed," and the call stack will be cleared.
 
 >_Console_\
 > I am the first log
 
 Step 2
 
-The second piece of code (`setTimeout(()=>console.log('I am the timout log'), 10000);`) will be put in the call stack for execution. But this time around, it is an asynchronous operation, having a callback. Callback itself might be explained as _"do serve other operations coming after me and when I am ready, call me back"_. The timeout is removed from the call stack then sent to the Web API(our waiting room) where it waits for 10 seconds as specified in our timer. 
+The second piece of code (`setTimeout(()=>console.log('I am the timout log'), 10000);`) will be put in the call stack for execution. However, this time it is an asynchronous operation with a callback. Callback can be defined as _"do continue serving other operations coming after me and call me back when I am ready"_. The timeout is removed from the call stack and sent to the Web API (our waiting room), where it waits for the designated 10 seconds.
 
 >_Console_\
 > I am the first log
 
 Step 3
 
-The third piece of code (`console.log('I am the log after the timeout');`) will be put on the call stack and executed just like the first one. Why? Well, it is synchronous. As a result, we see in our console a second log. Our console now looks like this:
+The third line of code (`console.log('I am the log after the timeout');`) will be added to the call stack and executed in the same manner as the first. Why? It is, after all, synchronous. As a result, we see a second log in our console. Our console now appears to be as follows:
 
 >_Console_\
 > I am the first log\
@@ -49,7 +51,7 @@ The third piece of code (`console.log('I am the log after the timeout');`) will 
 
 Step 4
 
-10 seconds later, the callback working in the Web API will be ready. It is sent to the callback queue. This is where asynchronous operations(except promises) ready to be executed are sent, in the order in which they arrived on the queue. Given that no one else is on the line, the event loop looks in the call stack. If there is no code running in there, the event loop fetches a callback from the callback queue and puts it inside the call stack. For our case, the event loop will take our callback and put it inside the call stack for execution.
+The callback function in the Web API will be ready in 10 seconds. When done, it is routed to the callback queue. This is where ready-to-execute asynchronous operations (except promises) are sent in the order they arrived on the queue. Because no one else is on the line, the event loop searches the call stack. If no code is running, the event loop retrieves a callback from the callback queue and places it in the call stack. In our case, the event loop will accept our callback and place it in the call stack for execution.
 
 >_Console_\
 > I am the first log\
@@ -57,7 +59,7 @@ Step 4
 
 Step 5
 
-Once in the call stack, the code inside the callback will be executed, line after line, then the callback removed from the stack(just in our case because there is no asynchronous code in our callback). The console now has out three logs.
+Once in the call stack, the code inside the callback will be executed line by line, and the callback will be removed from the stack (just in our case because there is no asynchronous code in our callback). The console is now emitting three logs.
 
 >_Console_\
 > I am the first log\
@@ -72,6 +74,6 @@ Let's link the concepts in our short story with Javascript.
 | Console       | Call Stack             | Web API          | Callback Queue  | Event loop
 
 
-In 5 simple steps, this is how the event loop works in Javascript. Of course if the code that we are running had multiple callbacks or async blocks of code, further judgement will have to be considered to decide who gets out of the Web API first. Apart from callbacks like setTimeout or a not-so-evident async operation like changing the src of an image, most of the time, asynchronous activities are data fetching algorithms. And in modern Javascript, we use promises to do exactly that. Promises are special in Javascript because they are called _microtasks_, as opposed to all other operations like `setTimeout` which are normal tasks. Difference? They have their special room called the Microtask queue. The interesting thing about the microtask queue is that code inside it is given priority when the callstack is empty. Before running any other task when the stack is empty, the runtime looks inside the microtask queue, and if there is some promise chilling in there, they will be called to the call stack immediately. 
+This is how the event loop in Javascript works in 5 easy steps. Of course, if the code we're running contains multiple callbacks or async blocks of code, we'll have to use our best judgment to determine who gets out of the Web API first. Aside from callbacks like `setTimeout` or a less obvious async operation like changing an image's src, most asynchronous activities are data fetching algorithms. And promises are used to accomplish this in modern Javascript. Promises are unique in Javascript because they are referred to as _microtasks_, as opposed to all other operations, such as 'setTimeout,' which are considered normal tasks. Difference? They have a special room known as the Microtask queue instead of going to the callback queue. The microtask queue is interesting in that code inside it is given priority when the call stack is empty. When the stack is empty, the runtime looks inside the microtask queue for any promises, and if there are any, they are immediately called to the call stack.
 
-Asynchronous Javascript has been a game-changer in the way applications are built to give an enjoyable experience to the user by, for example letting them know what is happening when they click on, say, a "Submit button". And the way that the process behind it works is quite interesting to understand to be able to decide on activities that need to be given priority over others. What about the newly introduced multithreading with Microtasks in Javascript? We shall explore them next time.
+By letting users know what's going on when they click a "Submit" button, for example, asynchronous Javascript has revolutionized the way applications are built to provide an enjoyable user experience. To be able to choose which activities should take precedence over others, it is helpful to comprehend the process's workings, which are quite interesting. What about Javascript's newly implemented multithreading with Microtasks? Next time, we'll look into them.
