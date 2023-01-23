@@ -133,5 +133,15 @@ const loadTableHeader = ()=>{
 
 loadTableHeader();
 
+const handleSearch = ()=>{
+    const searchInput = document.querySelector('.invoice-header-right');
+    searchInput.addEventListener('keyup', (e)=>{
+        setTimeout(()=>{
 
+            const data = invoices.filter((invoice)=>invoice.names.toLowerCase().includes(e.target.value.toLowerCase()) || invoice.dept.toLowerCase().includes(e.target.value.toLowerCase()));
+            loadTableData(data)
+        }, 80)
+    })
+}
 
+handleSearch();

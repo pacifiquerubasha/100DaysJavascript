@@ -82,7 +82,7 @@ const filterInput = document.querySelector('.filter-patients');
 
 filterInput.addEventListener('keyup', (e)=>{
 
-    const filteredPatientList = patients.filter((patient)=> patient.firstname.toLocaleLowerCase().includes(e.target.value) || patient.lastname.toLocaleLowerCase().includes(e.target.value))
+    const filteredPatientList = patients.filter((patient)=> patient.firstname.toLocaleLowerCase().includes(e.target.value.toLowerCase()) || patient.lastname.toLocaleLowerCase().includes(e.target.value.toLowerCase()))
     
     loadPatientsList(filteredPatientList);
 

@@ -180,3 +180,11 @@
 .change-status-list>p:hover{
     background-color: rgba(128, 128, 128, 0.39);
 }
+
+.invoice-header-right input{
+    border-radius: 0 !important;
+}
+
+.invoice-header-right input:focus{
+    border-bottom: 1px solid var(--main-color);
+}
