@@ -1,7 +1,7 @@
 import { staffs } from "../utils/data.js";
-import { staffFormsFields as formsFields } from "../utils/form-data.js";
+import { handleDropdownToggle } from "./dropdown.js";
 
-
+handleDropdownToggle();
 
 /**
  * Display list of staff data

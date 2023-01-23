@@ -1,7 +1,9 @@
 import { staffs } from "../utils/data.js";
 import { staffFormsFields as formsFields } from "../utils/form-data.js";
 import { loader } from "../utils/utils.js";
+import { handleDropdownToggle } from "./dropdown.js";
 
+handleDropdownToggle();
 /**
  * Loading Staff registration form items 
  */

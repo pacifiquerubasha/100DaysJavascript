@@ -1,4 +1,9 @@
 import { handlePrinting } from "../utils/utils.js";
+import { handleDropdownToggle } from "./dropdown.js";
+
+
+handleDropdownToggle();
+
 
 /**
  * Dynamically load data from the localstorage to the unique patient page

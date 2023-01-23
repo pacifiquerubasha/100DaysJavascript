@@ -3,14 +3,16 @@
 .staff-page-header,
 .add-staff-header,
 .add-patient-header,
-.invoice-page-header{
+.invoice-page-header,
+.invoice-list-page-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .staff-page-header,
-.add-patient-header{
+.add-patient-header,
+.invoice-list-page-header{
     width: 90%;
 }
 
@@ -18,7 +20,8 @@
     width: 80%;
 }
 
-.staff-page-header i{
+.staff-page-header i,
+.invoice-list-page-header i{
     font-size: 48px;
     color: var(--color-orange);
     cursor: pointer;
@@ -36,7 +39,8 @@
 
 .add-staff-header a:hover,
 .add-patient-header a:hover,
-.invoice-page-header a{
+.invoice-page-header a:hover,
+.invoice-list-page-header a:hover{
     text-decoration: none !important;
 }
 

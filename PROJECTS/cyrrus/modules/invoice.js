@@ -1,9 +1,9 @@
 import { patients, departments } from "../utils/data.js";
 import { handlePrinting } from "../utils/utils.js";
+import { handleDropdownToggle } from "./dropdown.js";
 
-/**
- * TODO: MINIMIZE THE USE OF DUPLICATE CODE. WILL BE MORE EFFICIENT WHEN SHIFTING TO MODULES(VITE)
- */
+
+handleDropdownToggle();
 
 /**
  * Loading depatments and handling click events for each of the items of the list

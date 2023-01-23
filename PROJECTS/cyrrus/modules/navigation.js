@@ -12,7 +12,7 @@ const navigationData = [
             },
             {
                 label:'View invoices', 
-                link:"../pages/view-patient.html"
+                link:"../pages/view-invoices.html"
             },
             
         ]

@@ -20,6 +20,7 @@ sendEmailForm.addEventListener('submit', (e)=>{
             required
         />
     `
+    
     if(submitBtn.textContent !== "Confirm code"){
         instruction.innerHTML = `We sent you the reset code on your email ${emailInput.value}.<br/>Please enter the code below`;
          emailInput.style.display = 'none';
@@ -27,7 +28,7 @@ sendEmailForm.addEventListener('submit', (e)=>{
          submitBtn.textContent = "Confirm code"
     }
 
-    
+
     const messageContainer = document.querySelector('.message-container .core-message');
 
     if(codeInput && codeInput.value !== "M0A3R0Y"){

@@ -1,6 +1,8 @@
 import { patientFormFields } from "../utils/form-data.js";
 import { handleToggleCustomSelectInputs, loader } from "../utils/utils.js";
+import { handleDropdownToggle } from "./dropdown.js";
 
+handleDropdownToggle();
 
 /**
  * Loading Patient registration form items 

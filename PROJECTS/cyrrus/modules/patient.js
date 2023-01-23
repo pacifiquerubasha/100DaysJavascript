@@ -1,5 +1,7 @@
 import { patients } from "../utils/data.js";
+import { handleDropdownToggle } from "./dropdown.js";
 
+handleDropdownToggle();
 
 /**
  * TODO: MINIMIZE THE USE OF DUPLICATE CODE. WILL BE MORE EFFICIENT WHEN SHIFTING TO MODULES(VITE)

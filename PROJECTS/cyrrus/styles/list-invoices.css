@@ -1,0 +1,40 @@
+@import url('./staff.css');
+
+
+.invoices{
+    display: flex;
+    flex-direction: column;
+}
+
+.invoices-stats{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.invoice-unique-stat{
+    border: 1px solid gray;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    border-radius: 5px;
+
+}
+
+.invoice-unique-stat>div{
+    width: 8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.invoice-unique-stat>div>span:first-of-type{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.invoice-unique-stat>div>span{
+    font-size: 24px;
+    font-weight: 900;
+}
