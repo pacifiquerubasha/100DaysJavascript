@@ -478,6 +478,10 @@ a:hover{
 	background-image: var(--color-purple-gradient);
 }
 
+.bg-gray{
+	background-color: gray;
+}
+
 .stats {
 	display: flex;
 	gap: 1.5rem;

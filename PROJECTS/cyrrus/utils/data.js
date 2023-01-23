@@ -186,6 +186,16 @@ export const invoices = [
         names:"Lady Mary",
         dept:"Surgery",
         total:1500,
+        status:"Paid",
+        updated:"12-20-2022"
+    },
+    {
+        id:'CY001',
+        created:'12-20-2022',
+        profile_pic:"../assets/profile.jpg",
+        names:"Lady Mary",
+        dept:"Surgery",
+        total:1300,
         status:"Active",
         updated:"12-20-2022"
     },
@@ -195,8 +205,8 @@ export const invoices = [
         profile_pic:"../assets/profile.jpg",
         names:"Lady Mary",
         dept:"Surgery",
-        total:1500,
-        status:"Active",
+        total:100,
+        status:"Unpaid",
         updated:"12-20-2022"
     },
     {
@@ -205,7 +215,7 @@ export const invoices = [
         profile_pic:"../assets/profile.jpg",
         names:"Lady Mary",
         dept:"Surgery",
-        total:1500,
+        total:500,
         status:"Active",
         updated:"12-20-2022"
     },

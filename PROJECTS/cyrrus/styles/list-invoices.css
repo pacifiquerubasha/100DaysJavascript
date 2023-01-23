@@ -155,6 +155,7 @@
     background-color: gray;
     border: none;
     border-radius: 5px;
+    color: var(--color-white);
 }
 
 .change-status-list{
