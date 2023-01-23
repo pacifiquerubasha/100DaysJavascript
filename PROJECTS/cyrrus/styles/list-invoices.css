@@ -188,3 +188,14 @@
 .invoice-header-right input:focus{
     border-bottom: 1px solid var(--main-color);
 }
+
+#plot{
+    /* max-width: 50rem;
+    max-height: 50rem; */
+}
+
+g.cartesianlayer, .subplot{
+    width: 200px !important;
+    height: 200px !important;
+    border: 1px solid red;
+}

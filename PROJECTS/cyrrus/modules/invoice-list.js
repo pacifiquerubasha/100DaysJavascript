@@ -1,12 +1,27 @@
 
 import { invoiceBoxes } from "../utils/form-data.js";
 import { invoices } from "../utils/data.js";
+import { loadInvoiceChartData } from "./invoice-charts.js";
+
+const generateData = (labels)=>{
+    const values = new Array(10).fill(0).map((i)=>Math.floor(Math.random() * 100))
+    return {
+        labels,
+        values
+    }
+}
+
+
+const updateChart = (chart, data)=>{
+    chart.data.datasets[0].data = data;
+    chart.update();
+}
 
 const loadStatsBoxes = ()=>{
 
     const invoice_stats_container = document.querySelector('.invoices-stats');
-    
-    invoiceBoxes.forEach((box)=>{
+  
+    invoiceBoxes.forEach((box, key)=>{
         const statsTemplate = `
             <div class="invoice-unique-stat">
                 <div class="invoice-unique-stat-left">
@@ -14,13 +29,19 @@ const loadStatsBoxes = ()=>{
                     <span>${box.total}</span>
                 </div>
                 <div class="invoice-unique-stat-right">
-                    X
+                    <canvas id="invoice-box-${key}" ></canvas>
                 </div>
-        
             </div>
         `
-    
+        const labels = ["January","February","March","April","May","June","July",
+        "August","September","October"];
+
         invoice_stats_container.insertAdjacentHTML('beforeend', statsTemplate)
+        const chart = loadInvoiceChartData(`invoice-box-${key}`, generateData(labels));
+
+        setInterval(()=>{
+            updateChart(chart, generateData(labels).values)
+        }, 1000)
     })
 
 }
@@ -145,3 +166,5 @@ const handleSearch = ()=>{
 }
 
 handleSearch();
+
+
