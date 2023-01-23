@@ -177,3 +177,37 @@ export const departments = [
         image:'../assets/pediatry.jpg'
     }
 ]
+
+export const invoices = [
+    {
+        id:'CY001',
+        created:'12-20-2022',
+        profile_pic:"../assets/profile.jpg",
+        names:"Lady Mary",
+        dept:"Surgery",
+        total:1500,
+        status:"Active",
+        updated:"12-20-2022"
+    },
+    {
+        id:'CY001',
+        created:'12-20-2022',
+        profile_pic:"../assets/profile.jpg",
+        names:"Lady Mary",
+        dept:"Surgery",
+        total:1500,
+        status:"Active",
+        updated:"12-20-2022"
+    },
+    {
+        id:'CY001',
+        created:'12-20-2022',
+        profile_pic:"../assets/profile.jpg",
+        names:"Lady Mary",
+        dept:"Surgery",
+        total:1500,
+        status:"Active",
+        updated:"12-20-2022"
+    },
+
+]

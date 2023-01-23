@@ -123,7 +123,7 @@ const navContainer = document.querySelector('.nav-container');
 navigationData.forEach((item, index)=>{
     const template = `  
 
-        <a ${!item.isExpendable && `href= ${item.link}` } class="expandable" id=${item.id}>
+        <a key=${index} ${!item.isExpendable && `href= ${item.link}` } class="expandable" id=${item.id}>
             <div>
                 <i class="fa-solid ${item.icon}"></i>
                 <span>${item.title}</span>

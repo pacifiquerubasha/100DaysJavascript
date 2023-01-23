@@ -198,3 +198,22 @@ export const patientFormFields = [
     },
 
 ]
+
+export const invoiceBoxes = [
+    {
+        title:"Total invoices",
+        total:"1,400"
+    },
+    {
+        title:"Total invoices",
+        total:"1,400"
+    },
+    {
+        title:"Total invoices",
+        total:"1,400"
+    },
+    {
+        title:"Total invoices",
+        total:"1,400"
+    }
+]
