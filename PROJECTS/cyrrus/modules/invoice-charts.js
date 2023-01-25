@@ -27,7 +27,7 @@ const chartOptions = {
     }
   }
 
-export const loadInvoiceChartData = (id, data)=>{
+export const loadChartData = (id, data, colorValues)=>{
 
     const lineChart = new Chart(document.getElementById(id), {
       type: 'line',
@@ -36,9 +36,9 @@ export const loadInvoiceChartData = (id, data)=>{
         datasets: [{ 
             data: data.values,
             label: "Recovered Patient",
-            borderColor: "rgba(199, 89, 89)",
+            borderColor: `rgba(${colorValues})`,
             borderWidth:1.5,
-            backgroundColor: "rgba(199, 89, 89,0.1)",
+            backgroundColor: `rgba(${colorValues},0.1)`,
             fill: true,
             pointRadius: 0,
             pointHoverRadius: 0

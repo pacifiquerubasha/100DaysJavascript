@@ -1,21 +1,9 @@
 
 import { invoiceBoxes } from "../utils/form-data.js";
 import { invoices } from "../utils/data.js";
-import { loadInvoiceChartData } from "./invoice-charts.js";
-import { handleTogglePopup } from "../utils/utils.js";
+import { loadChartData as loadInvoiceChartData } from "./invoice-charts.js";
+import { handleTogglePopup, generateData } from "../utils/utils.js";
 
-/**
- * Utility function to generate random {labels, values} data for chart 
- * @param {*} labels The chart labels to accompany the randomly generated data
- * @returns random chart data
- */
-const generateData = (labels)=>{
-    const values = new Array(10).fill(0).map((i)=>Math.floor(Math.random() * 100))
-    return {
-        labels,
-        values
-    }
-}
 
 /**
  * Chat update handler
@@ -50,7 +38,7 @@ const loadStatsBoxes = ()=>{
         "August","September","October"];
 
         invoice_stats_container.insertAdjacentHTML('beforeend', statsTemplate)
-        const chart = loadInvoiceChartData(`invoice-box-${key}`, generateData(labels));
+        const chart = loadInvoiceChartData(`invoice-box-${key}`, generateData(labels), '199, 89, 89');
 
         setInterval(()=>{
             updateChart(chart, generateData(labels).values)

@@ -1,7 +1,8 @@
 
 import { patients as patientDetails, doctorsDetails } from "../utils/data.js";
 import { handleDropdownToggle } from "./dropdown.js";
-
+import { loadChartData } from "./invoice-charts.js";
+import { generateData } from "../utils/utils.js";
 
 
 handleDropdownToggle(true);
@@ -42,8 +43,15 @@ const statsDetails = [
     }
 ]
 
-statsDetails.forEach((stat)=>{
+statsDetails.forEach((stat, key)=>{
     const amount = stat.total > 1000 ?` ${Math.floor(stat.total/1000)}k` : stat.total;
+    
+    const labels = ["January","February","March","April","May","June","July",
+    "August","September","October"];
+
+    const data = generateData(labels);
+
+    const difference = ((data.values[data.values.length-1]-data.values[0])*100/data.values[0]).toFixed(1);
 
     const template = `
             <div class="stat-box bg-${stat.color}">
@@ -52,8 +60,8 @@ statsDetails.forEach((stat)=>{
                     <div class="stat-data">
                         <div class="amount">${stat.icon=== 'dollar' ? `$${amount}` : amount}</div>
                         <div class="stat-chart">
-                            <div class="chart">X</div>
-                            <span>${stat.chartInfo}</span>
+                            <canvas id="dashboard-stat-${key}" class="dasboard-stat-chart"></canvas>
+                            <span>${difference > 0 ? '+' : ''}${difference}%</span>
                         </div>
                     </div>
                 </div>
@@ -63,9 +71,13 @@ statsDetails.forEach((stat)=>{
             </div>
     `;
 
+   
     stats.insertAdjacentHTML("beforeend", template)
 
+    loadChartData(`dashboard-stat-${key}`, data, '256, 256, 256')
+
 })
+
 
 
 /**

@@ -94,12 +94,30 @@ export const handlePrinting = (element, filename)=>{
         filename:     `${filename}.pdf`,
         image:        { type: 'png', quality: 0.98 },
         html2canvas:  { scale: 3 },
-        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        jsPDF:        { unit: 'in', format: 'a3', orientation: 'portrait' }
     };
 
     html2pdf(element, opt);
 
+    /**
+     * JSPDF FORMATS
+     * a0 - a10
+     * b0 - b10
+     * c0 - c10
+     * dl
+     * letter
+     * government-letter
+     * legal
+     * junior-legal
+     * ledger
+     * tabloid
+     * credit-card
+     */
+
+
 }
+
+
 
 /**
  * Custom utility function that handles Hide/Show select items on click
@@ -186,4 +204,18 @@ export const handleDisplayMessage = (isDisplay, container)=>{
  */
 export const cyrrusNavigate = (url)=>{
     location.href = url;
+}
+
+
+/**
+ * Utility function to generate random {labels, values} data for chart 
+ * @param {*} labels The chart labels to accompany the randomly generated data
+ * @returns random chart data
+ */
+export const generateData = (labels)=>{
+    const values = new Array(10).fill(0).map((i)=>Math.floor(Math.random() * 100))
+    return {
+        labels,
+        values
+    }
 }

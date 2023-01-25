@@ -509,7 +509,8 @@ a:hover{
 
 .stat-data {
 	display: flex;
-	justify-content: space-between;
+	gap: 1rem;
+	align-items: center;
 }
 
 .amount {
@@ -533,6 +534,13 @@ a:hover{
 	border: 1px solid var(--color-white);
 	font-size: 1.5rem;
 }
+
+.dasboard-stat-chart{
+	width: 3rem !important;
+	height: 3rem !important;
+	color: white;
+}
+
 
 /* CHARTS -----------*/
 
