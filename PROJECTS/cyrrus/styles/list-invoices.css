@@ -1,5 +1,17 @@
 @import url('./staff.css');
 
+.nav-container a,
+.nav-container a i,
+.nav-container a[key='2'],
+.nav-container a[key='2'] i{
+    color: gray !important;
+}
+
+.nav-container a[key='0'],
+.nav-container a[key='0'] i{
+	color: var(--main-color) !important;
+	font-weight: 900 !important;
+}
 
 .invoices{
     display: flex;

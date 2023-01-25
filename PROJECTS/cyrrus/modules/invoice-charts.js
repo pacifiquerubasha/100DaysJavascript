@@ -27,6 +27,15 @@ const chartOptions = {
     }
   }
 
+
+/**
+ * Function to load a line area chart 
+ * @param {*} id The id of the canvas to contain the chart
+ * @param {*} data The object {labels, values} to contain chart data
+ * @param {*} colorValues A string of 3 comma-separated values representing R, G and B values for the chart background and border
+ * @returns 
+ */
+
 export const loadChartData = (id, data, colorValues)=>{
 
     const lineChart = new Chart(document.getElementById(id), {

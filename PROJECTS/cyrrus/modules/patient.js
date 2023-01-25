@@ -72,9 +72,9 @@ tableRows.forEach((row)=>{
  * @param {*} data 
  */
 const navigateToDetailsPage = (data)=>{
-    sessionStorage.setItem("unique-patient", JSON.stringify(data))
+    localStorage.setItem("unique-patient", JSON.stringify(data))
 
-    if(sessionStorage.getItem("unique-patient"))
+    if(localStorage.getItem("unique-patient"))
         cyrrusNavigate('../pages/unique-patient.html')
     
 }

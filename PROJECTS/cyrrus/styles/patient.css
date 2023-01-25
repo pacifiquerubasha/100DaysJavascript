@@ -1,4 +1,17 @@
 
+.nav-container a,
+.nav-container a i,
+.nav-container a[key='2'],
+.nav-container a[key='2'] i{
+    color: gray !important;
+}
+
+.nav-container a[key='1'],
+.nav-container a[key='1'] i{
+	color: var(--main-color) !important;
+	font-weight: 900 !important;
+}
+
 
 .formFields{
     display: flex;

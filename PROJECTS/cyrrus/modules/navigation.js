@@ -1,6 +1,4 @@
-/**
- * Data structure for app navigation
- */
+
 const navigationData = [
     {
         id:4,
@@ -60,7 +58,7 @@ const navigationData = [
         isExpendable:false,
         link:'../index.html'
     },
-   
+    
 ]
 
 /**

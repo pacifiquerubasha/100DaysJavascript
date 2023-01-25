@@ -1,4 +1,18 @@
+
+.nav-container a,
+.nav-container a i{
+    color: gray !important;
+}
+
+.nav-container a[key='2'],
+.nav-container a[key='2'] i{
+	color: var(--main-color) !important;
+	font-weight: 900 !important;
+}
+
+
 /* ADD STAFF STYLES ----------------------*/
+
 
 .staff-page-header,
 .add-staff-header,

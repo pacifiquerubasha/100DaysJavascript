@@ -2,7 +2,7 @@
 import { patients as patientDetails, doctorsDetails } from "../utils/data.js";
 import { handleDropdownToggle } from "./dropdown.js";
 import { loadChartData } from "./invoice-charts.js";
-import { generateData } from "../utils/utils.js";
+import { generateData, cyrrusNavigate } from "../utils/utils.js";
 
 
 handleDropdownToggle(true);
@@ -50,7 +50,6 @@ statsDetails.forEach((stat, key)=>{
     "August","September","October"];
 
     const data = generateData(labels);
-
     const difference = ((data.values[data.values.length-1]-data.values[0])*100/data.values[0]).toFixed(1);
 
     const template = `
@@ -86,9 +85,9 @@ statsDetails.forEach((stat, key)=>{
 const patientsContainer = document.querySelector('.patients');
 
 
-patientDetails.forEach((patient)=>{
+patientDetails.forEach((patient, key)=>{
     const template = `    
-        <div class="pat-info">
+        <div class="pat-info" id="patient-info-${key}">
             <div class="pat-image">
                 <img
                     src=${patient.picture_url}
@@ -110,7 +109,17 @@ patientDetails.forEach((patient)=>{
         <div class="divider"></div>
         `
     patientsContainer.insertAdjacentHTML("beforeend", template)
-    
+
+    const recentPatient = document.querySelector(`#patient-info-${key}`);
+
+    recentPatient.addEventListener('click', ()=>{
+        localStorage.setItem("unique-patient", JSON.stringify(patient));
+
+        if(localStorage.getItem("unique-patient"))
+            cyrrusNavigate('../pages/unique-patient.html')
+    })
+  
+
 })
 
 

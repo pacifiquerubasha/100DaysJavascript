@@ -100,6 +100,8 @@ body {
 
 	transition: all ease-in-out 800ms;
 }
+
+
 /* MENU ---------------*/
 
 .container {
@@ -223,6 +225,17 @@ body {
 	color: var(--main-color) !important;
 	font-weight: 700 !important;
 }
+
+.expandable{
+	/* border: 1px solid red; */
+}
+
+.nav-container a[key='3'],
+.nav-container a[key='3'] i{
+	color: var(--main-color);
+	font-weight: 900 !important;
+}
+
 
 /* HEADER ----------- */
 
@@ -788,6 +801,7 @@ canvas {
 	display: flex;
 	flex-direction: row;
 	gap: 16px;
+	cursor: pointer;
 }
 
 .pat {

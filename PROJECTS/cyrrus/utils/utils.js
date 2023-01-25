@@ -2,8 +2,8 @@ import { PASSWORD_REGEX } from "./constants.js";
 
 /**
  * Utitlity function to display text letter after another
- * @param {*} text(The text to animate)
- * @param {*} container(The HTML element to contain the text) 
+ * @param {*} text The text to animate 
+ * @param {*} container The HTML element to contain the text  
  */
 
 export const displayLetterAfterLetter = (text, container)=>{
@@ -24,8 +24,8 @@ export const displayLetterAfterLetter = (text, container)=>{
 
 /**
  * Simple utility function to handle hide/show password
- * @param {*} input(the input element) 
- * @param {*} toggle(the icon to be toggled eye/eye-slash)
+ * @param {*} input the input element  
+ * @param {*} toggle the icon to be toggled eye/eye-slash 
  */
 
 export const handleTogglePassword = (input, toggle)=>{
@@ -44,7 +44,7 @@ export const handleTogglePassword = (input, toggle)=>{
 
 /**
  * Simple utility function to show a loading animation
- * @param {*} button(The HTML element to contain the loader)
+ * @param {*} button The HTML element to contain the loader 
  */
 export const loader = (button)=>{
     let i = 0
@@ -62,8 +62,8 @@ export const loader = (button)=>{
 
 /**
  * Custom function to check whether the password is strong enough to be allowed 
- * @param {*} password(The input to contain the password) 
- * @param {*} confirmPassword(The input to contain the confirm password) 
+ * @param {*} password The input to contain the password  
+ * @param {*} confirmPassword The input to contain the confirm password  
  * @returns password status
  */
 export const checkPasswords = (password, confirmPassword) => {
@@ -85,8 +85,8 @@ export const checkPasswords = (password, confirmPassword) => {
 
 /**
  * Utility function to print HTML sections
- * @param {*} element(The HTML container to be printed) 
- * @param {*} filename(The name of the file to be printed) 
+ * @param {*} element The HTML container to be printed  
+ * @param {*} filename The name of the file to be printed  
  */
 export const handlePrinting = (element, filename)=>{
     var opt = {
@@ -121,7 +121,7 @@ export const handlePrinting = (element, filename)=>{
 
 /**
  * Custom utility function that handles Hide/Show select items on click
- * @param {*} inputs(The nodelist of inputs to be toggled) 
+ * @param {*} inputs The nodelist of inputs to be toggled  
  */
 
 export const handleToggleCustomSelectInputs = (inputs)=>{
@@ -159,8 +159,8 @@ export const handleToggleCustomSelectInputs = (inputs)=>{
 
 /**
  * Handles the toggling of popups by allowing close on click outside
- * @param {*} toggleSelector(The css ]selector of the popup toggler) 
- * @param {*} popupSelector(The css ]selector of the popup to be displayed/hidden) 
+ * @param {*} toggleSelector The css ]selector of the popup toggler  
+ * @param {*} popupSelector The css ]selector of the popup to be displayed/hidden  
  */
 
 export const handleTogglePopup = (toggleSelector, popupSelector)=>{
@@ -184,8 +184,8 @@ export const handleTogglePopup = (toggleSelector, popupSelector)=>{
 
 /**
  * Handling display/hide error messages
- * @param {*} isDisplay(The display condition) 
- * @param {*} container(The container of the message) 
+ * @param {*} isDisplay The display condition  
+ * @param {*} container The container of the message  
  */
 export const handleDisplayMessage = (isDisplay, container)=>{
     const condition = container.classList.contains('hidden');
@@ -200,7 +200,7 @@ export const handleDisplayMessage = (isDisplay, container)=>{
 
 /**
  * Handling navigation to profided url(relative path)
- * @param {*} url(The url to redirect to) 
+ * @param {*} url The url to redirect to  
  */
 export const cyrrusNavigate = (url)=>{
     location.href = url;
