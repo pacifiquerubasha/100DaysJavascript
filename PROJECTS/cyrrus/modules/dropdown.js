@@ -1,3 +1,4 @@
+import { handleTogglePopup } from "../utils/utils.js";
 
 export const handleDropdownToggle = (isHome)=>{
 
@@ -25,14 +26,7 @@ export const handleDropdownToggle = (isHome)=>{
 
     headerRightContainer.insertAdjacentHTML('beforeend', dropdownTemplate);
 
-    const dropdownToggler = document.querySelector('.profile-container');
-    const dropdownProfile = document.querySelector('.dropdown-profile');
-
-    
-    dropdownToggler.addEventListener('click', ()=>{
-        dropdownProfile.classList.toggle('hidden');
-    })
-
+    handleTogglePopup('.profile-container', '.dropdown-profile');
 
     const dropdown_list = [
         {

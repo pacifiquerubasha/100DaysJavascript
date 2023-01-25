@@ -60,6 +60,12 @@ export const loader = (button)=>{
     }, 300)
 }
 
+/**
+ * Custom function to check whether the password is strong enough to be allowed 
+ * @param {*} password 
+ * @param {*} confirmPassword 
+ * @returns password status
+ */
 export const checkPasswords = (password, confirmPassword) => {
     if(!password.value.match(PASSWORD_REGEX)){
         password.parentElement.classList.add('border-red');
@@ -77,6 +83,11 @@ export const checkPasswords = (password, confirmPassword) => {
 }
 
 
+/**
+ * Utility function to print HTML sections
+ * @param {*} element 
+ * @param {*} filename 
+ */
 export const handlePrinting = (element, filename)=>{
     var opt = {
         margin:       0.5,
@@ -90,20 +101,19 @@ export const handlePrinting = (element, filename)=>{
 
 }
 
- 
 /**
  * Custom utility function that handles Hide/Show select items on click
+ * @param {*} inputs 
  */
 
 export const handleToggleCustomSelectInputs = (inputs)=>{
 
     inputs.forEach((select, i)=>{
+
         const KEY = select.id.split("-")[1]
         const correspondingItemsContainer = document.getElementById(`item-${KEY}`);
 
-        select.addEventListener('click', ()=>{
-            correspondingItemsContainer.classList.toggle('hidden')
-        })
+        handleTogglePopup(`#${select.id}`, `#item-${KEY}`)
 
         /**
          * Simple function that, for each element of the items list toggled, adds the value to the field on click
@@ -124,7 +134,32 @@ export const handleToggleCustomSelectInputs = (inputs)=>{
 
         handleSelectElement();
 
-
     })   
+
+
+}
+
+/**
+ * Handles the toggling of popups by allowing close on click outside
+ * @param {*} toggleClass 
+ * @param {*} popupClass 
+ */
+
+export const handleTogglePopup = (toggleClass, popupClass)=>{
+    
+    const popup = document.querySelector(popupClass);
+
+    document.addEventListener('click', (e)=>{
+
+        if(e.target.closest(toggleClass)){            
+            popup.classList.toggle('hidden');
+        }
+
+        else if (e.target.closest(popupClass) === null && !popup.classList.contains('hidden')) {
+            popup.classList.add('hidden')
+        }
+        
+
+    })
 
 }

@@ -63,8 +63,6 @@ document.querySelector('.patients-toggle').addEventListener('click', ()=>{
 })
 
 
-
-
 const patients_list_items = document.querySelectorAll('.patients_list_item');
 const toDetails_name = document.querySelector('.to-details .name');
 const toDetails_email = document.querySelector('.to-details .email');
@@ -94,7 +92,6 @@ const invoiceItemsContainer = document.querySelector('.invoiceItems');
 
 let i = 0;
 const invoiceItemsArray = [];
-
 
 
 const handleAddNewInvoiceItem = (e)=>{
