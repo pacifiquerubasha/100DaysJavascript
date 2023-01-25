@@ -1,4 +1,6 @@
-
+/**
+ * Data structure for app navigation
+ */
 const navigationData = [
     {
         id:4,
@@ -58,61 +60,7 @@ const navigationData = [
         isExpendable:false,
         link:'../index.html'
     },
-    // {
-    //     id:2,
-    //     icon:'fa-calendar-check',
-    //     title:'Appointment',
-    //     isExpendable:false
-    // },
-    
-    
-    // {
-    //     id:4,
-    //     icon:'fa-heart-circle-plus',
-    //     title:'Apps',
-    //     isExpendable:true
-    // },
-    // {
-    //     id:5,
-    //     icon:'fa-chart-simple',
-    //     title:'Charts',
-    //     isExpendable:true
-    // },
-    // {
-    //     id:6,
-    //     icon:'fa-globe',
-    //     title:'Bootstrap',
-    //     isExpendable:true
-    // },
-    // {
-    //     id:7,
-    //     icon:'fa-gears',
-    //     title:'Plugins',
-    //     isExpendable:true
-    // },
-    // {
-    //     id:8,
-    //     icon:'fa-certificate',
-    //     title:'Widget',
-    //     isExpendable:false
-    // },{
-    //     id:9,
-    //     icon:'fa-align-justify',
-    //     title:'Forms',
-    //     isExpendable:true
-    // },
-    // {
-    //     id:10,
-    //     icon:'fa-table',
-    //     title:'Table',
-    //     isExpendable:true
-    // },
-    // {
-    //     id:11,
-    //     icon:'fa-layer-group',
-    //     title:'Pages',
-    //     isExpendable:true
-    // }
+   
 ]
 
 /**

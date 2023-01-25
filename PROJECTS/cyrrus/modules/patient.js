@@ -1,13 +1,13 @@
 import { patients } from "../utils/data.js";
+import { cyrrusNavigate } from "../utils/utils.js";
 import { handleDropdownToggle } from "./dropdown.js";
 
 handleDropdownToggle();
 
 /**
- * TODO: MINIMIZE THE USE OF DUPLICATE CODE. WILL BE MORE EFFICIENT WHEN SHIFTING TO MODULES(VITE)
+ * Handler for loading and displaying patients on the table
+ * @param {*} data 
  */
-
-
 
 const loadPatientsList = (data)=>{
     const patientListContainer = document.querySelector('.dataTable');
@@ -29,8 +29,6 @@ const loadPatientsList = (data)=>{
     </div>
     `
     patientListContainer.insertAdjacentHTML('beforeend', headerTemplate);
-
-
 
     data.forEach((patient, key)=>{
         const template = `
@@ -57,8 +55,9 @@ const loadPatientsList = (data)=>{
 loadPatientsList(patients);
 
 
-
-
+/**
+ * Adding click event on each row of the patients table
+ */
 const tableRows = document.querySelectorAll('.data-table-row');
 
 tableRows.forEach((row)=>{
@@ -68,15 +67,21 @@ tableRows.forEach((row)=>{
     })
 })
 
-
+/**
+ * Patient table navigation row click handler
+ * @param {*} data 
+ */
 const navigateToDetailsPage = (data)=>{
     sessionStorage.setItem("unique-patient", JSON.stringify(data))
 
     if(sessionStorage.getItem("unique-patient"))
-        location.href = '../pages/unique-patient.html'
+        cyrrusNavigate('../pages/unique-patient.html')
     
 }
 
+/**
+ * Filtering patients list
+ */
 
 const filterInput = document.querySelector('.filter-patients');
 

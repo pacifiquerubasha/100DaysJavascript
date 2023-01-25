@@ -2,7 +2,13 @@
 import { invoiceBoxes } from "../utils/form-data.js";
 import { invoices } from "../utils/data.js";
 import { loadInvoiceChartData } from "./invoice-charts.js";
+import { handleTogglePopup } from "../utils/utils.js";
 
+/**
+ * Utility function to generate random {labels, values} data for chart 
+ * @param {*} labels The chart labels to accompany the randomly generated data
+ * @returns random chart data
+ */
 const generateData = (labels)=>{
     const values = new Array(10).fill(0).map((i)=>Math.floor(Math.random() * 100))
     return {
@@ -11,12 +17,19 @@ const generateData = (labels)=>{
     }
 }
 
-
+/**
+ * Chat update handler
+ * @param {*} chart The chart element
+ * @param {*} data The data to change
+ */
 const updateChart = (chart, data)=>{
     chart.data.datasets[0].data = data;
     chart.update();
 }
 
+/**
+ * Handler for loading statistics boxes
+ */
 const loadStatsBoxes = ()=>{
 
     const invoice_stats_container = document.querySelector('.invoices-stats');
@@ -48,7 +61,10 @@ const loadStatsBoxes = ()=>{
 
 loadStatsBoxes();
 
-
+/**
+ * Handler for Loading table data
+ * @param {*} data The data to fill the invoices table
+ */
 const loadTableData = (data)=>{
 
     const container = document.querySelector('.current-invoice-table-body');
@@ -99,15 +115,16 @@ const loadTableData = (data)=>{
 
         const toggleBtn = document.getElementById(`toggle-status-${index}`);
         const toggleList = document.getElementById(`status-list-${index}`);
-        toggleBtn.addEventListener('click', ()=> {
-            toggleList.classList.toggle('hidden');
-        })
+        
+    
+        handleTogglePopup(`#toggle-status-${index}`, `#status-list-${index}`)
 
         const listElements = document.querySelectorAll(`#status-list-${index} p`);
         
         listElements.forEach((el)=>{
             el.addEventListener('click', ()=>{
                 document.querySelector(`#toggle-status-${index} span`).textContent = el.textContent;
+                
                 toggleList.classList.toggle('hidden');
 
                 switch(el.textContent){
@@ -122,6 +139,7 @@ const loadTableData = (data)=>{
                         break;
                 }
 
+
             })
         })
 
@@ -130,6 +148,9 @@ const loadTableData = (data)=>{
 
 loadTableData(invoices);
 
+/**
+ * Table header(Filters) handler
+ */
 const loadTableHeader = ()=>{
     const headerItems = ['All invoices', 'Active', 'Paid', 'Unpaid'];
     const headerLeftContainer = document.querySelector('.invoice-header-left');
@@ -153,6 +174,10 @@ const loadTableHeader = ()=>{
 }
 
 loadTableHeader();
+
+/**
+ * Search handler to filter table data
+ */
 
 const handleSearch = ()=>{
     const searchInput = document.querySelector('.invoice-header-right');

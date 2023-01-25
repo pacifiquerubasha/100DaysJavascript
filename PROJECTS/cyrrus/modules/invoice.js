@@ -1,5 +1,5 @@
 import { patients, departments } from "../utils/data.js";
-import { handlePrinting } from "../utils/utils.js";
+import { handlePrinting, handleTogglePopup } from "../utils/utils.js";
 import { handleDropdownToggle } from "./dropdown.js";
 
 
@@ -10,7 +10,6 @@ handleDropdownToggle();
  */
 
 
-
 const departments_container = document.querySelector('.departments-list')
 
 departments.forEach((dept)=>{
@@ -18,6 +17,23 @@ departments.forEach((dept)=>{
     departments_container.insertAdjacentHTML('beforeend', template)
 })
 
+/**
+ * Combined function to handle selecting department/patient for an invoice
+ * @param {*} elements 
+ * @param {*} data 
+ * @param {*} popup 
+ * @param {*} isPatient 
+ */
+const handleSelectInvoiceParties = (elements, data, popup, isPatient)=>{
+    elements.name.textContent = !isPatient ? data.name : `${data.firstname} ${data.lastname}`;
+    elements.email.textContent = data.email;
+    elements.image.setAttribute('src', data.image ? data.image : data.picture_url)
+    elements.image.classList.remove('default-image')
+
+    popup.classList.toggle('hidden')
+
+
+}
 
 const departments_list_items = document.querySelectorAll('.departments_list_item');
 const fromDetails_Name = document.querySelector('.from-details .name');
@@ -27,13 +43,13 @@ const fromDetails_Image = document.querySelector('.from-Image');
 departments_list_items.forEach((item)=>{
     item.addEventListener('click', ()=>{
         const data =departments[Number(item.id.split('-')[1])-1]; 
-        
-        fromDetails_Name.textContent = data.name;
-        fromDetails_Email.textContent = data.email;
-        fromDetails_Image.setAttribute('src', data.image)
-        fromDetails_Image.classList.remove('default-image')
+        const fields = {
+            name:fromDetails_Name,
+            email:fromDetails_Email,
+            image:fromDetails_Image
+        }
 
-        departments_container.classList.toggle('hidden')
+        handleSelectInvoiceParties(fields, data, departments_container);
 
     })
 })
@@ -53,14 +69,13 @@ patients.forEach((patient)=>{
 })
 
 
+/**
+ * Handle toggle select dept/patient popups
+ */
 
-document.querySelector('.dept-toggle').addEventListener('click', ()=>{
-    departments_container.classList.toggle('hidden')
-})
+handleTogglePopup('.dept-toggle', '.departments-list')
 
-document.querySelector('.patients-toggle').addEventListener('click', ()=>{
-    patients_list.classList.toggle('hidden')
-})
+handleTogglePopup('.patients-toggle', '.patients-list')
 
 
 const patients_list_items = document.querySelectorAll('.patients_list_item');
@@ -73,12 +88,13 @@ patients_list_items.forEach((item)=>{
         const id = item.id.split('-')[1];
         const data = patients.find(el => el.id === id);
 
-        toDetails_name.textContent = `${data.firstname} ${data.lastname}`;
-        toDetails_email.textContent = data.email;
-        toDetails_image.setAttribute('src', data.picture_url)
-        toDetails_image.classList.remove('default-image')
+        const fields = {
+            name:toDetails_name,
+            email:toDetails_email,
+            image:toDetails_image
+        }
 
-        patients_list.classList.toggle('hidden')
+        handleSelectInvoiceParties(fields, data, patients_list, true);
 
     })
 })
@@ -180,9 +196,7 @@ const handleInitialValidation = ()=>{
     const validateFirstInput = validateTitleDetails(fromDetails_Name, "Select Department", fromBox);
     const validateSecondInput = validateTitleDetails(toDetails_name, "Select Patient", toBox);
 
-    if(!validateFirstInput) return false;
-    if(!validateSecondInput) return false;
-
+    if(!validateFirstInput || !validateSecondInput) return false;
 
     if(initalFirstInput.value !== "" && initalSecondInput.value != ""){
 

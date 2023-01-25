@@ -61,38 +61,34 @@ const patientFormSelects = document.querySelectorAll('.inputContainer-selectText
 handleToggleCustomSelectInputs(patientFormSelects);
 
 
+/**
+ * PATIENT FORM VALIDATION
+ */
+
 const registerPatientSubmitBtn = document.querySelector('.formsContainer.patientForm .submitBtn');
 
 registerPatientSubmitBtn.addEventListener('click', ()=>{
+    
     const allInputs = document.querySelectorAll('.inputContainer div input');
     const allSelectsInputs = document.querySelectorAll('.inputContainer-selectText');
 
     let fieldsValid = [];
 
-    allInputs.forEach((input)=>{
-        if(input.value === ""){
-            input.parentElement.parentElement.style.border = "1px solid red";
-            fieldsValid.push(false)
-        }
-        else{
-            input.parentElement.parentElement.style.border = "1.5px solid rgba(128, 128, 128, 0.404)";
-            fieldsValid.push(true)
+    const checkFields = (isNormalInput, inputsArray)=>{        
 
-        }
-    })
+        inputsArray.forEach((input)=>{
+            const condition = isNormalInput ? (input.value === "") : (input.textContent.includes('Select'))
 
-    allSelectsInputs.forEach((select)=>{
-        if(select.textContent.includes('Select')){
-            select.parentElement.parentElement.style.border = "1px solid red";
-            fieldsValid.push(false)
-        }
-        else{
-            select.parentElement.parentElement.style.border = "1.5px solid rgba(128, 128, 128, 0.404)";
-            fieldsValid.push(true)
+            input.parentElement.parentElement.style.border = condition ? "1px solid red" : "1.5px solid rgba(128, 128, 128, 0.404)";
+            fieldsValid.push(!condition)
+        })
 
-        }
+    }
 
-    })
+    checkFields(true, allInputs);
+    checkFields(false, allSelectsInputs)
+
+     
 
     if(!fieldsValid.includes(false)){
         loader(registerPatientSubmitBtn)

@@ -33,6 +33,10 @@ const handleLogin = (e)=>{
 loginForm.addEventListener('submit', handleLogin)
 
 
+/**
+ * Little Login title animation(Maybe useless)
+ */
+
 const formIntroTitle = document.querySelector('.formIntro .title');
 
 displayLetterAfterLetter('Welcome Back', formIntroTitle);
