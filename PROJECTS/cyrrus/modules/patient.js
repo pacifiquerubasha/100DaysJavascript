@@ -75,7 +75,7 @@ const navigateToDetailsPage = (data)=>{
     localStorage.setItem("unique-patient", JSON.stringify(data))
 
     if(localStorage.getItem("unique-patient"))
-        cyrrusNavigate('../pages/unique-patient.html')
+        cyrrusNavigate('../app/unique-patient.html')
     
 }
 

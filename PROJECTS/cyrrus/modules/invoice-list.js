@@ -3,7 +3,10 @@ import { invoiceBoxes } from "../utils/form-data.js";
 import { invoices } from "../utils/data.js";
 import { loadChartData as loadInvoiceChartData } from "./invoice-charts.js";
 import { handleTogglePopup, generateData } from "../utils/utils.js";
+import { handleDropdownToggle } from "./dropdown.js";
 
+
+handleDropdownToggle();
 
 /**
  * Chat update handler

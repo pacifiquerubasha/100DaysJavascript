@@ -8,11 +8,11 @@ const navigationData = [
         subItems:[
             {
                 label:'Generate invoice', 
-                link:"../pages/invoice.html"
+                link:"../app/invoice.html"
             },
             {
                 label:'View invoices', 
-                link:"../pages/view-invoices.html"
+                link:"../app/view-invoices.html"
             },
             
         ]
@@ -25,11 +25,11 @@ const navigationData = [
         subItems:[
             {
                 label:'Register Patient', 
-                link:"../pages/patient.html"
+                link:"../app/patient.html"
             },
             {
                 label:'View Patients', 
-                link:"../pages/view-patient.html"
+                link:"../app/view-patient.html"
             },
             
         ]
@@ -42,11 +42,11 @@ const navigationData = [
         subItems:[
             {
                 label:'Add Staff', 
-                link:"../pages/staff.html"
+                link:"../app/staff.html"
             },
             {
                 label:'View Staffs', 
-                link:"../pages/view-staff.html"
+                link:"../app/view-staff.html"
             },
             
         ]
@@ -56,7 +56,7 @@ const navigationData = [
         icon:'fa-chart-line',
         title:'Dashboard',
         isExpendable:false,
-        link:'../index.html'
+        link:'/'
     },
     
 ]

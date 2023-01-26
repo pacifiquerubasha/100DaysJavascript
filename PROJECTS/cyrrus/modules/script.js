@@ -116,7 +116,7 @@ patientDetails.forEach((patient, key)=>{
         localStorage.setItem("unique-patient", JSON.stringify(patient));
 
         if(localStorage.getItem("unique-patient"))
-            cyrrusNavigate('../pages/unique-patient.html')
+            cyrrusNavigate('../app/unique-patient.html')
     })
   
 
