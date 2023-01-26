@@ -37,7 +37,7 @@ export const handleDropdownToggle = (isHome)=>{
         {
             title:"Modify Profile",
             icon:"icon-edit",
-            url:'/'
+            url:'../app/modify-profile.html'
         }
     ]
 
