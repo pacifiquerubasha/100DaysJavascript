@@ -560,14 +560,18 @@ a:hover{
 .statistics {
 	display: flex;
 	gap: 2rem;
+	width: 100% !important;
+	justify-content: space-between;
 }
 
-canvas {
+.statistics canvas {
 	max-height: 15rem;
+	width: 100%;
 }
 
 .statistics-left {
-	flex: 2;
+	/* flex: 2; */
+	width: 35%;
 	background-color: var(--color-white);
 	border-radius: 15px;
 	padding: 20px;
@@ -630,11 +634,13 @@ canvas {
 	font-weight: 600;
 }
 .statistics-right {
-	flex: 5;
+	/* flex: 5; */
+	width: 60%;
 	background-color: var(--color-white);
 	border-radius: 15px;
 	padding: 20px;
 }
+
 .filters {
 	display: flex;
 	gap: 0.5rem;

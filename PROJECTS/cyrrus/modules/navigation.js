@@ -2,7 +2,7 @@
 const navigationData = [
     {
         id:4,
-        icon:'fa-hospital-user',
+        icon:'fa-money',
         title:'Invoices',
         isExpendable:true,
         subItems:[
