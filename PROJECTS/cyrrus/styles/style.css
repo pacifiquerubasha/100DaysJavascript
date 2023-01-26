@@ -432,10 +432,11 @@ a:hover{
 .intro-left {
 	display: flex;
 	flex-direction: column;
+	font-size: 1.1vw;
 }
 
 .intro-left span:first-of-type {
-	font-size: 1.25rem;
+	font-size: 1.5vw;
 	font-weight: 700;
 	margin-bottom: 0.5rem;
 }
@@ -443,32 +444,35 @@ a:hover{
 .intro-right {
 	display: flex;
 	gap: 1rem;
+	align-items: center;
 }
+
 .search-container {
 	border: 1px solid gray;
-	border-radius: 25px;
+	border-radius: 1.4vw;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	padding: 0.5rem 1rem;
+	padding: 0.5vw 1vw;
 	overflow: hidden;
 }
 
 .search-container input {
 	border: none;
 	height: 100%;
+	width: 15vw;
 }
 
 .settings {
-	width: 3rem;
-	height: 3rem;
+	width: 3vw;
+	height: 3vw;
 	border-radius: 3rem;
 	background-color: var(--color-orange);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 1.5rem;
+	font-size: 1.75vw;
 	color: white;
 	cursor: pointer;
 }
@@ -517,7 +521,7 @@ a:hover{
 }
 
 .stat-title {
-	font-size: 1.1rem;
+	font-size: 1.2vw;
 }
 
 .stat-data {
@@ -527,7 +531,7 @@ a:hover{
 }
 
 .amount {
-	font-size: 2rem;
+	font-size: 2vw;
 	font-weight: 700;
 }
 
@@ -537,20 +541,22 @@ a:hover{
 	justify-content: center;
 	align-items: center;
 }
+
+
 .stat-box-right {
-	height: 3rem;
-	width: 3rem;
+	height: 2.5vw;
+	width: 2.5vw;
 	border-radius: 3rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border: 1px solid var(--color-white);
-	font-size: 1.5rem;
+	font-size: 1vw;
 }
 
 .dasboard-stat-chart{
-	width: 3rem !important;
-	height: 3rem !important;
+	width: 2vw !important;
+	height: 2vw !important;
 	color: white;
 }
 
@@ -608,7 +614,7 @@ a:hover{
 }
 
 .header-title {
-	font-size: 1.2rem;
+	font-size: 1.2vw;
 	font-weight: 700;
 	margin-bottom: 2rem;
 }
@@ -623,12 +629,12 @@ a:hover{
 }
 
 .big-total {
-	font-size: 1.4rem;
+	font-size: 1.4vw;
 	color: var(--color-blue);
 	font-weight: 800;
 }
 .small-total {
-	font-size: 1.2rem;
+	font-size: 1.2vw;
 	margin-left: 1rem;
 	color: var(--color-purple);
 	font-weight: 600;
@@ -647,13 +653,14 @@ a:hover{
 }
 
 .filterBtn {
-	height: 2.5rem;
+	height: 2.3vw;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	padding: 0.25rem 0.5rem;
 	border-radius: 5px;
 	cursor: pointer;
+	font-size: 1vw;
 }
 
 .monthly {
@@ -684,7 +691,7 @@ a:hover{
 	background-color: white;
 	border-radius: 16px;
 	/* width: 680px; */
-	height: 360px;
+	height: auto;
 	padding: 16px;
 	flex: 3;
 }
@@ -695,6 +702,7 @@ a:hover{
 	justify-content: space-between;
 	margin: 0 48px 0 48px;
 	justify-content: space-around;
+	overflow-x: scroll;
 }
 
 .doctor-card div {
@@ -709,9 +717,11 @@ a:hover{
 	margin-bottom: 24px;
 	font-weight: 800;
 }
+
+
 .doctor-intro #top,
 .pat-intro #top {
-	font-size: 16px;
+	font-size: 1.2vw;
 	font-weight: 800;
 }
 
@@ -721,24 +731,24 @@ a:hover{
 .doctor-intro #view,
 .pat-intro #view {
 	color: green;
-	font-size: 14px;
+	font-size: 1vw;
 	cursor: pointer;
 }
 
 .doc-image {
 	position: relative;
-	margin-bottom: 1rem;
+	margin-bottom: .5vw;
 }
 
 .doc-image img {
-	height: 100px;
-	width: 100px;
+	height: 6vw;
+	width: 6vw;
 	border-radius: 8px;
 	object-fit: cover;
 }
 .doctor-card .ratingBox {
-	height: 22px;
-	width: 60px;
+	height: 1.2vw;
+	width: 4.25vw;
 	border-radius: 16px;
 	background-color: green;
 	display: flex;
@@ -754,15 +764,16 @@ a:hover{
 	color: white;
 	font-size: 10px;
 }
+
 .doc-name {
-	font-size: 14px;
+	font-size: 1.1vw;
 	font-weight: 900;
 	margin-bottom: 0 !important;
 }
 
 .doc-title {
 	color: green;
-	font-size: 14px;
+	font-size: 1vw;
 	font-weight: 900;
 	text-align: center;
 	margin-bottom: 0.25rem !important;
@@ -770,8 +781,9 @@ a:hover{
 
 .doc-address,
 .pat-age {
-	font-size: 10px;
+	font-size: .6vw;
 	color: gray;
+	text-align: center;
 }
 .doctor-card .container-icon {
 	display: flex;
@@ -782,8 +794,8 @@ a:hover{
 }
 .socials {
 	background-color: rgb(179, 177, 177, 20%);
-	height: 32px;
-	width: 32px;
+	height: 2vw;
+	width: 2vw;
 	border-radius: 50%;
 	display: flex;
 	justify-content: center;
@@ -792,12 +804,13 @@ a:hover{
 .container-icon i {
 	color: green;
 	content: center;
+	font-size: 1vw;
 }
 
 /* Recent Patients */
 .patients {
 	height: auto;
-	width: 360px;
+	width: 25vw;
 	padding: 16px;
 	background-color: white;
 	border-radius: 16px;
@@ -820,20 +833,20 @@ a:hover{
 }
 
 .pat p:first-of-type{
-	width: 10rem;
+	width: 10vw;
 	text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
 
 .pat-image img {
-	height: 40px;
-	width: 40px;
-	border-radius: 40px;
+	height: 3vw !important;
+	width: 3vw !important;
+	border-radius: 100%;
 	object-fit: cover;
 }
 .pat-status {
-	font-size: 14px;
+	font-size: .75vw;
 	text-align: right;
 	font-weight: bolder;
 }
@@ -849,12 +862,13 @@ a:hover{
 .pat .recovered {
 	color: green;
 }
+
 .divider {
 	height: 1px;
-	width: 320px;
+	width: 22vw;
 	background-color: rgb(179, 177, 177, 20%);
-	margin-top: 12px;
-	margin-bottom: 12px;
+	margin-top: 1vw;
+	margin-bottom: 1vw;
 }
 
 /* scrolls */
