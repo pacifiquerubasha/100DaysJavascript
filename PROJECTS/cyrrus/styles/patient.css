@@ -62,7 +62,7 @@
 }
 
 .selected-value{
-    color: black;
+    color: var(--color-black);
 }
 
 .invisible{
@@ -87,7 +87,7 @@ input[type=date]::-webkit-datetime-edit{
 input[type=file]::-webkit-file-upload-button{
     font-size: 14px;
     background-color: gray;
-    color: white;
+    color: var(--color-white);
     border: none;
     padding: 5px;
     border-radius: 5px;

@@ -196,7 +196,7 @@
     border: none;
     background-color: var(--main-color);
     border-radius: 5px;
-    color: white;
+    color: var(--color-white);
     font-size: 18px;
 
 }

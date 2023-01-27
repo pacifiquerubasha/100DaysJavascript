@@ -146,9 +146,11 @@ label {
 .profile-right-header span{
     padding: 1vw 0;
     cursor: pointer;
+    width: 10vw;
 }
 
-.profile-right-header span:first-of-type{
+
+.profile-right-header .selected-menu-item{
     font-weight: 900;
     color: var(--main-color);
     border-bottom: .2vw solid var(--main-color);
@@ -169,10 +171,33 @@ label {
     gap: 2vw;
 }
 
+.modify-information>div label{
+    cursor: default;
+    font-weight: 800;
+    color: rgb(92, 92, 92);
+}
+
+div.password-change-inputs{
+    display: flex;
+    flex-direction: column !important;
+    gap: .25vw;
+}
+
 .modify-information>div input{
     padding: 1vw .5vw;
     width: 15vw;
     margin-top: .5vw;
+}
+
+
+.modify-information>div textarea{
+    width: 32vw;
+    height: 5vw;
+    resize: none;
+    margin-top: .5vw;
+    padding: .5vw;
+    color: var(--color-black);
+    font-weight: 800;
 }
 
 .modify-information button{

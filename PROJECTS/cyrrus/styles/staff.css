@@ -44,7 +44,7 @@
 .add-staff-header a,
 .add-patient-header a,
 .invoice-page-header a{
-    color: white;
+    color: var(--color-white);
     background-color: var(--color-orange);
     padding: 1rem 2rem;
     border-radius: 10px;

@@ -2,7 +2,7 @@
 import { patients as patientDetails, doctorsDetails } from "../utils/data.js";
 import { handleDropdownToggle } from "./dropdown.js";
 import { loadChartData } from "./invoice-charts.js";
-import { generateData, cyrrusNavigate } from "../utils/utils.js";
+import { generateData, cyrrusNavigate, startToastProgress, toggleDarkMode } from "../utils/utils.js";
 
 
 handleDropdownToggle(true);
@@ -182,3 +182,64 @@ listOfYears.forEach((year)=>{
     })
 })
 
+
+// const startToastProgress = (message, isError)=>{
+//     const dashboard = document.querySelector('.dashboard');
+
+//     dashboard.insertAdjacentHTML('afterbegin', `
+//         <div class="toast hidden">
+//             <p>Message here</p>
+//             <div class="progress-bar"></div>
+//             <i class="icon-remove-sign"></i>
+//         </div>
+//     `)
+
+//     const toastContainer = document.querySelector('.toast');
+//     const toastProgress = document.querySelector('.toast .progress-bar');
+//     const toastMessage = document.querySelector('.toast p');
+//     const closeToast = document.querySelector('.toast i')
+
+//     toastContainer.classList.remove('hidden');
+//     toastMessage.textContent = message;
+//     toastProgress.style.border = `2px solid ${isError ? "rgba(255, 0, 0, 0.808)" : "rgba(0, 255, 0, 0.808);"}`
+//     toastContainer.style.backgroundColor = `${isError ? "rgba(255, 0, 0, 0.058)" : "rgba(0, 255, 0, 0.058);"}`
+
+
+//     let total = 100;
+//     let interval;
+
+//     const startProgress = ()=>{
+//         interval = setInterval(()=>{
+//             if(total == 0){
+//                 clearInterval(this)
+//                 toastContainer.classList.add('hidden')
+//             }
+    
+//             toastProgress.style.width = `${total}%`;
+//             total--;
+//         }, 80)
+//     }
+
+//     startProgress();
+
+//     toastContainer.addEventListener('mouseover', ()=>{
+//         clearInterval(interval)
+//     })
+
+//     toastContainer.addEventListener('mouseout', ()=>{
+//         startProgress()
+
+//     })
+
+//     closeToast.addEventListener('click', ()=> toastContainer.classList.add('hidden'))
+// }
+
+
+
+// startToastProgress("User not found", true);
+
+const toggleBtn = document.querySelector('.settings');
+
+toggleBtn.addEventListener('click', ()=>{
+    toggleDarkMode();
+})

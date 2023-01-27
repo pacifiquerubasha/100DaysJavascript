@@ -8,8 +8,8 @@ export const handleDropdownToggle = (isHome)=>{
             <div class="dropdown-top">
                 <img src=${isHome ? "./assets/profile.jpg" : "../assets/profile.jpg"} alt="Profile image">
                 <div>
-                    <span>Malaika</span>
-                    <span>malaika@cyrrus.com</span>
+                    <span>Mary</span>
+                    <span>Mary@cyrrus.com</span>
                 </div>
             </div>
             <hr/>

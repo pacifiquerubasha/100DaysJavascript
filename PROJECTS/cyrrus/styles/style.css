@@ -12,7 +12,7 @@
 	);
 	--color-red: rgba(199, 89, 89);
 
-	--color-white: white;
+	/* --color-white: var(--color-white) */
 
 	--color-green-gradient: linear-gradient(
 		to right,
@@ -60,7 +60,7 @@ input {
 	margin-bottom: 0 !important;
 	box-shadow: none !important;
 	background-color: transparent !important;
-	color: black !important;
+	color: var(--color-black) !important;
 	font-weight: 800;
 }
 
@@ -73,10 +73,17 @@ input {
 	background-color: var(--main-background);
 	overflow: hidden !important;
 	padding-left: 1rem;
+
+	--color-white: white;
+	--main-color: green;
+	--color-black:black;
+	
+
 }
 
 body {
 	overflow: hidden !important;
+	/* background-color: #aaaaaa; */
 }
 
 .navigation {
@@ -99,6 +106,7 @@ body {
 	padding-top: 2rem !important;
 
 	transition: all ease-in-out 800ms;
+	position: relative;
 }
 
 
@@ -178,7 +186,7 @@ body {
 }
 
 .schedule i {
-	color: white;
+	color: var(--color-white);
 	margin-left: 0;
 	padding-left: 0;
 }
@@ -305,7 +313,7 @@ body {
 	text-align: center;
 	border-radius: 1rem;
 	font-size: 0.75rem;
-	color: white;
+	color: var(--color-white);
 	top: -0.25rem;
 	right: -0.25rem;
 }
@@ -315,7 +323,7 @@ body {
 }
 
 .no-color .counter {
-	background-color: black;
+	background-color: var(--color-black);
 }
 
 .profile-container {
@@ -337,7 +345,7 @@ body {
 	position: absolute;
 	top: 115%;
 	right: .5rem;
-	background-color: white;
+	background-color: var(--color-white);
 	border-radius: 15px;
 	padding: 1rem 2rem;
 	box-shadow: 10px 10px 10px rgba(128, 128, 128, 0.233);
@@ -347,7 +355,7 @@ body {
 }
 
 .dropdown-profile i{
-	color: black !important;
+	color: var(--color-black) !important;
 }
 
 .dropdown-profile .dropdown-top{
@@ -375,7 +383,7 @@ body {
 
 .dropdown-profile .dropdown-top div span:first-of-type{
 	font-size: 18px;
-	color: black;
+	color: var(--color-black);
 }
 
 .dropdown-list{
@@ -402,13 +410,13 @@ body {
 }
 
 a{
-	color: black;
+	color: var(--color-black);
 }
 
 a:hover{
 	text-decoration: none;
 	cursor: pointer;
-	color: black;
+	color: var(--color-black);
 }
 
 .logout{
@@ -473,7 +481,7 @@ a:hover{
 	justify-content: center;
 	align-items: center;
 	font-size: 1.75vw;
-	color: white;
+	color: var(--color-white);
 	cursor: pointer;
 }
 
@@ -503,6 +511,7 @@ a:hover{
 	display: flex;
 	gap: 1.5rem;
 }
+
 .stat-box {
 	display: flex;
 	flex-direction: row;
@@ -557,7 +566,7 @@ a:hover{
 .dasboard-stat-chart{
 	width: 2vw !important;
 	height: 2vw !important;
-	color: white;
+	color: var(--color-white)
 }
 
 
@@ -597,7 +606,7 @@ a:hover{
 	border: 1px solid rgba(128, 128, 128, 0.397);
 	border-radius: 8px;
 	padding: 5px;
-	background-color: white;
+	background-color: var(--color-white)
 }
 
 .toggle-year-list {
@@ -665,7 +674,7 @@ a:hover{
 
 .monthly {
 	background-color: var(--main-color);
-	color: white;
+	color: var(--color-white)
 }
 
 .weekly {
@@ -677,7 +686,7 @@ a:hover{
 
 .btn-green {
 	background-color: var(--main-color);
-	color: white;
+	color: var(--color-white)
 }
 
 /* Top Doctors */
@@ -688,7 +697,7 @@ a:hover{
 	gap: 2rem;
 }
 .doctors {
-	background-color: white;
+	background-color: var(--color-white);
 	border-radius: 16px;
 	/* width: 680px; */
 	height: auto;
@@ -761,7 +770,7 @@ a:hover{
 	color: yellow;
 }
 .ratingBox span {
-	color: white;
+	color: var(--color-white);
 	font-size: 10px;
 }
 
@@ -812,7 +821,7 @@ a:hover{
 	height: auto;
 	width: 25vw;
 	padding: 16px;
-	background-color: white;
+	background-color: var(--color-white);
 	border-radius: 16px;
 }
 
@@ -876,7 +885,7 @@ a:hover{
 	height: 48px;
 	width: 48px;
 	border-radius: 18px;
-	background-color: white;
+	background-color: var(--color-white);
 	box-shadow: 4px 8px rgb(179, 177, 177, 4%);
 	display: flex;
 	justify-content: center;
@@ -889,4 +898,39 @@ a:hover{
 	/* transform: translateX(-500px); */
 	display: none;
 	transition: all ease-in-out 800ms;
+}
+
+
+/* TOAST */
+
+.toast{
+	border:1px solid rgba(128, 128, 128, 0.425);
+	position: absolute;
+	background-color: var(--color-white);
+	left: 40%;
+	width: 15vw;
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+	overflow: hidden;
+}
+
+.toast p{
+	padding: 1vw;
+}
+
+.toast i{
+	position: absolute;
+	top: .3vw;
+	right: .3vw;
+	font-size: 1vw;
+	cursor: pointer;
+}
+
+.toast div{
+	border-radius: 5px;
+	
+}
+
+.dark-main{
+	background-color: #121212;
 }

@@ -217,3 +217,71 @@ export const invoiceBoxes = [
         total:"1,400"
     }
 ]
+
+
+export const userInfoFieldsTemplate = [
+    `
+    <span>Update the information needed by replacing values provided in these inputs</span>
+    
+    <div class="message-container"><div class="core-message">Message</div></div>
+                      
+    <div>
+        <div>
+            <label for="">Firstname</label>
+            <input aria-label="Firstname" type="text" placeholder="Firstname" value="Mary" required>
+        </div>
+        
+        <div>
+            <label for="">Lastname</label>
+            <input aria-label="Lastname" type="text" placeholder="Lastname" value="Rubasha" required>
+        </div>                                    
+    </div>
+
+    <div>                                        
+        <div>
+            <label for="">Email</label>
+            <input aria-label="Email" type="email" placeholder="Email" value="mary@cyrrus.com" required>
+        </div>
+        <div>
+            <label for="">Title</label>
+            <input aria-label="Title" type="text" placeholder="Title" value="Financial Officer" required>
+        </div>                                    
+    </div>
+    <div>                                        
+        <div>
+            <label for="">Description</label>
+            <textarea aria-label="Description" placeholder="Description" spellcheck="false">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veniam dolorem natus quidem, incidunt suscipit animi quae totam! Fuga nostrum dolorem nulla autem nemo culpa, magnam dignissimos sunt hic minus tempora. Magnam totam voluptate illo sed doloremque quaerat ex aliquam!
+            </textarea>
+        </div>
+                                       
+    </div>
+    
+    <button type="submit">Apply modifications</button>
+    
+    `,
+
+    `
+    <span class="d">Enter the information required to modify your password</span>
+
+    <div class="password-change-inputs">
+        <label for="">Old password</label>
+        <input aria-label="Old password" type="password" placeholder="Old password" required>
+    </div>
+
+    <div class="password-change-inputs">
+        <label for="">New password</label>
+        <input aria-label="New password" type="password" placeholder="New password" required>
+    </div>
+
+    <div class="password-change-inputs">
+        <label for="">Confirm New Password</label>
+        <input aria-label="Confirm password" type="password" placeholder="Confirm password" required>
+    </div>
+
+    <button type="submit">Change password</button>
+
+    
+    `
+
+
+]

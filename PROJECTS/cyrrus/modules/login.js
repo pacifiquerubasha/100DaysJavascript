@@ -1,4 +1,4 @@
-import { displayLetterAfterLetter, handleTogglePassword, loader } from "../utils/utils.js";
+import { cyrrusNavigate, displayLetterAfterLetter, handleTogglePassword, loader } from "../utils/utils.js";
 import { PASSWORD_REGEX } from "../utils/constants.js";
 
 
@@ -25,7 +25,8 @@ const handleLogin = (e)=>{
 
     else{
         loginPassword.parentElement.classList.remove('border-red');
-        loader(loginBtn);
+        // loader(loginBtn);
+        cyrrusNavigate('/')
     }
 }
 

@@ -1,6 +1,6 @@
 import { staffs } from "../utils/data.js";
 import { staffFormsFields as formsFields } from "../utils/form-data.js";
-import { loader } from "../utils/utils.js";
+import { loader, startToastProgress } from "../utils/utils.js";
 import { handleDropdownToggle } from "./dropdown.js";
 
 handleDropdownToggle();
@@ -56,3 +56,5 @@ registerStaffSubmitBtn.addEventListener('click', ()=>{
 
 
 })
+
+// startToastProgress("Staff page here", false)
