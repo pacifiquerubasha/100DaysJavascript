@@ -90,6 +90,7 @@ const checkFibonacci = (instances) => {
 
 console.log(checkFibonacci(7));
 
+
 /**
  * 6. Create a function that determines whether a number is Oddish or Evenish.
  * A number is Oddish if the sum of all of its digits is odd, and a number is Evenish if the sum of all of its digits is even.
